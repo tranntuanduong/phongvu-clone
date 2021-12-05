@@ -1,0 +1,273 @@
+import styled from "styled-components";
+import { colors } from "@theme/colors";
+import { fontSizes } from "@theme/fontSizes";
+
+export const StyledHeader = styled.div`
+    background-color: ${colors.whiteColor};
+    box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 10%);
+    position: sticky;
+    top: 0px;
+
+    &.zoomout {
+        transform: translateY(-16px);
+        transition: all 0.25s;
+
+        & .search {
+            transform: translateY(8px);
+        }
+
+        & .logo {
+            transform: translateY(8px);
+        }
+    }
+
+    & .header-content {
+        display: flex;
+        align-items: center;
+        padding: 14px 0;
+    }
+
+
+    & .search {
+        margin-left: 16px;
+        background-color: ${colors.whitesmoke};
+        padding: 10px 0;
+        border-radius: 5px;
+        display: flex;
+        position: relative;
+        flex: 1;
+
+        & input {
+            outline: none;
+            border: none;
+            background-color: transparent;
+            width: calc(100% - 60px);
+            margin: 0 8px;
+            font-size: ${fontSizes.body1};
+        }
+
+        &__icon {
+            background-color: ${colors.primaryColor};
+            color: ${colors.whiteColor};
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            user-select: none;
+        }
+    }
+`
+
+export const StyledSearchHisory = styled.div`
+    box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 10%);
+    background-color: ${colors.whiteColor};
+    border: 0.5px solid ${colors.border};
+    border-radius: 5px;
+    padding: 16px 12px 12px 12px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+
+    & .history-title {
+        display: flex;
+        justify-content: space-between;
+
+        &__text {
+            color: ${colors.textGrey};
+            font-weight: 600;
+            font-size: ${fontSizes.body1};
+        }
+
+        &__action {
+            color: ${colors.textGrey};
+            font-size: ${fontSizes.body2};
+            &:hover {
+                color: ${colors.primaryColor};
+                cursor: pointer;
+            }
+        }
+      
+    }
+    & .history-list {
+        margin-top: 8px;
+    }
+
+    & .history-item {
+        display: flex;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: ${colors.whitesmoke};
+        }
+
+        &__icon {
+            color: ${colors.textGrey}
+        }
+
+        & p {
+            margin-left: 8px;
+            flex: 1;
+            color: ${colors.text};
+            font-size: ${fontSizes.body2};
+            text-overflow: ellipsis;
+            /* Needed to make it work */
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }
+`
+
+export const StyledNavItem = styled.ul`
+    display: flex;
+    margin-left: 16px;
+    margin: 0 -20px 0 12px;
+
+    &.zoomout {
+        transform: translateY(22px);
+        & .nav-item__text {
+            visibility: hidden;
+            /* height: 0; */
+        }
+
+        & .nav-item__icon {
+            /* transform: translateY(8px); */
+        }
+    }
+
+    & .nav-item {
+        width: max-content;
+        padding: 4px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: ${fontSizes.desc1};
+        font-weight: 600;
+        color: ${colors.textGrey};
+        position: relative;
+
+        &__wrap {
+            color: ${colors.textGrey};
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            &:hover {
+                color: ${colors.primaryColor};
+                cursor: pointer;
+            }
+        }
+
+        &__link {
+            color: ${colors.textGrey};
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            &:hover {
+                color: ${colors.primaryColor};
+            }
+        }
+
+        &__icon {
+            font-size: 26px;
+        }
+
+        &__text {
+            margin-top: 14px;
+        }
+
+        &__quantity {
+            position: absolute;
+            top: -8px;
+            right: 22px;
+            color: ${colors.whiteColor};
+            width: 16px;
+            height: 16px;
+            background-color: ${colors.hotline};
+            font-size: ${fontSizes.desc2};
+            line-height: 16px;
+            text-align: center;
+            border-radius: 50%;
+        }
+    }
+`
+
+export const StyledUserActions = styled.div`
+    position: absolute;
+    box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 10%);
+    background-color: ${colors.whiteColor};
+    border: 0.5px solid ${colors.border};
+    border-radius: 5px;
+    top: 68px;
+    padding-top: 8px;
+    width: max-content;
+    z-index: 10;
+
+    &.zoomout {
+        top: 44px;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: -11px;
+        width: 100%;
+        height: 18px;
+    }
+
+    & .top {
+        display: flex;
+        padding: 4px 8px 0 8px;
+
+        &__icon {
+            font-size: 26px;
+            margin-right: 16px;
+        }
+
+        &__title {
+            font-size: ${fontSizes.body1};
+            color: ${colors.text}
+        }
+    }
+
+    & .detail-list {
+        margin-top: 14px;
+    }
+
+    & .detail-item {
+        display: flex;
+        padding: 12px 8px;
+
+        &:hover {
+            background-color: ${colors.whitesmoke};
+            cursor: pointer;
+        }
+
+        &__icon {
+            font-size: 16px;
+            margin-right: 8px;
+        }
+
+        &__text {
+            color: ${colors.text};
+            font-size: ${fontSizes.body2};
+            font-weight: 300;
+        }
+    }
+
+    & .logout-btn {
+        padding:  8px;
+        min-width: 230px;
+    }
+`
