@@ -1,18 +1,20 @@
-import { StyledHeader, StyledNavItem, StyledSearchHisory, StyledUserActions } from "./Header";
-import Link from 'next/Link'
-import Image from 'next/image'
-import { BsSearch, BsClock, BsTags, BsCalendar2Check, BsPersonCircle, BsBell, BsCart3, BsGeoAlt, BsPiggyBank, BsNewspaper } from "react-icons/bs";
-
-
-import Container from "layouts/container";
 import Button from "@components/Elements/Button";
+import Container from "layouts/container";
+import Image from 'next/image';
+import Link from 'next/Link';
 import { useEffect, useRef, useState } from "react";
+import { BsBell, BsCalendar2Check, BsCart3, BsClock, BsGeoAlt, BsNewspaper, BsPersonCircle, BsPiggyBank, BsSearch, BsTags } from "react-icons/bs";
+import { StyledCard, StyledHeader, StyledNavItem, StyledNotify, StyledSearchHisory, StyledUserActions } from "./Header";
+
+
 
 function Header() {
   const searchInput = useRef(null);
   const [openHistorySearch, setOpenHistorySearch] = useState(false);
   const [openUserActions, setOpenUserActions] = useState(false);
   const [zoomOutHeader, setZoomOutHeader] = useState(false);
+  const [openNotify, setOpenNotify] = useState(false);
+  const [openCard, setOpenCard] = useState(false);
 
   const handleSearchFieldClick = () => {
     setOpenHistorySearch(true)
@@ -26,21 +28,40 @@ function Header() {
     setOpenHistorySearch(false)
   }
 
-  const onMouseEnterHandler = () => {
+  const onMouseEnterUserHandler = () => {
     setOpenUserActions(true)
   }
 
-  const onMouseLeaveHandler = () => {
+  const onMouseLeaveUserHandler = () => {
     setOpenUserActions(false)
   }
 
-  // zoom out header
-  const handleScrollY = (e: any) => {
-    if (e.currentTarget.scrollY >= 46) {
-      setZoomOutHeader(true);
-    } else {
-      setZoomOutHeader(false);
+  const onMouseEnterNotiHandler = () => {
+    setOpenNotify(true)
+  }
 
+  const onMouseLeaveNotiHandler = () => {
+    setOpenNotify(false)
+  }
+
+  const onMouseEnterCardHandler = () => {
+    setOpenCard(true)
+  }
+
+  const onMouseLeaveCardHandler = () => {
+    setOpenCard(false)
+  }
+
+  // zoom out header
+  // can fix typescript EventTarget
+  const handleScrollY = (e: any) => {
+    console.log("Scorll", e.currentTarget)
+    if (e?.currentTarget) {
+      if (e.currentTarget.scrollY >= 46) {
+        setZoomOutHeader(true);
+      } else {
+        setZoomOutHeader(false);
+      }
     }
   }
 
@@ -106,7 +127,6 @@ function Header() {
                 </ul>
               </StyledSearchHisory>
             )}
-
           </div>
           <StyledNavItem className={zoomOutHeader ? "zoomout" : ""}>
             <li className="nav-item">
@@ -127,8 +147,8 @@ function Header() {
             </li>
             <li
               className="nav-item"
-              onMouseEnter={onMouseEnterHandler}
-              onMouseLeave={onMouseLeaveHandler}
+              onMouseEnter={onMouseEnterUserHandler}
+              onMouseLeave={onMouseLeaveUserHandler}
             >
               <div className="nav-item__wrap">
                 <BsPersonCircle className="nav-item__icon" />
@@ -167,30 +187,110 @@ function Header() {
                     </li>
                   </ul>
                   <div className="logout-btn">
-                    <Button />
+                    <Button >Đăng xuất</Button>
                   </div>
                 </StyledUserActions>
               )}
 
-
             </li>
-            <li className="nav-item">
+            <li
+              className="nav-item"
+              onMouseEnter={onMouseEnterNotiHandler}
+              onMouseLeave={onMouseLeaveNotiHandler}>
               <div className="nav-item__wrap">
                 <BsBell className="nav-item__icon" />
                 <span className="nav-item__text">Thông báo</span>
               </div>
+              {openNotify && (
+                <StyledNotify className={zoomOutHeader ? "zoomout" : ""}>
+                  <img alt="" src="/access/popup/no-notify.png" />
+                  <span>Bạn chưa có thông báo mới</span>
+                </StyledNotify>
+              )}
+
             </li>
-            <li className="nav-item">
+            <li
+              className="nav-item"
+              onMouseEnter={onMouseEnterCardHandler}
+              onMouseLeave={onMouseLeaveCardHandler}
+            >
               <div className="nav-item__wrap">
                 <BsCart3 className="nav-item__icon" />
                 <span className="nav-item__text">Giỏ hàng</span>
                 <span className="nav-item__quantity">3</span>
               </div>
+              {openCard && (
+                <StyledCard className={zoomOutHeader ? "zoomout" : ""}>
+                  <ul className="list">
+                    <li className="item">
+                      <img src="/access/products/dongho/dongho1.jpg" alt="" className="item__img" />
+                      <div className="item__content">
+                        <Link href="#">
+                          <a>
+                            <p className="item__content-title">
+                              Vòng đeo tay/ Đồng hồ thông minh Xiaomi Amazfit Pace (UYG4012RT) Vòng đeo tay/ Đồng hồ thông minh Xiaomi Amazfit Pace (UYG4012RT)
+                            </p>
+                          </a>
+                        </Link>
+                        <div className="item__content-quantity">Số lượng 3</div>
+                        <div className="item__content-price">3.690.000đ</div>
+                      </div>
+                    </li>
+                    <li className="item">
+                      <img src="/access/products/dongho/dongho1.jpg" alt="" className="item__img" />
+                      <div className="item__content">
+                        <Link href="#">
+                          <a>
+                            <p className="item__content-title">
+                              Vòng đeo tay/ Đồng hồ thông minh Xiaomi Amazfit Pace (UYG4012RT) Vòng đeo tay/ Đồng hồ thông minh Xiaomi Amazfit Pace (UYG4012RT)
+                            </p>
+                          </a>
+                        </Link>
+                        <div className="item__content-quantity">Số lượng 3</div>
+                        <div className="item__content-price">3.690.000đ</div>
+                      </div>
+                    </li>
+                    <li className="item">
+                      <img src="/access/products/dongho/dongho1.jpg" alt="" className="item__img" />
+                      <div className="item__content">
+                        <Link href="#">
+                          <a>
+                            <p className="item__content-title">
+                              Vòng đeo tay/ Đồng hồ thông minh Xiaomi Amazfit Pace (UYG4012RT) Vòng đeo tay/ Đồng hồ thông minh Xiaomi Amazfit Pace (UYG4012RT)
+                            </p>
+                          </a>
+                        </Link>
+                        <div className="item__content-quantity">Số lượng 3</div>
+                        <div className="item__content-price">3.690.000đ</div>
+                      </div>
+                    </li>
+                    <li className="item">
+                      <img src="/access/products/dongho/dongho1.jpg" alt="" className="item__img" />
+                      <div className="item__content">
+                        <Link href="#">
+                          <a>
+                            <p className="item__content-title">
+                              Vòng đeo tay/ Đồng hồ thông minh Xiaomi Amazfit Pace (UYG4012RT) Vòng đeo tay/ Đồng hồ thông minh Xiaomi Amazfit Pace (UYG4012RT)
+                            </p>
+                          </a>
+                        </Link>
+                        <div className="item__content-quantity">Số lượng 3</div>
+                        <div className="item__content-price">3.690.000đ</div>
+                      </div>
+                    </li>
+                  </ul>
+                  <div className="count">
+                    <div className="count__quantity">Tổng tiền (2) sản phẩm</div>
+                    <div className="count__price">5.899.000đ</div>
+                  </div>
+                  <Button size="large" mt={16}>Xem giỏ hàng</Button>
+                </StyledCard>
+              )}
             </li>
           </StyledNavItem>
         </div>
       </Container>
-    </StyledHeader>
+    </StyledHeader >
   );
 }
 

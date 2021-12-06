@@ -8,6 +8,7 @@ export const StyledButton = styled.div`
     padding: ${props => props.theme.size};
     border-radius: 5px;
     cursor: pointer;
+    margin-top: ${props => `${props.theme.mt}px`};
 
     &:hover {
         /* background-color: ${props => props.theme.btnBgColor}; */

@@ -5,6 +5,8 @@ interface ButtonProps {
     size?: string;
     bgColor?: string;
     textColor?: string;
+    children: string;
+    mt?: number | null;
 }
 
 const sizes: Record<string, string> = {
@@ -13,13 +15,21 @@ const sizes: Record<string, string> = {
 }
 
 function Button(props: ButtonProps) {
-    const { size, bgColor, textColor } = props;
+    const { size, bgColor, textColor, children, mt } = props;
     const btnSize = size ? sizes[size] : "10px";
     const btnBgColor = bgColor ? bgColor : colors.primaryColor;
     const btnTextColor = textColor ? textColor : colors.whiteColor;
     return (
-        <StyledButton theme={{ size: btnSize, btnBgColor: btnBgColor, btnTextColor: btnTextColor }}>
-            Đăng xuất
+        <StyledButton
+            theme={{
+                size: btnSize,
+                btnBgColor: btnBgColor,
+                btnTextColor: btnTextColor,
+                mt: mt
+            }}
+
+        >
+            {children}
         </StyledButton>
     )
 }

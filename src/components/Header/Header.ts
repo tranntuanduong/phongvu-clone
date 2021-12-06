@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { colors } from "@theme/colors";
 import { fontSizes } from "@theme/fontSizes";
+import { StyledBox } from "styles";
 
 export const StyledHeader = styled.div`
     background-color: ${colors.whiteColor};
@@ -64,11 +65,11 @@ export const StyledHeader = styled.div`
     }
 `
 
-export const StyledSearchHisory = styled.div`
-    box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 10%);
+export const StyledSearchHisory = styled(StyledBox)`
+    /* box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 10%);
     background-color: ${colors.whiteColor};
     border: 0.5px solid ${colors.border};
-    border-radius: 5px;
+    border-radius: 5px; */
     padding: 16px 12px 12px 12px;
     position: absolute;
     top: 40px;
@@ -203,12 +204,12 @@ export const StyledNavItem = styled.ul`
     }
 `
 
-export const StyledUserActions = styled.div`
+export const StyledUserActions = styled(StyledBox)`
     position: absolute;
-    box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 10%);
+    /* box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 10%);
     background-color: ${colors.whiteColor};
     border: 0.5px solid ${colors.border};
-    border-radius: 5px;
+    border-radius: 5px; */
     top: 68px;
     padding-top: 8px;
     width: max-content;
@@ -271,3 +272,153 @@ export const StyledUserActions = styled.div`
         min-width: 230px;
     }
 `
+
+export const StyledNotify = styled(StyledBox)`
+    position: absolute;
+    top: 68px;
+    right: 0;
+    min-width: 380px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &.zoomout {
+        top: 44px;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: -11px;
+        width: 100%;
+        height: 18px;
+    }
+
+    & img {
+        width: 130px;
+    }
+
+    & span {
+        color: ${colors.textGrey};
+        font-weight: 300;
+        margin-top: 20px;
+    }
+`
+
+export const StyledCard = styled(StyledBox)`
+    width: max-content;
+    max-width: 400px;
+    padding: 16px;
+    position: absolute;
+    top: 68px;
+    right: 0;
+  
+    & a {
+        text-decoration: none;
+    }
+
+    &.zoomout {
+        top: 44px;
+    }
+
+    & .list {
+        border-bottom: 2px dashed ${colors.border};
+        max-height: 288px;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            width: 5px;
+            display: none;
+        }
+
+        &:hover::-webkit-scrollbar {
+            display: block;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(109, 109, 109, 0.576);
+            border-radius: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #acacac06;
+        }
+    }
+
+    & .item {
+        text-decoration: none;
+        display: flex;
+        margin-bottom: 16px;
+       
+        &::after {
+            content: "";
+            position: absolute;
+            top: -11px;
+            width: 100%;
+            height: 18px;
+        }
+
+        &__img {
+            width: 78px;
+            height: 78px;
+            margin-right: 8px;
+            border: 0.5px solid ${colors.border};
+            border-radius: 5px;
+        }
+
+        &__content {
+            margin-top: 2px;
+        }
+
+        &__content-title {
+            color: ${colors.text};
+            font-weight: 300;
+            line-height: 1.4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        &:hover .item__content-title  {
+            color: ${colors.primaryColor};
+        }
+
+        &__content-quantity {
+            margin-top: 2px;
+            color: ${colors.textGrey};
+            font-weight: 300;
+            line-height: 1.4;
+            font-size: ${fontSizes.desc1}
+        }
+
+        &__content-price {
+            margin-top: 2px;
+            color: ${colors.text};
+            font-weight: bold;
+            line-height: 1.4;
+            font-size: ${fontSizes.desc1}
+        }
+    }
+
+    & .count {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+        text-align: center;
+
+        &__quantity {
+            color: ${colors.text};
+            font-size: ${fontSizes.desc1};
+            font-weight: 300;
+        }
+
+        &__price {
+            font-weight: bold;
+            color: ${colors.text};
+            font-size: ${fontSizes.subtitle};
+        }
+    }
+`
+
