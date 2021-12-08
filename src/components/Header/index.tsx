@@ -270,7 +270,7 @@ function Header() {
                         <Link href="#">
                           <a>
                             <p className="item__content-title">
-                              Vòng đeo tay/ Đồng hồ thông minh Xiaomi Amazfit Pace (UYG4012RT) Vòng đeo tay/ Đồng hồ thông minh Xiaomi Amazfit Pace (UYG4012RT)
+                              Vòng đeo tay
                             </p>
                           </a>
                         </Link>
@@ -280,7 +280,7 @@ function Header() {
                     </li>
                   </ul>
                   <div className="count">
-                    <div className="count__quantity">Tổng tiền (2) sản phẩm</div>
+                    <div className="count__quantity">Tổng tiền (3) sản phẩm</div>
                     <div className="count__price">5.899.000đ</div>
                   </div>
                   <Button size="large" mt={16}>Xem giỏ hàng</Button>

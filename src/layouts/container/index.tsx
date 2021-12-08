@@ -10,7 +10,6 @@ interface ContaierProps {
 }
 
 function Container(props: ContaierProps) {
-
     const { children } = props;
     return (
         <StyledContainer>

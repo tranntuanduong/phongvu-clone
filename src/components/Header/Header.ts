@@ -8,6 +8,7 @@ export const StyledHeader = styled.div`
     box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 10%);
     position: sticky;
     top: 0px;
+    z-index: 10;
 
     &.zoomout {
         transform: translateY(-16px);

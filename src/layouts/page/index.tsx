@@ -9,20 +9,17 @@ interface PageProps {
   children?: ReactNode;
 }
 
-function Page(props: PageProps) {
+function PageLayout(props: PageProps) {
 
   const { children } = props;
   return (
     <>
       <TopContact />
       <Header />
-      <Container>
-      
-        {children}
-      </Container>
+      {children}
       <Footer />
     </>
   );
 }
 
-export default Page;
+export default PageLayout;
