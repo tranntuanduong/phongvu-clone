@@ -8,15 +8,9 @@ interface ContaierProps {
   children?: ReactNode;
 }
 
-function Container(
-  props: ContaierProps
-) {
+function Container(props: ContaierProps) {
   const { children } = props;
-  return (
-    <StyledContainer>
-      {children}
-    </StyledContainer>
-  );
+  return <StyledContainer>{children}</StyledContainer>;
 }
 
 export default Container;

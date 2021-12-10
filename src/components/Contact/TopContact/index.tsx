@@ -15,20 +15,14 @@ function TopContact() {
           </Link>
         </li>
         <li className="element">
-          <a
-            href="tel:18006867"
-            className="element__link"
-          >
+          <a href="tel:18006867" className="element__link">
             <BiBuildingHouse className="element__icon" />
             <p>Tư vấn mua hàng</p>
             <span>18006865</span>
           </a>
         </li>
         <li className="element">
-          <a
-            href="tel:18006865"
-            className="element__link"
-          >
+          <a href="tel:18006865" className="element__link">
             <BiBuildingHouse className="element__icon" />
             <p>CSKH</p>
             <span>18006865</span>

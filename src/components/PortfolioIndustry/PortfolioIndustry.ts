@@ -3,9 +3,7 @@ import { fontSizes } from '@theme/fontSizes';
 import styled from 'styled-components';
 import { StyledBox } from 'styles';
 
-export const StyledProductPortfolio = styled(
-  StyledBox
-)`
+export const StyledProductPortfolio = styled(StyledBox)`
   z-index: 1;
   background-color: ${colors.whiteColor};
   margin-top: 20px;

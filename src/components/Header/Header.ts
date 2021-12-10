@@ -66,9 +66,7 @@ export const StyledHeader = styled.div`
   }
 `;
 
-export const StyledSearchHisory = styled(
-  StyledBox
-)`
+export const StyledSearchHisory = styled(StyledBox)`
   /* box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 10%);
     background-color: ${colors.whiteColor};
     border: 0.5px solid ${colors.border};
@@ -206,9 +204,7 @@ export const StyledNavItem = styled.ul`
   }
 `;
 
-export const StyledUserActions = styled(
-  StyledBox
-)`
+export const StyledUserActions = styled(StyledBox)`
   position: absolute;
   /* box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 10%);
     background-color: ${colors.whiteColor};
@@ -277,9 +273,7 @@ export const StyledUserActions = styled(
   }
 `;
 
-export const StyledNotify = styled(
-  StyledBox
-)`
+export const StyledNotify = styled(StyledBox)`
   position: absolute;
   top: 68px;
   right: 0;
@@ -312,9 +306,7 @@ export const StyledNotify = styled(
   }
 `;
 
-export const StyledCard = styled(
-  StyledBox
-)`
+export const StyledCard = styled(StyledBox)`
   width: max-content;
   max-width: 400px;
   padding: 16px;

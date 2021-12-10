@@ -15,22 +15,10 @@ const sizes: Record<string, string> = {
 };
 
 function Button(props: ButtonProps) {
-  const {
-    size,
-    bgColor,
-    textColor,
-    children,
-    mt,
-  } = props;
-  const btnSize = size
-    ? sizes[size]
-    : '10px';
-  const btnBgColor = bgColor
-    ? bgColor
-    : colors.primaryColor;
-  const btnTextColor = textColor
-    ? textColor
-    : colors.whiteColor;
+  const { size, bgColor, textColor, children, mt } = props;
+  const btnSize = size ? sizes[size] : '10px';
+  const btnBgColor = bgColor ? bgColor : colors.primaryColor;
+  const btnTextColor = textColor ? textColor : colors.whiteColor;
   return (
     <StyledButton
       theme={{

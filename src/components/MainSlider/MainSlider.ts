@@ -64,6 +64,29 @@ export const StyledMainSlider = styled.div`
       color: ${colors.whiteColor};
       font-size: 25px;
     }
+
+    &__dot {
+      z-index: 1;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+    }
+
+    &__dot-item {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: ${colors.bannerBtnBackground};
+      cursor: pointer;
+      margin: 0 4px;
+    }
+
+    &__dot-item--active {
+      background-color: ${colors.primaryColor};
+
+    }
   }
   &:hover .banner__btn-prev,
   &:hover .banner__btn-next {
@@ -100,6 +123,12 @@ export const StyledRightAdvertise = styled.div`
 `;
 
 export const StyledBottomAdvertise = styled.div`
-  color: '#fff';
   z-index: 1;
+  width: 1216px;
+  height: 140px;
+  position: absolute;
+  right: auto;
+  left: auto;
+  bottom: -70px;
+  border-radius: 10px;
 `;
