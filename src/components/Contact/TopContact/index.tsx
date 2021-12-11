@@ -1,6 +1,6 @@
-import { StyledTopContact } from './TopContact';
-import { BiBuildingHouse } from 'react-icons/bi';
 import Link from 'next/Link';
+import { BiBuildingHouse } from 'react-icons/bi';
+import { StyledTopContact } from './TopContact';
 
 function TopContact() {
   return (
