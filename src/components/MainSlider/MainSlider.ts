@@ -28,37 +28,11 @@ export const StyledMainSlider = styled.div`
     position: relative;
 
     &__btn-prev {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 50px;
-      height: 40px;
-      background-color: ${colors.bannerBtnBackground};
-      z-index: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-top-right-radius: 40px;
-      border-bottom-right-radius: 40px;
       opacity: 0;
-      cursor: pointer;
     }
 
     &__btn-next {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      width: 50px;
-      height: 40px;
-      background-color: ${colors.bannerBtnBackground};
-      z-index: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-top-left-radius: 40px;
-      border-bottom-left-radius: 40px;
       opacity: 0;
-      cursor: pointer;
     }
 
     &__btn-icon {
@@ -95,7 +69,6 @@ export const StyledMainSlider = styled.div`
   &:hover .banner__btn-prev,
   &:hover .banner__btn-next {
     opacity: 1;
-    transition: 0.25s ease-in;
   }
 `;
 

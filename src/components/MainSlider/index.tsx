@@ -12,6 +12,8 @@ import {
 import Link from 'next/Link';
 import { useEffect, useRef, useState } from 'react';
 import ShortBanner from '@components/Banner/ShortBanner';
+import NextBtn from '@components/Elements/NextBtn';
+import PrevBtn from '@components/Elements/PrevBtn'
 
 const imageCollection = [
   "banner12.jpg",
@@ -51,7 +53,7 @@ const bannerBottomAdvertise = [
   {
     imageUrl: "banner-n5.jpg",
     link: "#",
-  },{
+  }, {
     imageUrl: "banner-n6.jpg",
     link: "#",
   },
@@ -108,10 +110,10 @@ function MainSlider() {
           <PortfolioIndustry />
           <div className="banner">
             <div className="banner__btn-prev" onClick={prevClickHandler}>
-              <BiChevronLeft className="banner__btn-icon" />
+              <PrevBtn />
             </div>
             <div className="banner__btn-next" onClick={nextClickHandler}>
-              <BiChevronRight className="banner__btn-icon" />
+              <NextBtn />
             </div>
             <ul className="banner__dot">
               {imageCollection.map((img, index) => (
@@ -157,7 +159,7 @@ function MainSlider() {
 
         </div>
         <StyledBottomAdvertise>
-          <ShortBanner images={bannerBottomAdvertise}  />
+          <ShortBanner images={bannerBottomAdvertise} />
         </StyledBottomAdvertise>
       </Container>
     </StyledMainSlider>

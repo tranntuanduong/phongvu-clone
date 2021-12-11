@@ -1,7 +1,29 @@
 import { StyledProductCard } from "./ProductCard"
 import Link from 'next/Link'
 
-const ProductCard = () => {
+interface Product {
+  backgroundImage: string,
+  backgroundPosition: string,
+  title: string,
+  quantity: number,
+  promotePrice: number,
+  originPrice: number,
+}
+
+interface Props {
+  product: Product
+}
+
+const ProductCard = (props: Props) => {
+  const {
+    backgroundImage,
+    backgroundPosition,
+    title,
+    quantity,
+    promotePrice,
+    originPrice
+  } = props.product;
+
   return (
     <StyledProductCard>
       <Link href="#product">
@@ -9,24 +31,24 @@ const ProductCard = () => {
           <div
             className="thumb"
             style={{
-              backgroundImage: `url("/access/products/manhinh/screen1.jpg")`,
+              backgroundImage: `url(${backgroundImage})`,
               height: "145px",
-              backgroundPosition: "4px -15px"
+              backgroundPosition: backgroundPosition
             }}
           >
           </div>
           <div className="save-tag">
-              <div className="label">
-                Tiết kiệm
-              </div>
-              <div className="number">19.000đ</div>
+            <div className="label">
+              Tiết kiệm
             </div>
-          <h3 className="title">Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi</h3>
-          <div className="quantity">Còn 1 sản phẩm</div>
-          <div className="promote-price">431.100đ</div>
+            <div className="number">{originPrice - promotePrice}đ</div>
+          </div>
+          <h3 className="title">{title}</h3>
+          <div className="quantity">Còn {quantity} sản phẩm</div>
+          <div className="promote-price">{promotePrice}đ</div>
           <div className="origin-price-wrap">
-            <div className="origin-price">450.100đ</div>
-            <div className="promote-percen">-4.22%</div>
+            <div className="origin-price">{originPrice}đ</div>
+            <div className="promote-percen">-{Math.round(promotePrice * 100 / originPrice)}%</div>
           </div>
         </a>
       </Link>

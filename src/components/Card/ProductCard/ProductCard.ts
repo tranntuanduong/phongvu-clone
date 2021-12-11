@@ -19,6 +19,7 @@ export const StyledProductCard = styled.div`
 
   & .save-tag {
       position: absolute;
+      /* top: 165px; */
       top: 120px;
 
       background: linear-gradient(315deg, rgba(136,0,255,1) 6%, rgba(166,0,255,1) 33%, rgba(161,68,237,1) 64%, rgba(102,68,237,1) 96%);

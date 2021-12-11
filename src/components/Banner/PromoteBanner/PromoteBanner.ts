@@ -114,18 +114,30 @@ export const StyledPromoteBanner = styled.div`
 
     & .product-list-wrap {
       overflow: hidden;
+      position: relative;
+      transform: translateX(-14px);
+
+      &__carousel-btn {
+        opacity: 0;
+      }
+
+      &:hover .product-list-wrap__carousel-btn {
+        opacity: 1;
+      }
     }
   }
 `
 
 export const StyledProductList = styled.ul`
+  transform: translateX(${(props) => props.theme.translateX});\
+  transition: transform 0.3s;
   display: flex;
   /* justify-content: space-evenly; */
   margin-top: 45px;
   width: max-content;
   & .product-item {
     background-color: ${colors.whiteColor};
-    margin: 0 6px;
+    margin-right: 16px;
     border-radius: 10px;
     overflow: hidden;
     width: 155px;
