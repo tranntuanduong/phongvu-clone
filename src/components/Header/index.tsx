@@ -71,7 +71,6 @@ function Header() {
   // zoom out header
   // can fix typescript EventTarget
   const handleScrollY = (e: any) => {
-    console.log('Scorll', e.currentTarget);
     if (e?.currentTarget) {
       if (e.currentTarget.scrollY >= 46) {
         setZoomOutHeader(true);

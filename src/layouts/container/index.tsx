@@ -6,11 +6,18 @@ import { StyledContainer } from './Container';
 
 interface ContaierProps {
   children?: ReactNode;
+  backgroundColor?: string
 }
 
 function Container(props: ContaierProps) {
-  const { children } = props;
-  return <StyledContainer>{children}</StyledContainer>;
+  const { children, backgroundColor } = props;
+  return (
+    <StyledContainer
+      theme={{ backgroundColor: backgroundColor }}
+    >
+      {children}
+    </StyledContainer>
+  )
 }
 
 export default Container;

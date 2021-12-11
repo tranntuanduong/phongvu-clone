@@ -5,6 +5,7 @@ export const StyledMainSlider = styled.div`
   width: 100%;
   height: 566px;
   position: relative;
+  margin-bottom: 100px;
 
   & .top {
     display: flex;
@@ -81,11 +82,14 @@ export const StyledMainSlider = styled.div`
       background-color: ${colors.bannerBtnBackground};
       cursor: pointer;
       margin: 0 4px;
+      transition: 0.3s ease 0s;
+
     }
 
     &__dot-item--active {
       background-color: ${colors.primaryColor};
-
+      width: 20px;
+      border-radius: 20px;
     }
   }
   &:hover .banner__btn-prev,
@@ -124,7 +128,8 @@ export const StyledRightAdvertise = styled.div`
 
 export const StyledBottomAdvertise = styled.div`
   z-index: 1;
-  width: 1216px;
+  max-width: 1216px;
+  width: 100%;
   height: 140px;
   position: absolute;
   right: auto;

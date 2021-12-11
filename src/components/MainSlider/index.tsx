@@ -11,7 +11,7 @@ import {
 } from './MainSlider';
 import Link from 'next/Link';
 import { useEffect, useRef, useState } from 'react';
-import ShortBanner from '@components/ShortBanner';
+import ShortBanner from '@components/Banner/ShortBanner';
 
 const imageCollection = [
   "banner12.jpg",
@@ -87,7 +87,11 @@ function MainSlider() {
 
   useEffect(() => {
     bannerTimeout.current = setInterval(() => {
-      nextClickHandler();
+      if (sliderIndex === imageCollection.length - 1) {
+        setSliderIndex(0);
+      } else {
+        setSliderIndex(sliderIndex + 1);
+      }
     }, 5000);
 
     return () => {

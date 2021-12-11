@@ -1,3 +1,4 @@
+import PromoteBanner from '@components/Banner/PromoteBanner';
 import TopContact from '@components/Contact/TopContact';
 import MainSlider from '@components/MainSlider';
 import Container from 'layouts/container';
@@ -9,6 +10,9 @@ const Home: NextPage = () => {
     <>
       <Page>
         <MainSlider />
+        <Container>
+          <PromoteBanner />
+        </Container>
       </Page>
     </>
   );

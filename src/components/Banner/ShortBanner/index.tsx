@@ -20,11 +20,12 @@ const ShortBanner = (props: Props) => {
       {images.slice(0, 4).map((image, index) => (
         <Link key={index} href={`#${index}`}>
           <a className="banner-item">
-            <img src={`/access/banner-ngan-4/${image.imageUrl}`} alt="" className="banner-item__img" />
+            <div className="banner-item__img-wrap">
+              <img src={`/access/banner-ngan-4/${image.imageUrl}`} alt="" className="banner-item__img" />
+            </div>
           </a>
         </Link>
       ))}
-
     </StyledShortBanner>
   )
 }
