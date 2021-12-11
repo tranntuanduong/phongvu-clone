@@ -121,7 +121,7 @@ function MainSlider() {
               ))}
             </ul>
           </div>
-          <Link href="https://phongvu.vn/promo/diengiadung?pv_source=homepage&pv_medium=de-main-banner&pv_campaign=">
+          <Link href="#campain">
             <a>
               <img
                 src={`/access/banner/${imageCollection[sliderIndex]}`}
@@ -131,7 +131,7 @@ function MainSlider() {
             </a>
           </Link>
           <StyledRightAdvertise>
-            <Link href="https://phongvu.vn">
+            <Link href="#ad1">
               <a className="ad-img-wrap">
                 <img
                   src="/access/advertise/ad2.jpg"
@@ -140,7 +140,7 @@ function MainSlider() {
                 />
               </a>
             </Link>
-            <Link href="https://phongvu1.vn">
+            <Link href="#ad2">
               <a className="ad-img-wrap">
                 <img
                   src="/access/advertise/ad3.jpg"
