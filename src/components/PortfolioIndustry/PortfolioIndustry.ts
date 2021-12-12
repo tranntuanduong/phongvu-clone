@@ -4,10 +4,11 @@ import styled from 'styled-components';
 import { StyledBox } from 'styles';
 
 export const StyledProductPortfolio = styled(StyledBox)`
-  z-index: 1;
+  z-index: 2;
   background-color: ${colors.whiteColor};
   margin-top: 20px;
   max-width: 200px;
+  position: relative;
 
   & .intrustry-list {
     color: ${colors.whiteColor};
@@ -22,7 +23,7 @@ export const StyledProductPortfolio = styled(StyledBox)`
     &:hover {
       cursor: pointer;
       background-color: ${colors.whitesmoke};
-      border-radius: 5px;
+      border-radius: 10px;
     }
 
     &__icon {
@@ -42,3 +43,42 @@ export const StyledProductPortfolio = styled(StyledBox)`
     }
   }
 `;
+
+
+export const StyledIndustryCategory = styled.div`
+  padding: 16px;
+  background-color: ${colors.whiteColor};
+  border-radius: 10px;
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: 212px;
+  width: 974px; //1216px - 200px - 8px - 2 * 16px
+  
+`
+
+export const StyledSubCatagory = styled.ul`
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+  & .sub-category-item {
+    color: ${colors.text};
+    font-size: ${fontSizes.body2};
+    padding: 4px 0;
+    cursor: pointer;
+  }
+
+  & .sub-category-item.title {
+    color: ${colors.primaryColor};
+    font-weight: bold;
+    font-size: ${fontSizes.body1};
+    margin: 20px 20px 10px 0;
+    min-width: 150px;
+  }
+
+  & .sub-category-item:first-child {
+    margin-top: 0
+  }
+`

@@ -7,6 +7,7 @@ export const StyledTopContact = styled.div`
   background-color: ${colors.primaryColor};
   height: 42px;
   color: ${colors.whiteColor};
+  z-index: 2;
 
   & .list {
     height: 100%;

@@ -1,7 +1,8 @@
 import TopContact from '@components/Contact/TopContact';
+import Shadow from '@components/Elements/Shadow';
 import Footer from '@components/Footer';
 import Header from '@components/Header';
-import Container from 'layouts/container';
+import UserContextProvider from 'contexts/UserContext';
 import { ReactNode } from 'react';
 
 interface PageProps {
@@ -10,13 +11,15 @@ interface PageProps {
 
 function PageLayout(props: PageProps) {
   const { children } = props;
+
   return (
-    <>
+    <UserContextProvider>
       <TopContact />
       <Header />
       {children}
       <Footer />
-    </>
+      <Shadow />
+    </UserContextProvider>
   );
 }
 

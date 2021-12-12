@@ -1,8 +1,9 @@
 import Button from '@components/Elements/Button';
+import PortfolioIndustry from '@components/PortfolioIndustry';
 import Container from 'layouts/container';
 import Image from 'next/image';
 import Link from 'next/Link';
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import {
   BsBell,
   BsCalendar2Check,
@@ -15,6 +16,7 @@ import {
   BsSearch,
   BsTags,
 } from 'react-icons/bs';
+import { BiMenu } from 'react-icons/bi';
 import {
   StyledCard,
   StyledHeader,
@@ -23,6 +25,8 @@ import {
   StyledSearchHisory,
   StyledUserActions,
 } from './Header';
+import LogoMenu from './LogoMenu';
+import { UserContext } from 'contexts/UserContext';
 
 function Header() {
   const searchInput = useRef(null);
@@ -31,6 +35,7 @@ function Header() {
   const [zoomOutHeader, setZoomOutHeader] = useState(false);
   const [openNotify, setOpenNotify] = useState(false);
   const [openCard, setOpenCard] = useState(false);
+  const { handleClosePortfolioIndustry } = useContext(UserContext);
 
   const handleSearchFieldClick = () => {
     setOpenHistorySearch(true);
@@ -76,6 +81,7 @@ function Header() {
         setZoomOutHeader(true);
       } else {
         setZoomOutHeader(false);
+        if(handleClosePortfolioIndustry) handleClosePortfolioIndustry();
       }
     }
   };
@@ -91,11 +97,16 @@ function Header() {
     <StyledHeader className={zoomOutHeader ? 'zoomout' : ''}>
       <Container>
         <div className={`header-content${zoomOutHeader ? ' header-content--zoomout' : ''}`}>
-          <Link href="/">
-            <a className="logo">
-              <Image alt="" src="/access/logo/logo.svg" width={250} height={35} />
-            </a>
-          </Link>
+          {zoomOutHeader ? (
+            <LogoMenu />
+          ) : (
+            <Link href="/">
+              <a className="logo">
+                <Image alt="" src="/access/logo/logo.svg" width={250} height={35} />
+              </a>
+            </Link>
+          )}
+
           <div className="search" onMouseLeave={onMouseLeaveSearchHistoryHandler}>
             <input
               type="text"

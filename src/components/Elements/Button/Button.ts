@@ -16,7 +16,7 @@ export const StyledButton = styled.div`
 
   &:hover {
     /* background-color: ${(props) =>
-      props.theme.btnBgColor}; */
+    props.theme.btnBgColor}; */
     opacity: 0.9;
   }
 `;

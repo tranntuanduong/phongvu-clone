@@ -17,6 +17,7 @@ import PrevBtn from '@components/Elements/PrevBtn'
 
 const imageCollection = [
   "banner12.jpg",
+  "banner19.jpg",
   "banner1.jpg",
   "banner2.jpg",
   "banner3.jpg",
@@ -31,7 +32,7 @@ const imageCollection = [
   "banner4.jpg",
   "banner5.jpg",
   "banner6.jpg",
-  "banner7.jpg"
+  "banner7.jpg",
 ]
 // "banner-n1.jpg",
 //   "banner-n2.jpg",

@@ -6,5 +6,5 @@ export const StyledBox = styled.div`
     rgb(0 0 0 / 10%);
   background-color: ${colors.whiteColor};
   border: 0.5px solid ${colors.border};
-  border-radius: 5px;
+  border-radius: 10px;
 `;

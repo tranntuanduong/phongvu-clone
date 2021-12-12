@@ -11,4 +11,5 @@ export const colors: Colors = {
   border: '#ececec',
   bannerBtnBackground: '#21212170',
   quantityProduct: "#eca56d",
+  logoMenuBorder: "#e0e0e0",
 };

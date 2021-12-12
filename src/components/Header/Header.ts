@@ -24,6 +24,34 @@ export const StyledHeader = styled.div`
     }
   }
 
+  /* & .logo-menu {
+    display: flex:
+    align-items: center;
+    transform: translateY(10px);
+
+    &__menu {
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      border-radius: 5px;
+      height: 30px;
+      border: 0.5px solid ${colors.logoMenuBorder};
+      margin-left: 20px;
+      cursor: pointer;
+    }
+
+    &__menu-icon {
+      margin-right: 4px;
+      font-size: 20px;
+      color: ${colors.textGrey};
+    }
+
+    &__menu-title {
+      font-size: ${fontSizes.body2};
+      color: ${colors.textGrey};
+    }
+  } */
+
   & .header-content {
     display: flex;
     align-items: center;
@@ -65,6 +93,45 @@ export const StyledHeader = styled.div`
     }
   }
 `;
+
+export const StyledLogoMenu = styled.div`
+   display: flex:
+    align-items: center;
+    transform: translateY(10px);
+
+    & .menu {
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      border-radius: 5px;
+      height: 30px;
+      border: 0.5px solid ${colors.logoMenuBorder};
+      margin-left: 20px;
+      cursor: pointer;
+    }
+
+    &:hover .menu {
+      background-color: ${colors.whitesmoke}
+    }
+
+    & .menu-icon {
+      margin-right: 4px;
+      font-size: 20px;
+      color: ${colors.textGrey};
+    }
+
+    & .menu-title {
+      font-size: ${fontSizes.body2};
+      color: ${colors.textGrey};
+    }
+
+    & .portfolio-industry {
+      position: absolute;
+      z-index: 1;
+      top: 52px;
+      left: 0;
+    }
+`
 
 export const StyledSearchHisory = styled(StyledBox)`
   /* box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 10%);

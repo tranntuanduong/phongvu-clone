@@ -99,7 +99,7 @@ const promoteBanner: Product[] = [
   },
   {
     backgroundImage: "/access/products/dongho/dongho1.jpg",
-    backgroundPosition: "4px -15px",
+    backgroundPosition: "4px -6px",
     title: "Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6",
     quantity: 1,
     promotePrice: 431000,
@@ -107,7 +107,7 @@ const promoteBanner: Product[] = [
   },
   {
     backgroundImage: "/access/products/dongho/dongho1.jpg",
-    backgroundPosition: "4px -15px",
+    backgroundPosition: "4px -6px",
     title: "Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6",
     quantity: 1000,
     promotePrice: 431000,
@@ -214,7 +214,7 @@ const PromoteBanner = () => {
         </Link>
 
         <div className="product-list-wrap">
-          <div className="product-list-wrap__carousel-btn" onClick={nextPageHandler}>
+          <div className="product-list-wrap__carousel-btn" onClick={prevPageHandler}>
             <PrevBtn />
           </div>
           <StyledProductList theme={{ translateX: `${translateX}px` }}>
@@ -224,7 +224,7 @@ const PromoteBanner = () => {
               </li>
             ))}
           </StyledProductList>
-          <div className="product-list-wrap__carousel-btn" onClick={prevPageHandler}>
+          <div className="product-list-wrap__carousel-btn" onClick={nextPageHandler}>
             <NextBtn />
           </div>
         </div>

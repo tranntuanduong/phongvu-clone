@@ -84,7 +84,7 @@ export const StyledRightAdvertise = styled.div`
     width: 100%;
     max-height: 250px;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 10px;
 
     &:hover .ad-img {
       transform: scale(1.05);

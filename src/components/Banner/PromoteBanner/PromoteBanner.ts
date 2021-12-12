@@ -99,6 +99,7 @@ export const StyledPromoteBanner = styled.div`
       top: 0;
       right: 0;
       padding: 12px 16px;
+      z-index: 2;
 
       font-size: ${fontSizes.body2};
       color: ${colors.whiteColor};

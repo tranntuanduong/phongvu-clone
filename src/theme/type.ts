@@ -9,6 +9,7 @@ export interface Colors {
   border: string;
   bannerBtnBackground: string;
   quantityProduct: string;
+  logoMenuBorder: string;
 }
 
 export interface FontSizes {
