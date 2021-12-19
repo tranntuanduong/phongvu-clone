@@ -41,6 +41,14 @@ export const StyledProductPortfolio = styled(StyledBox)`
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
+    & .industry-category {
+      display: none;
+    }
+
+    &:hover .industry-category {
+      display: block;
+    }
   }
 `;
 
@@ -54,7 +62,16 @@ export const StyledIndustryCategory = styled.div`
   bottom: -1px;
   left: 212px;
   width: 974px; //1216px - 200px - 8px - 2 * 16px
-  
+  /* overflow: hidden; */
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 20px;
+    top: 0;
+    left: -16px;
+  }
 `
 
 export const StyledSubCatagory = styled.ul`
@@ -62,6 +79,7 @@ export const StyledSubCatagory = styled.ul`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    align-content: flex-start;
 
   & .sub-category-item {
     color: ${colors.text};
@@ -80,5 +98,19 @@ export const StyledSubCatagory = styled.ul`
 
   & .sub-category-item:first-child {
     margin-top: 0
+  }
+
+  & .category-advertise {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    & img {
+      height: 100%;
+      width: auto;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
   }
 `

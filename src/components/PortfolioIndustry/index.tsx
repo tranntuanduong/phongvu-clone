@@ -10,19 +10,79 @@ import { SiPcgamingwiki } from 'react-icons/si';
 import { StyledIndustryCategory, StyledProductPortfolio, StyledSubCatagory } from './PortfolioIndustry';
 
 function PortfolioIndustry() {
-  const [openSubCategory, setOpenSubCategory] = useState(false);
+  const [openSubCategory, setOpenSubCategory] = useState(true);
+
+  const onMouseEnterHandler = () => {
+    setOpenSubCategory(true)
+  }
+
+  const onMouseLeaveHandler = () => {
+    setOpenSubCategory(false)
+
+  }
 
   return (
     <StyledProductPortfolio>
-      <ul className="intrustry-list">
-        <li className="industry-item">
+      <ul className="intrustry-list" onMouseEnter={onMouseEnterHandler}>
+        <li
+          className="industry-item"
+        >
           <CgSmartHomeWashMachine className="industry-item__icon" />
           <div className="industry-item__name">Điện máy - điên da dụng</div>
-
+          <StyledIndustryCategory className="industry-category">
+            <StyledSubCatagory>
+              <li className="sub-category-item title">
+                Điều hòa máy lạnh
+              </li>
+              <li className="sub-category-item">
+                Daikin
+              </li>
+              <li className="sub-category-item">
+                Tủ lạnh inventor
+              </li>
+              <li className="sub-category-item">
+                Misubishi
+              </li>
+              <li className="sub-category-item">
+                LG
+              </li>
+              <div className="category-advertise">
+                <img
+                  src={`/access/portfolio-industry/1.png`}
+                  alt=""
+                />
+              </div>
+            </StyledSubCatagory>
+          </StyledIndustryCategory>
         </li>
         <li className="industry-item">
           <BsLaptop className="industry-item__icon" />
           <div className="industry-item__name">Laptop & Markbook</div>
+          <StyledIndustryCategory className="industry-category">
+            <StyledSubCatagory>
+              <li className="sub-category-item title">
+                Laptop tivi
+              </li>
+              <li className="sub-category-item">
+                Helo
+              </li>
+              <li className="sub-category-item">
+                Tivi soni
+              </li>
+              <li className="sub-category-item">
+                Panasonic
+              </li>
+              <li className="sub-category-item">
+                LG
+              </li>
+              <div className="category-advertise">
+                <img
+                  src={`/access/portfolio-industry/2.png`}
+                  alt=""
+                />
+              </div>
+            </StyledSubCatagory>
+          </StyledIndustryCategory>
         </li>
         <li className="industry-item">
           <RiComputerLine className="industry-item__icon" />
@@ -72,228 +132,8 @@ function PortfolioIndustry() {
           <AiOutlineSolution className="industry-item__icon" />
           <div className="industry-item__name">Giải pháp doanh nghiệp</div>
         </li>
-        {openSubCategory && (
-          <StyledIndustryCategory>
-            <StyledSubCatagory>
-              <li className="sub-category-item title">
-                Điều hòa máy lạnh
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                Tủ lạnh inventor
-              </li>
-              <li className="sub-category-item">
-                Misubishi
-              </li>
-              <li className="sub-category-item">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item title">
-                Máy giặt
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                Tủ lạnh side by side
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item title">
-                Tủ lạnh
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item title">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item title">
-                Điều hòa máy lạnh
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                Tủ lạnh inventor
-              </li>
-              <li className="sub-category-item">
-                Misubishi
-              </li>
-              <li className="sub-category-item">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item title">
-                Máy giặt
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                Tủ lạnh side by side
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item title">
-                Tủ lạnh
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item title">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item title">
-                Điều hòa máy lạnh
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                Tủ lạnh inventor
-              </li>
-              <li className="sub-category-item">
-                Misubishi
-              </li>
-              <li className="sub-category-item">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item title">
-                Máy giặt
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                Tủ lạnh side by side
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item title">
-                Tủ lạnh
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item title">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-              <li className="sub-category-item">
-                LG
-              </li>
-              <li className="sub-category-item">
-                Daikin
-              </li>
-            </StyledSubCatagory>
-          </StyledIndustryCategory>
-        )}
+
+
 
       </ul>
     </StyledProductPortfolio>
