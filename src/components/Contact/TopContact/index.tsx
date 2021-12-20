@@ -1,4 +1,4 @@
-import Link from 'next/Link';
+import Link from 'next/link';
 import { BiBuildingHouse } from 'react-icons/bi';
 import { StyledTopContact } from './TopContact';
 
