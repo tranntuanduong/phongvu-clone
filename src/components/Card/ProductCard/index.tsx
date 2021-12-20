@@ -1,5 +1,5 @@
 import { StyledProductCard } from "./ProductCard"
-import Link from 'next/Link'
+import Link from 'next/link'
 
 interface Product {
   backgroundImage: string,

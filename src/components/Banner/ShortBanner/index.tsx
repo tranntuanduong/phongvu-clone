@@ -1,6 +1,6 @@
 import { StringifyOptions } from "querystring";
 import { StyledShortBanner } from "./ShortBanner";
-import Link from 'next/Link'
+import Link from 'next/link'
 
 interface Image {
   imageUrl: string,

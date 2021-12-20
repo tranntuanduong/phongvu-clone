@@ -1,119 +1,118 @@
-import { StyledProductList, StyledPromoteBanner } from "./PromoteBanner";
+import { StyledProductList, StyledPromoteBanner } from './PromoteBanner';
 import { BiChevronRight } from 'react-icons/bi';
-import Link from 'next/Link';
-import ProductCard from "@components/Card/ProductCard";
-import PrevBtn from "@components/Elements/PrevBtn";
-import NextBtn from "@components/Elements/NextBtn";
-import { useEffect, useState } from "react";
+import Link from 'next/link';
+import ProductCard from '@components/Card/ProductCard';
+import PrevBtn from '@components/Elements/PrevBtn';
+import NextBtn from '@components/Elements/NextBtn';
+import { useEffect, useState } from 'react';
 
 interface Product {
-  backgroundImage: string,
-  backgroundPosition: string,
-  title: string,
-  quantity: number,
-  promotePrice: number,
-  originPrice: number,
+  backgroundImage: string;
+  backgroundPosition: string;
+  title: string;
+  quantity: number;
+  promotePrice: number;
+  originPrice: number;
 }
-
 
 const promoteBanner: Product[] = [
   {
-    backgroundImage: "/access/products/manhinh/screen1.jpg",
-    backgroundPosition: "4px -15px",
-    title: "Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 1",
+    backgroundImage: '/access/products/manhinh/screen1.jpg',
+    backgroundPosition: '4px -15px',
+    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 1',
     quantity: 1,
     promotePrice: 431000,
     originPrice: 450000,
   },
   {
-    backgroundImage: "/access/products/manhinh/screen2.jpg",
-    backgroundPosition: "4px -15px",
-    title: "Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 2",
+    backgroundImage: '/access/products/manhinh/screen2.jpg',
+    backgroundPosition: '4px -15px',
+    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 2',
     quantity: 1,
     promotePrice: 431000,
     originPrice: 450000,
   },
   {
-    backgroundImage: "/access/products/manhinh/screen3.jpg",
-    backgroundPosition: "4px -15px",
-    title: "Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 3",
+    backgroundImage: '/access/products/manhinh/screen3.jpg',
+    backgroundPosition: '4px -15px',
+    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 3',
     quantity: 1,
     promotePrice: 431000,
     originPrice: 450000,
   },
   {
-    backgroundImage: "/access/products/manhinh/screen4.jpg",
-    backgroundPosition: "4px -15px",
-    title: "Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 4",
+    backgroundImage: '/access/products/manhinh/screen4.jpg',
+    backgroundPosition: '4px -15px',
+    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 4',
     quantity: 1,
     promotePrice: 431000,
     originPrice: 450000,
   },
   {
-    backgroundImage: "/access/products/manhinh/screen5.jpg",
-    backgroundPosition: "4px -15px",
-    title: "Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 5",
+    backgroundImage: '/access/products/manhinh/screen5.jpg',
+    backgroundPosition: '4px -15px',
+    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 5',
     quantity: 1,
     promotePrice: 431000,
     originPrice: 450000,
   },
   {
-    backgroundImage: "/access/products/giadung/giadung1.jpg",
-    backgroundPosition: "4px -15px",
-    title: "Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6",
+    backgroundImage: '/access/products/giadung/giadung1.jpg',
+    backgroundPosition: '4px -15px',
+    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6',
     quantity: 1,
     promotePrice: 431000,
     originPrice: 450000,
   },
   {
-    backgroundImage: "/access/products/giadung/giadung2.jpg",
-    backgroundPosition: "4px -15px",
-    title: "Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6",
+    backgroundImage: '/access/products/giadung/giadung2.jpg',
+    backgroundPosition: '4px -15px',
+    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6',
     quantity: 1,
     promotePrice: 431000,
     originPrice: 450000,
   },
   {
-    backgroundImage: "/access/products/giadung/giadung3.jpg",
-    backgroundPosition: "4px -15px",
-    title: "Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6",
+    backgroundImage: '/access/products/giadung/giadung3.jpg',
+    backgroundPosition: '4px -15px',
+    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6',
     quantity: 1,
     promotePrice: 431000,
     originPrice: 450000,
   },
   {
-    backgroundImage: "/access/products/giadung/giadung4.jpg",
-    backgroundPosition: "4px -15px",
-    title: "Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6",
+    backgroundImage: '/access/products/giadung/giadung4.jpg',
+    backgroundPosition: '4px -15px',
+    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6',
     quantity: 1,
     promotePrice: 431000,
     originPrice: 450000,
   },
   {
-    backgroundImage: "/access/products/giadung/giadung5.jpg",
-    backgroundPosition: "4px -15px",
-    title: "Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6",
+    backgroundImage: '/access/products/giadung/giadung5.jpg',
+    backgroundPosition: '4px -15px',
+    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6',
     quantity: 1,
     promotePrice: 431000,
     originPrice: 450000,
   },
   {
-    backgroundImage: "/access/products/dongho/dongho1.jpg",
-    backgroundPosition: "4px -6px",
-    title: "Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6",
+    backgroundImage: '/access/products/dongho/dongho1.jpg',
+    backgroundPosition: '4px -6px',
+    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6',
     quantity: 1,
     promotePrice: 431000,
     originPrice: 450000,
   },
   {
-    backgroundImage: "/access/products/dongho/dongho1.jpg",
-    backgroundPosition: "4px -6px",
-    title: "Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6",
+    backgroundImage: '/access/products/dongho/dongho1.jpg',
+    backgroundPosition: '4px -6px',
+    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6',
     quantity: 1000,
     promotePrice: 431000,
     originPrice: 450000,
-  }
-]
+  },
+];
 
 const PromoteBanner = () => {
   const [translateX, setTranslateX] = useState(0);
@@ -122,36 +121,35 @@ const PromoteBanner = () => {
 
   useEffect(() => {
     setPageSize(Math.ceil(promoteBanner.length / 5));
-  }, [])
+  }, []);
 
   const nextPageHandler = () => {
     if (page < pageSize - 1) {
       setPage(page + 1);
     }
     // setTranslateX(-400);
-  }
+  };
 
   const prevPageHandler = () => {
     if (page > 0) {
       setPage(page - 1);
     }
-  }
+  };
 
   // if last page only has 2 or < 5 product => translateX to last product
   useEffect(() => {
     if (page + 1 <= promoteBanner.length / 5) {
-      setTranslateX(-(page) * 5 * 203);
+      setTranslateX(-page * 5 * 203);
     } else {
       const lastPageSize = Math.ceil(5 * (promoteBanner.length / 5 - page));
       setTranslateX(-(page * 5 * 203) + (5 - lastPageSize) * 203);
     }
-  }, [page, pageSize])
+  }, [page, pageSize]);
 
   return (
     <StyledPromoteBanner>
       <ul className="tab">
-        <li
-          className="tab-item">
+        <li className="tab-item">
           <div className="tab-item__title">Deal sốc cuối năm</div>
           <div className="tab-item__subtitle">Giảm đến 49%++</div>
         </li>
@@ -187,7 +185,7 @@ const PromoteBanner = () => {
         className="content"
         style={{
           backgroundImage: `url("/access/banner-promote/banner-promote3.png")`,
-          backgroundPosition: "0px -65px"
+          backgroundPosition: '0px -65px',
         }}
       >
         <div className="promotion-time">
@@ -195,15 +193,9 @@ const PromoteBanner = () => {
             Kết thúc sau <span>4</span> ngày
           </div>
           <div className="promotion-time__block">
-            <div className="promotion-time__block-item">
-              09
-            </div>
-            <div className="promotion-time__block-item">
-              04
-            </div>
-            <div className="promotion-time__block-item">
-              59
-            </div>
+            <div className="promotion-time__block-item">09</div>
+            <div className="promotion-time__block-item">04</div>
+            <div className="promotion-time__block-item">59</div>
           </div>
         </div>
         <Link href="#viewall">
@@ -229,10 +221,8 @@ const PromoteBanner = () => {
           </div>
         </div>
       </div>
-
-    </StyledPromoteBanner >
-  )
-}
+    </StyledPromoteBanner>
+  );
+};
 
 export default PromoteBanner;
-

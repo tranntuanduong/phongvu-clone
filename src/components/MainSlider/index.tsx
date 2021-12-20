@@ -1,68 +1,62 @@
 import PortfolioIndustry from '@components/PortfolioIndustry';
 import Container from 'layouts/container';
-import {
-  BiChevronLeft,
-  BiChevronRight,
-} from 'react-icons/bi';
-import {
-  StyledBottomAdvertise,
-  StyledMainSlider,
-  StyledRightAdvertise,
-} from './MainSlider';
-import Link from 'next/Link';
+import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
+import { StyledBottomAdvertise, StyledMainSlider, StyledRightAdvertise } from './MainSlider';
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import ShortBanner from '@components/Banner/ShortBanner';
 import NextBtn from '@components/Elements/NextBtn';
-import PrevBtn from '@components/Elements/PrevBtn'
+import PrevBtn from '@components/Elements/PrevBtn';
 
 const imageCollection = [
-  "banner12.jpg",
-  "banner19.jpg",
-  "banner1.jpg",
-  "banner2.jpg",
-  "banner3.jpg",
-  "banner4.jpg",
-  "banner5.jpg",
-  "banner6.jpg",
-  "banner7.jpg",
-  "banner12.jpg",
-  "banner1.jpg",
-  "banner2.jpg",
-  "banner3.jpg",
-  "banner4.jpg",
-  "banner5.jpg",
-  "banner6.jpg",
-  "banner7.jpg",
-]
+  'banner12.jpg',
+  'banner19.jpg',
+  'banner1.jpg',
+  'banner2.jpg',
+  'banner3.jpg',
+  'banner4.jpg',
+  'banner5.jpg',
+  'banner6.jpg',
+  'banner7.jpg',
+  'banner12.jpg',
+  'banner1.jpg',
+  'banner2.jpg',
+  'banner3.jpg',
+  'banner4.jpg',
+  'banner5.jpg',
+  'banner6.jpg',
+  'banner7.jpg',
+];
 // "banner-n1.jpg",
 //   "banner-n2.jpg",
 //   "banner-n4.jpg",
 //   "banner-n5.jpg",
 const bannerBottomAdvertise = [
   {
-    imageUrl: "banner-n1.jpg",
-    link: "#",
+    imageUrl: 'banner-n1.jpg',
+    link: '#',
   },
   {
-    imageUrl: "banner-n2.jpg",
-    link: "#",
+    imageUrl: 'banner-n2.jpg',
+    link: '#',
   },
   {
-    imageUrl: "banner-n4.jpg",
-    link: "#",
+    imageUrl: 'banner-n4.jpg',
+    link: '#',
   },
   {
-    imageUrl: "banner-n5.jpg",
-    link: "#",
-  }, {
-    imageUrl: "banner-n6.jpg",
-    link: "#",
+    imageUrl: 'banner-n5.jpg',
+    link: '#',
   },
   {
-    imageUrl: "banner-n7.jpg",
-    link: "#",
-  }
-]
+    imageUrl: 'banner-n6.jpg',
+    link: '#',
+  },
+  {
+    imageUrl: 'banner-n7.jpg',
+    link: '#',
+  },
+];
 
 function MainSlider() {
   const [sliderIndex, setSliderIndex] = useState<number>(0);
@@ -74,7 +68,7 @@ function MainSlider() {
     } else {
       setSliderIndex(sliderIndex - 1);
     }
-  }
+  };
 
   const nextClickHandler = () => {
     if (sliderIndex === imageCollection.length - 1) {
@@ -82,11 +76,11 @@ function MainSlider() {
     } else {
       setSliderIndex(sliderIndex + 1);
     }
-  }
+  };
 
   const handleClickDotSlider = (index: number) => {
     setSliderIndex(index);
-  }
+  };
 
   useEffect(() => {
     bannerTimeout.current = setInterval(() => {
@@ -101,8 +95,8 @@ function MainSlider() {
       if (bannerTimeout.current) {
         clearInterval(bannerTimeout.current);
       }
-    }
-  }, [sliderIndex])
+    };
+  }, [sliderIndex]);
 
   return (
     <StyledMainSlider>
@@ -121,10 +115,12 @@ function MainSlider() {
                 <li
                   onClick={() => handleClickDotSlider(index)}
                   key={index}
-                  className={index === sliderIndex
-                    ? "banner__dot-item banner__dot-item--active"
-                    : "banner__dot-item"}>
-                </li>
+                  className={
+                    index === sliderIndex
+                      ? 'banner__dot-item banner__dot-item--active'
+                      : 'banner__dot-item'
+                  }
+                ></li>
               ))}
             </ul>
           </div>
@@ -140,24 +136,15 @@ function MainSlider() {
           <StyledRightAdvertise>
             <Link href="#ad1">
               <a className="ad-img-wrap">
-                <img
-                  src="/access/advertise/ad2.jpg"
-                  alt=""
-                  className="ad-img"
-                />
+                <img src="/access/advertise/ad2.jpg" alt="" className="ad-img" />
               </a>
             </Link>
             <Link href="#ad2">
               <a className="ad-img-wrap">
-                <img
-                  src="/access/advertise/ad3.jpg"
-                  alt=""
-                  className="ad-img"
-                />
+                <img src="/access/advertise/ad3.jpg" alt="" className="ad-img" />
               </a>
             </Link>
           </StyledRightAdvertise>
-
         </div>
         <StyledBottomAdvertise>
           <ShortBanner images={bannerBottomAdvertise} />

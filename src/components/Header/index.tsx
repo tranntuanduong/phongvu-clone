@@ -2,7 +2,7 @@ import Button from '@components/Elements/Button';
 import PortfolioIndustry from '@components/PortfolioIndustry';
 import Container from 'layouts/container';
 import Image from 'next/image';
-import Link from 'next/Link';
+import Link from 'next/link';
 import { useContext, useEffect, useRef, useState } from 'react';
 import {
   BsBell,
