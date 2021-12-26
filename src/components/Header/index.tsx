@@ -1,5 +1,5 @@
 import Button from '@components/Elements/Button';
-import PortfolioIndustry from '@components/PortfolioIndustry';
+import { UserContext } from 'contexts/UserContext';
 import Container from 'layouts/container';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -14,19 +14,17 @@ import {
   BsPersonCircle,
   BsPiggyBank,
   BsSearch,
-  BsTags,
+  BsTags
 } from 'react-icons/bs';
-import { BiMenu } from 'react-icons/bi';
 import {
   StyledCard,
   StyledHeader,
   StyledNavItem,
   StyledNotify,
   StyledSearchHisory,
-  StyledUserActions,
+  StyledUserActions
 } from './Header';
 import LogoMenu from './LogoMenu';
-import { UserContext } from 'contexts/UserContext';
 
 function Header() {
   const searchInput = useRef(null);

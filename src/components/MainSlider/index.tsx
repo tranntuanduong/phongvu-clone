@@ -7,56 +7,11 @@ import { useEffect, useRef, useState } from 'react';
 import ShortBanner from '@components/Banner/ShortBanner';
 import NextBtn from '@components/Elements/NextBtn';
 import PrevBtn from '@components/Elements/PrevBtn';
+import { bannerBottomAdvertise, mainSliderImgs } from 'dummydata';
 
-const imageCollection = [
-  'banner12.jpg',
-  'banner19.jpg',
-  'banner1.jpg',
-  'banner2.jpg',
-  'banner3.jpg',
-  'banner4.jpg',
-  'banner5.jpg',
-  'banner6.jpg',
-  'banner7.jpg',
-  'banner12.jpg',
-  'banner1.jpg',
-  'banner2.jpg',
-  'banner3.jpg',
-  'banner4.jpg',
-  'banner5.jpg',
-  'banner6.jpg',
-  'banner7.jpg',
-];
-// "banner-n1.jpg",
-//   "banner-n2.jpg",
-//   "banner-n4.jpg",
-//   "banner-n5.jpg",
-const bannerBottomAdvertise = [
-  {
-    imageUrl: 'banner-n1.jpg',
-    link: '#',
-  },
-  {
-    imageUrl: 'banner-n2.jpg',
-    link: '#',
-  },
-  {
-    imageUrl: 'banner-n4.jpg',
-    link: '#',
-  },
-  {
-    imageUrl: 'banner-n5.jpg',
-    link: '#',
-  },
-  {
-    imageUrl: 'banner-n6.jpg',
-    link: '#',
-  },
-  {
-    imageUrl: 'banner-n7.jpg',
-    link: '#',
-  },
-];
+
+
+const imageCollection = mainSliderImgs;
 
 function MainSlider() {
   const [sliderIndex, setSliderIndex] = useState<number>(0);
@@ -149,6 +104,7 @@ function MainSlider() {
         <StyledBottomAdvertise>
           <ShortBanner images={bannerBottomAdvertise} />
         </StyledBottomAdvertise>
+
       </Container>
     </StyledMainSlider>
   );

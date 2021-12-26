@@ -13,6 +13,7 @@ export const StyledNextBtn = styled.div`
     cursor: pointer;
     position: absolute;
     top: 50%;
+    transform: translateY(-50%);
     right: 0;
     z-index: 1;
 

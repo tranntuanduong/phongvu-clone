@@ -1,4 +1,20 @@
+import { colors } from "@theme/colors";
+import { fontSizes } from "@theme/fontSizes";
 import styled from "styled-components";
+
+
+export const StyledBannerWrapper = styled.div`
+position: relative;
+  padding: ${props => props.title && "16px"};
+  background-color: ${props => props.title && colors.whiteColor};
+  border-radius: 10px;
+  & .banner-title {
+      font-size: ${fontSizes.subtitle};
+      font-weight: bold;
+      color: ${colors.text};
+      margin-bottom: 20px;
+    }
+`
 
 export const StyledShortBanner = styled.div`
   z-index: 2;
@@ -11,6 +27,7 @@ export const StyledShortBanner = styled.div`
   & .banner-item {
     height: 140px;
     padding: 0 8px;
+    display: block;
 
     &__img-wrap {
       width: 100%;
@@ -21,9 +38,9 @@ export const StyledShortBanner = styled.div`
     }
 
     &__img {
-
       height: 100%;
       width: 100%;
+      object-fit: cover;
       border-radius: 10px;
       transition: 0.2s ease 0s;
 
@@ -32,5 +49,13 @@ export const StyledShortBanner = styled.div`
       }
     }
   }
- 
+
+  & .banner-item__name {
+    font-size: ${fontSizes.body1};
+    font-weight: 600;
+    color: ${colors.text};
+    text-decoration: none;
+    text-align: center;
+    padding-top: 16px;
+  }
 `

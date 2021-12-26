@@ -12,6 +12,7 @@ export const StyledPrevBtn = styled.div`
   border-bottom-right-radius: 40px;
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
   left: 0;
   z-index: 1;
   cursor: pointer;

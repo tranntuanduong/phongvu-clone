@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import { fontSizes } from '@theme/fontSizes';
 
 export const StyledPromoteBanner = styled.div`
+
+  padding-top: 10px;
+
   & .link {
     text-decoration: none;
   }
