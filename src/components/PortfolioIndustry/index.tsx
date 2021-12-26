@@ -87,6 +87,22 @@ function PortfolioIndustry() {
         <li className="industry-item">
           <RiComputerLine className="industry-item__icon" />
           <div className="industry-item__name">Tivi - Màn hình TV</div>
+          <StyledIndustryCategory className="industry-category">
+            <StyledSubCatagory>
+              <li className="sub-category-item title">
+                Laptop tivi
+              </li>
+              <li className="sub-category-item">
+                Helo
+              </li>
+              <li className="sub-category-item">
+                Tivi soni
+              </li>
+              <li className="sub-category-item">
+                Panasonic
+              </li>
+            </StyledSubCatagory>
+          </StyledIndustryCategory>
         </li>
         <li className="industry-item">
           <BsPhone className="industry-item__icon" />
