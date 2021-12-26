@@ -73,23 +73,25 @@ function Header() {
 
   // zoom out header
   // can fix typescript EventTarget
-  const handleScrollY = (e: any) => {
-    if (e?.currentTarget) {
-      if (e.currentTarget.scrollY >= 46) {
-        setZoomOutHeader(true);
-      } else {
-        setZoomOutHeader(false);
-        if(handleClosePortfolioIndustry) handleClosePortfolioIndustry();
-      }
-    }
-  };
+
 
   useEffect(() => {
+    const handleScrollY = (e: any) => {
+      if (e?.currentTarget) {
+        if (e.currentTarget.scrollY >= 46) {
+          setZoomOutHeader(true);
+        } else {
+          setZoomOutHeader(false);
+          if (handleClosePortfolioIndustry) handleClosePortfolioIndustry();
+        }
+      }
+    };
+
     window.addEventListener('scroll', (e: Event) => handleScrollY(e));
     return () => {
       window.removeEventListener('scroll', (e: Event) => handleScrollY(e));
     };
-  }, []);
+  }, [handleClosePortfolioIndustry]);
 
   return (
     <StyledHeader className={zoomOutHeader ? 'zoomout' : ''}>

@@ -1,16 +1,33 @@
 
 import ProductCardGeneral from '@components/Card/ProductCardGeneral';
-import { generalBanner1 } from 'dummydata';
 import Link from 'next/link';
 import { BiChevronRight } from 'react-icons/bi';
 import { StyledGeneralBanner, StyledGeneralBannerWrap } from './GeneralBanner';
 
-const generalBanner = generalBanner1;
 
-const GeneralBanner = () => {
+interface Product {
+  thumb: string;
+  backgroundPosition: string;
+  title: string;
+  subtitle: string
+}
+
+interface GeneralBanner {
+  title: string;
+  link: string;
+  advertise: string;
+  products: Product[];
+}
+
+interface Props {
+  generalBanners: GeneralBanner[]
+}
+
+const GeneralBanner = (props: Props) => {
+  const { generalBanners } = props
   return (
     <StyledGeneralBannerWrap>
-      {generalBanner.map((item, index) => (
+      {generalBanners.map((item, index) => (
         <StyledGeneralBanner key={index} className="general">
           <div className="general-top">
             <h3 className="general-top__title">{item.title}</h3>
@@ -42,22 +59,6 @@ const GeneralBanner = () => {
                   subtitle={product.subtitle}
                 />
               ))}
-              {/* <ProductCardGeneral
-                backgroundImage='/access/products/dongho/dongho1.jpg'
-                backgroundPosition='4px 0px'
-              />
-              <ProductCardGeneral
-                backgroundImage='/access/products/dongho/dongho1.jpg'
-                backgroundPosition='4px 0px'
-              />
-              <ProductCardGeneral
-                backgroundImage='/access/products/dongho/dongho1.jpg'
-                backgroundPosition='4px 0px'
-              />
-              <ProductCardGeneral
-                backgroundImage='/access/products/manhinh/screen5.jpg'
-                backgroundPosition='4px 0px'
-              /> */}
             </div>
           </div>
         </StyledGeneralBanner>

@@ -28,7 +28,7 @@ export const StyledProductCardGeneral = styled.div`
     width: 100px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
+    margin-top: 10px;
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;

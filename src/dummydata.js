@@ -134,22 +134,104 @@ export const generalBanner1 = [
 
         backgroundPosition: '4px 0px',
         title: 'Ấm nước',
-        subtitle: 'Sức mạnh từ nhà rồng',
+        subtitle: 'Siêu khuyến mãi',
       },
       {
         thumb: '/access/products/manhinh/screen3.jpg',
 
         backgroundPosition: '4px 0px',
         title: 'MSI',
-        subtitle: 'Sức mạnh từ nhà rồng',
+        subtitle: 'Siêu nhẹ tiện lợi',
       },
       {
         thumb: '/access/products/manhinh/screen4.jpg',
 
         backgroundPosition: '4px 0px',
         title: 'MSI',
+        subtitle: 'Dành cho doanh nhân',
+      },
+    ],
+  },
+];
+
+export const generalBanner2 = [
+  {
+    title: 'TI VI - ĐIỆN MÁY - GIA DỤNG',
+    link: '#',
+    advertise: '/access/banner-tonghop/ad3.jpg',
+    products: [
+      {
+        thumb: '/access/products/giadung/giadung1.jpg',
+
+        backgroundPosition: '4px 0px',
+        title: 'MSI',
+        subtitle: 'Làm việc chuẩn mực',
+      },
+      {
+        thumb: '/access/products/dongho/dongho1.jpg',
+        backgroundPosition: '4px 0px',
+        title: 'Ấm nước',
+        subtitle: 'Sức mạnh từ nhà rồng',
+      },
+      {
+        thumb: '/access/products/giadung/giadung3.jpg',
+        backgroundPosition: '4px 0px',
+        title: 'MSI',
+        subtitle: 'Sức mạnh từ nhà rồng',
+      },
+      {
+        thumb: '/access/products/giadung/giadung1.jpg',
+        backgroundPosition: '4px 0px',
+        title: 'MSI',
         subtitle: 'Sức mạnh từ nhà rồng',
       },
     ],
+  },
+  {
+    title: 'ĐIỆN THOẠI - MÁY ẢNH - THIẾT BỊ THÔNG MINH',
+    link: '#',
+    advertise: '/access/banner-tonghop/ad4.jpg',
+    products: [
+      {
+        thumb: '/access/products/manhinh/screen1.jpg',
+        backgroundPosition: '4px 0px',
+        title: 'Màn hình MSI',
+        subtitle: 'Sale khủng lên đến 49%',
+      },
+      {
+        thumb: '/access/products/manhinh/screen2.jpg',
+
+        backgroundPosition: '4px 0px',
+        title: 'Ấm nước',
+        subtitle: 'Sức mạnh từ nhà rồng',
+      },
+      {
+        thumb: '/access/products/dongho/dongho1.jpg',
+        backgroundPosition: '4px 0px',
+        title: 'MSI',
+        subtitle: 'Hẫn dẫn',
+      },
+      {
+        thumb: '/access/products/giadung/giadung4.jpg',
+        backgroundPosition: '4px 0px',
+        title: 'MSI',
+        subtitle: 'Năng động và phong cách',
+      },
+    ],
+  },
+];
+
+export const shortBanner4 = [
+  {
+    imageUrl: 'banner-n12.jpg',
+    link: '#',
+  },
+  {
+    imageUrl: 'banner-n13.jpg',
+    link: '#',
+  },
+  {
+    imageUrl: 'banner-n14.jpg',
+    link: '#',
   },
 ];

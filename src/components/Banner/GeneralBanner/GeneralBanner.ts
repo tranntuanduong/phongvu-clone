@@ -57,6 +57,7 @@ export const StyledGeneralBanner = styled.div`
     }
 
     & .content-right {
+      margin-top: 20px;
       width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
