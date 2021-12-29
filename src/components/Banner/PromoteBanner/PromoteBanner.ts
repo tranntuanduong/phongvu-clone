@@ -133,7 +133,7 @@ export const StyledPromoteBanner = styled.div`
 `
 
 export const StyledProductList = styled.ul`
-  transform: translateX(${(props) => props.theme.translateX});\
+  transform: translateX(${(props) => props.theme.translateX}); 
   transition: transform 0.3s;
   display: flex;
   /* justify-content: space-evenly; */

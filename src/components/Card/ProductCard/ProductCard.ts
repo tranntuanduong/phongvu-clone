@@ -5,6 +5,13 @@ import styled from "styled-components";
 export const StyledProductCard = styled.div`
   background-color: "transparent";
   width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  & .link {
+    text-decoration: none;
+  }
+
 
   & .thumb {
     background-size: contain;
@@ -19,8 +26,7 @@ export const StyledProductCard = styled.div`
 
   & .save-tag {
       position: absolute;
-      /* top: 165px; */
-      top: 120px;
+      top: 100px;
 
       background: linear-gradient(315deg, rgba(136,0,255,1) 6%, rgba(166,0,255,1) 33%, rgba(161,68,237,1) 64%, rgba(102,68,237,1) 96%);
       width: fit-content;
@@ -57,7 +63,13 @@ export const StyledProductCard = styled.div`
     font-size: ${fontSizes.desc2};
     color: ${colors.quantityProduct};
     margin-top: 2px;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
+  }
+
+  & .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   & .promote-price {
@@ -81,5 +93,11 @@ export const StyledProductCard = styled.div`
 
   & .promote-percen {
     color: ${colors.primaryColor};
+  }
+
+  & .present {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 `

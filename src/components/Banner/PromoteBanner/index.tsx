@@ -5,6 +5,7 @@ import ProductCard from '@components/Card/ProductCard';
 import PrevBtn from '@components/Elements/PrevBtn';
 import NextBtn from '@components/Elements/NextBtn';
 import { useEffect, useState } from 'react';
+import { promoteBanner } from 'dummydata';
 
 interface Product {
   backgroundImage: string;
@@ -15,104 +16,6 @@ interface Product {
   originPrice: number;
 }
 
-const promoteBanner: Product[] = [
-  {
-    backgroundImage: '/access/products/manhinh/screen1.jpg',
-    backgroundPosition: '4px -15px',
-    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 1',
-    quantity: 1,
-    promotePrice: 431000,
-    originPrice: 450000,
-  },
-  {
-    backgroundImage: '/access/products/manhinh/screen2.jpg',
-    backgroundPosition: '4px -15px',
-    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 2',
-    quantity: 1,
-    promotePrice: 431000,
-    originPrice: 450000,
-  },
-  {
-    backgroundImage: '/access/products/manhinh/screen3.jpg',
-    backgroundPosition: '4px -15px',
-    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 3',
-    quantity: 1,
-    promotePrice: 431000,
-    originPrice: 450000,
-  },
-  {
-    backgroundImage: '/access/products/manhinh/screen4.jpg',
-    backgroundPosition: '4px -15px',
-    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 4',
-    quantity: 1,
-    promotePrice: 431000,
-    originPrice: 450000,
-  },
-  {
-    backgroundImage: '/access/products/manhinh/screen5.jpg',
-    backgroundPosition: '4px -15px',
-    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 5',
-    quantity: 1,
-    promotePrice: 431000,
-    originPrice: 450000,
-  },
-  {
-    backgroundImage: '/access/products/giadung/giadung1.jpg',
-    backgroundPosition: '4px -15px',
-    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6',
-    quantity: 1,
-    promotePrice: 431000,
-    originPrice: 450000,
-  },
-  {
-    backgroundImage: '/access/products/giadung/giadung2.jpg',
-    backgroundPosition: '4px -15px',
-    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6',
-    quantity: 1,
-    promotePrice: 431000,
-    originPrice: 450000,
-  },
-  {
-    backgroundImage: '/access/products/giadung/giadung3.jpg',
-    backgroundPosition: '4px -15px',
-    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6',
-    quantity: 1,
-    promotePrice: 431000,
-    originPrice: 450000,
-  },
-  {
-    backgroundImage: '/access/products/giadung/giadung4.jpg',
-    backgroundPosition: '4px -15px',
-    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6',
-    quantity: 1,
-    promotePrice: 431000,
-    originPrice: 450000,
-  },
-  {
-    backgroundImage: '/access/products/giadung/giadung5.jpg',
-    backgroundPosition: '4px -15px',
-    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6',
-    quantity: 1,
-    promotePrice: 431000,
-    originPrice: 450000,
-  },
-  {
-    backgroundImage: '/access/products/dongho/dongho1.jpg',
-    backgroundPosition: '4px -6px',
-    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6',
-    quantity: 1,
-    promotePrice: 431000,
-    originPrice: 450000,
-  },
-  {
-    backgroundImage: '/access/products/dongho/dongho1.jpg',
-    backgroundPosition: '4px -6px',
-    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6',
-    quantity: 1000,
-    promotePrice: 431000,
-    originPrice: 450000,
-  },
-];
 
 const PromoteBanner = () => {
   const [translateX, setTranslateX] = useState(0);

@@ -1,5 +1,7 @@
 import { StyledProductCard } from "./ProductCard"
 import Link from 'next/link'
+import FreeShipIcon from "@components/SvgIcon/FreeShip";
+import PresentIcon from "@components/SvgIcon/PresentIcon";
 
 interface Product {
   backgroundImage: string,
@@ -37,18 +39,26 @@ const ProductCard = (props: Props) => {
             }}
           >
           </div>
-          <div className="save-tag">
-            <div className="label">
-              Tiết kiệm
+          {originPrice - promotePrice > 0 && (
+            <div className="save-tag">
+              <div className="label">
+                Tiết kiệm
+              </div>
+              <div className="number">{originPrice - promotePrice}đ</div>
             </div>
-            <div className="number">{originPrice - promotePrice}đ</div>
-          </div>
+          )}
           <h3 className="title">{title}</h3>
           <div className="quantity">Còn {quantity} sản phẩm</div>
-          <div className="promote-price">{promotePrice}đ</div>
+          <div className="wrap">
+            <div className="promote-price">{promotePrice}đ</div>
+            <FreeShipIcon />
+          </div>
           <div className="origin-price-wrap">
             <div className="origin-price">{originPrice}đ</div>
             <div className="promote-percen">-{Math.round(promotePrice * 100 / originPrice)}%</div>
+          </div>
+          <div className="present">
+            <PresentIcon />
           </div>
         </a>
       </Link>
