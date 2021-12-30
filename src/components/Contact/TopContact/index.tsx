@@ -15,18 +15,22 @@ function TopContact() {
           </Link>
         </li>
         <li className="element">
-          <a href="tel:18006867" className="element__link">
-            <BiBuildingHouse className="element__icon" />
-            <p>Tư vấn mua hàng</p>
-            <span>18006865</span>
-          </a>
+          <Link href="tel:18006867">
+            <a className="element__link">
+              <BiBuildingHouse className="element__icon" />
+              <p>Tư vấn mua hàng</p>
+              <span>18006865</span>
+            </a>
+          </Link>
         </li>
         <li className="element">
-          <a href="tel:18006865" className="element__link">
-            <BiBuildingHouse className="element__icon" />
-            <p>CSKH</p>
-            <span>18006865</span>
-          </a>
+          <Link href="tel:18006865">
+            <a className="element__link">
+              <BiBuildingHouse className="element__icon" />
+              <p>CSKH</p>
+              <span>18006865</span>
+            </a>
+          </Link>
         </li>
         <li className="element">
           <BiBuildingHouse className="element__icon" />
@@ -37,7 +41,7 @@ function TopContact() {
           <p>Xây dựng cấu hình</p>
         </li>
       </ul>
-    </StyledTopContact>
+    </StyledTopContact >
   );
 }
 

@@ -11,12 +11,13 @@ export const StyledGeneralBanner = styled.div`
   background-color: ${colors.whiteColor};
   border-radius: 10px;
   flex: 1;
+  overflow: hidden;
+
 
   &.general + &.general {
     margin-left: 16px;
   } 
  
-  overflow: hidden;
 
   & .general-top {
     display: flex;

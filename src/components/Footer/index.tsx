@@ -3,6 +3,7 @@ import { BiHeadphone } from 'react-icons/bi';
 import { ImQrcode } from 'react-icons/im';
 import { FaMoneyBillAlt } from 'react-icons/fa';
 import { SiInternetarchive } from 'react-icons/si';
+import Link from 'next/link';
 
 function Footer() {
   return (
@@ -69,17 +70,21 @@ function Footer() {
             <li className="row">
               <div className="link-wrap">
                 Hỗ trợ Khách hàng:
-                <a href="mailto:junjun@gmail.com" className="link">
-                  junjun@gmail.com
-                </a>
+                <Link href="mailto:junjun@gmail.com">
+                  <a className="link">
+                    junjun@gmail.com
+                  </a>
+                </Link>
               </div>
             </li>
             <li className="row">
               <div className="link-wrap">
                 Liên hệ báo giá:
-                <a href="mailto:junjun@gmail.com" className="link">
-                  baogiajun@gmail.com
-                </a>
+                <Link href="mailto:junjun@gmail.com">
+                  <a className="link">
+                    baogiajun@gmail.com
+                  </a>
+                </Link>
               </div>
             </li>
             <li className="row">Trung tâm bảo hành</li>

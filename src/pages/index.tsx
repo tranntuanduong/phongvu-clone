@@ -1,55 +1,78 @@
-import GeneralBanner from '@components/Banner/GeneralBanner';
-import PromoteBanner from '@components/Banner/PromoteBanner';
-import ShortBanner from '@components/Banner/ShortBanner';
+// import GeneralBanner from '@components/Banner/GeneralBanner';
+// import PromoteBanner from '@components/Banner/PromoteBanner';
+// import ShortBanner from '@components/Banner/ShortBanner';
 import Section from '@components/Elements/Section';
-import MainSlider from '@components/MainSlider';
-import Pagination from '@components/Pagination';
-import ProductList from '@components/ProductList';
+// import MainSlider from '@components/MainSlider';
+// import Pagination from '@components/Pagination';
+// import ProductList from '@components/ProductList';
 import {
   generalBanner1,
-  generalBanner2,
-  promoteBanner,
-  shortBanner1,
+  generalBanner2, shortBanner1,
   shortBanner2,
   shortBanner3,
-  shortBanner4,
+  shortBanner4
 } from 'dummydata';
 import Container from 'layouts/container';
 import Page from 'layouts/page';
 import type { NextPage } from 'next';
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+
+const DynamicLazyGeneralBanner = dynamic(() => import('@components/Banner/GeneralBanner'), {
+  loading: () => <p style={{ backgroundColor: "blue" }} > Loading...</p >
+})
+
+const DynamicLazyPromoteBanner = dynamic(() => import('@components/Banner/PromoteBanner'), {
+  loading: () => <p style={{ backgroundColor: "blue" }} > Loading...</p >
+})
+
+const DynamicLazyShortBanner = dynamic(() => import('@components/Banner/ShortBanner'), {
+  loading: () => <p style={{ backgroundColor: "blue" }} > Loading...</p >
+})
+
+const DynamicLazyMainSlider = dynamic(() => import('@components/MainSlider'), {
+  loading: () => <p style={{ backgroundColor: "blue" }} > Loading...</p >
+})
+
+const DynamicLazyPagination = dynamic(() => import('@components/Pagination'), {
+  loading: () => <p style={{ backgroundColor: "blue" }} > Loading...</p >
+})
+
+const DynamicLazyProductList = dynamic(() => import('@components/ProductList'), {
+  loading: () => <p style={{ backgroundColor: "blue" }} > Loading...</p >
+})
 
 const Home: NextPage = () => {
   return (
-    <>
-      <Page>
-        <MainSlider />
-        <Container>
-          <Section>
-            <PromoteBanner />
-          </Section>
-          <Section>
-            <ShortBanner images={shortBanner1} />
-          </Section>
-          <Section>
-            <ShortBanner images={shortBanner2} title="Thương hiệu nổi bật" />
-          </Section>
-          <Section>
-            <GeneralBanner generalBanners={generalBanner1} />
-          </Section>
-          <Section>
-            <ShortBanner images={shortBanner3} />
-          </Section>
-          <Section>
-            <GeneralBanner generalBanners={generalBanner2} />
-          </Section>
-          <Section>
-            <ShortBanner images={shortBanner4} />
-          </Section>
-          <ProductList>Dành cho bạn</ProductList>
-          <Pagination />
-        </Container>
-      </Page>
-    </>
+    <Page>
+      <DynamicLazyMainSlider />
+      <Container>
+        <Section>
+          <DynamicLazyPromoteBanner />
+        </Section>
+        <Section>
+          <DynamicLazyShortBanner images={shortBanner1} />
+        </Section>
+        <Section>
+          <DynamicLazyShortBanner images={shortBanner2} title="Thương hiệu nổi bật" />
+        </Section>
+        <Section>
+          <DynamicLazyGeneralBanner generalBanners={generalBanner1} />
+        </Section>
+        <Section>
+          <DynamicLazyShortBanner images={shortBanner3} />
+        </Section>
+        <Section>
+          <DynamicLazyGeneralBanner generalBanners={generalBanner2} />
+        </Section>
+        <Section>
+          <DynamicLazyShortBanner images={shortBanner4} />
+        </Section>
+        <DynamicLazyProductList>Dành cho bạn</DynamicLazyProductList>
+        <DynamicLazyPagination />
+      </Container>
+    </Page>
+
   );
 };
 

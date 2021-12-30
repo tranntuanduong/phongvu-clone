@@ -148,9 +148,6 @@ function PortfolioIndustry() {
           <AiOutlineSolution className="industry-item__icon" />
           <div className="industry-item__name">Giải pháp doanh nghiệp</div>
         </li>
-
-
-
       </ul>
     </StyledProductPortfolio>
   );
