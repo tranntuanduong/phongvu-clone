@@ -26,7 +26,6 @@ export const StyledTopContact = styled.div`
     font-size: ${fontSizes.desc1};
     height: 100%;
     padding: 0 8px;
-    margin: 0 -8px;
     margin-left: 20px;
     cursor: pointer;
 

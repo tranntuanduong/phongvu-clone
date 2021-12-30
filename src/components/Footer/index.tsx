@@ -112,7 +112,7 @@ function Footer() {
             </li>
           </ul>
         </StyledFooterColumn>
-        <StyledFooterColumn className="w-3-5">
+        <StyledFooterColumn className="w-3-6">
           <div className="title">Danh sách các ngân hàng thanh toán online</div>
           <img src="access/banking/1.jpg" alt="#" className="banking" />
         </StyledFooterColumn>

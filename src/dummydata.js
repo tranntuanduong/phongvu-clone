@@ -467,7 +467,8 @@ export const productList = [
   {
     backgroundImage: '/access/products/dongho/dongho1.jpg',
     backgroundPosition: 'center -6px',
-    title: 'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6',
+    title:
+      'Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6, Laptop HP VICTUS 16-e0170AX 4R0U7PA router wifi 6',
     quantity: 1,
     promotePrice: 431000,
     originPrice: 450000,

@@ -197,7 +197,7 @@ export const StyledSearchHisory = styled(StyledBox)`
 export const StyledNavItem = styled.ul`
   display: flex;
   margin-left: 16px;
-  margin: 0 -20px 0 12px;
+  /* margin: 0 -20px 0 12px; */
 
   &.zoomout {
     transform: translateY(22px);

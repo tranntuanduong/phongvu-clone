@@ -18,15 +18,14 @@ position: relative;
 
 export const StyledShortBanner = styled.div`
   z-index: 2;
-  /* width: 100%; */
   height: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 -8px;
+  display: grid;
+  /* grid-template-columns: repeat(4, 1fr); */
+  grid-auto-flow: column;
+  gap: 8px;
 
   & .banner-item {
     height: 140px;
-    padding: 0 8px;
     display: block;
 
     &__img-wrap {

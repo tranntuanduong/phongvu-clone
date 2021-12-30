@@ -8,26 +8,31 @@ export const StyledFooter = styled.div`
   background-color: ${colors.whiteColor};
 
   .wrap {
-    width: 1216px;
+    /* width: 1216px; */
+    width: 100%;
+    max-width: 1216px;
     margin-left: auto;
     margin-right: auto;
     display: grid;
     margin-top: 8px;
 
-    & .w-3-5 {
-      grid-column: 3 / 5;
-    }
-
     &.w-5 {
       grid-template-columns: repeat(5, minmax(0, 1fr));
     }
 
+    & .w-3-6 {
+      grid-column: 3 / 6;
+      width: 100%;
+    }
+
+
     & .w-1-3 {
       grid-column: 1 / 3;
+      width: 100%;
     }
 
     & .banking {
-      width: 90%;
+      width: 100%;
     }
   }
 `;
