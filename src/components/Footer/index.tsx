@@ -122,6 +122,7 @@ function Footer() {
           <img src="access/banking/1.jpg" alt="#" className="banking" />
         </StyledFooterColumn>
       </div>
+      <div>v1.1.0</div>
     </StyledFooter>
   );
 }
