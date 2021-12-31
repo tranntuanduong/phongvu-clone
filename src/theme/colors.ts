@@ -10,6 +10,6 @@ export const colors: Colors = {
   text: '#474747',
   border: '#ececec',
   bannerBtnBackground: '#21212170',
-  quantityProduct: "#eca56d",
-  logoMenuBorder: "#e0e0e0",
+  quantityProduct: '#eca56d',
+  footerBackground: '#e9edf2',
 };
