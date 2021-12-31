@@ -15,11 +15,9 @@ const Pagination = () => {
         <StyledPaginationItem className="dot icon">
           <BsThreeDots />
         </StyledPaginationItem>
-        {Array(6)
-          .fill(0)
-          .map((x, index) => (
-            <StyledPaginationItem key={index}>11</StyledPaginationItem>
-          ))}
+        {[3, 4, 5, 6, 7, 9].map((x, index) => (
+          <StyledPaginationItem key={index}>{x}</StyledPaginationItem>
+        ))}
         <StyledPaginationItem className="icon">
           <BiChevronRight />
         </StyledPaginationItem>

@@ -7,10 +7,11 @@ import Section from '@components/Elements/Section';
 // import ProductList from '@components/ProductList';
 import {
   generalBanner1,
-  generalBanner2, shortBanner1,
+  generalBanner2,
+  shortBanner1,
   shortBanner2,
   shortBanner3,
-  shortBanner4
+  shortBanner4,
 } from 'dummydata';
 import Container from 'layouts/container';
 import Page from 'layouts/page';
@@ -18,29 +19,17 @@ import type { NextPage } from 'next';
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 
-const DynamicLazyGeneralBanner = dynamic(() => import('@components/Banner/GeneralBanner'), {
-  loading: () => <p style={{ backgroundColor: "blue" }} > Loading...</p >
-})
+const DynamicLazyGeneralBanner = dynamic(() => import('@components/Banner/GeneralBanner'));
 
-const DynamicLazyPromoteBanner = dynamic(() => import('@components/Banner/PromoteBanner'), {
-  loading: () => <p style={{ backgroundColor: "blue" }} > Loading...</p >
-})
+const DynamicLazyPromoteBanner = dynamic(() => import('@components/Banner/PromoteBanner'));
 
-const DynamicLazyShortBanner = dynamic(() => import('@components/Banner/ShortBanner'), {
-  loading: () => <p style={{ backgroundColor: "blue" }} > Loading...</p >
-})
+const DynamicLazyShortBanner = dynamic(() => import('@components/Banner/ShortBanner'));
 
-const DynamicLazyMainSlider = dynamic(() => import('@components/MainSlider'), {
-  loading: () => <p style={{ backgroundColor: "blue" }} > Loading...</p >
-})
+const DynamicLazyMainSlider = dynamic(() => import('@components/MainSlider'));
 
-const DynamicLazyPagination = dynamic(() => import('@components/Pagination'), {
-  loading: () => <p style={{ backgroundColor: "blue" }} > Loading...</p >
-})
+const DynamicLazyPagination = dynamic(() => import('@components/Pagination'));
 
-const DynamicLazyProductList = dynamic(() => import('@components/ProductList'), {
-  loading: () => <p style={{ backgroundColor: "blue" }} > Loading...</p >
-})
+const DynamicLazyProductList = dynamic(() => import('@components/ProductList'));
 
 const Home: NextPage = () => {
   return (
@@ -72,7 +61,6 @@ const Home: NextPage = () => {
         <DynamicLazyPagination />
       </Container>
     </Page>
-
   );
 };
 
