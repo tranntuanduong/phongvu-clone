@@ -514,3 +514,14 @@ export const filters = [
     filterCollection: ['Đỏ', 'Xanh'],
   },
 ];
+
+export const enhanceFilters = [
+  {
+    title: 'Màu sắc',
+    categories: ['Đen', 'Trắng', 'Bạc', 'Xanh'],
+  },
+  {
+    title: 'Chất liệu',
+    categories: ['Thép', 'Nhựa', 'Kính'],
+  },
+];

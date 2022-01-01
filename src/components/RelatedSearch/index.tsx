@@ -1,3 +1,4 @@
+import Chip from "@components/Elements/Chip";
 import Section from "@components/Elements/Section";
 import { StyledRelatedSearch } from "./RelatedSearch";
 
@@ -7,14 +8,17 @@ const RelatedSearch = () => {
       <StyledRelatedSearch>
         <div className="title">Tìm kiếm liên quan</div>
         <ul className="list">
-          <li className="item">
-            Máy tính bảng
+          <li>
+            <Chip name="Máy vi tính" mr="10px" />
           </li>
-          <li className="item">
-            Vỏ máy tính
+          <li>
+            <Chip name="Cây máy tính" mr="10px" />
           </li>
-          <li className="item">
-            Cây máy tính
+          <li>
+            <Chip name="Vỏ máy tính" mr="10px" />
+          </li>
+          <li>
+            <Chip name="Máy vi tính" mr="10px" />
           </li>
         </ul>
       </StyledRelatedSearch>

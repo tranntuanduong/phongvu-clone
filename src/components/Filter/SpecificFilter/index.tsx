@@ -1,6 +1,7 @@
+import Chip from "@components/Elements/Chip";
+import { useState } from "react";
+import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import { StyledSpecificFilter } from "./SpecificFilter";
-import { BiChevronUp, BiChevronDown } from "react-icons/bi";
-import { useEffect, useState } from "react";
 
 interface SpecificFilter {
   title: string,
@@ -29,7 +30,7 @@ const SpecificFilter = (props: Props) => {
       <ul className={open ? 'list-chip list-chip--open' : 'list-chip'}>
         {specificFilter.filterCollection.map((filter, index) => (
           <li key={index} className="list-chip__item">
-            {filter}
+            <Chip name={filter} mr="8px" mb="10px" />
           </li>
         ))}
       </ul>

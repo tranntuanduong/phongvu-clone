@@ -14,9 +14,10 @@ const ProductList = (props: Props) => {
     <Section>
       <Fragment>
         <StyledTitleSection>
-          <StyledTitle>
+          {children}
+          {/* <StyledTitle>
             {children}
-          </StyledTitle>
+          </StyledTitle> */}
         </StyledTitleSection>
         <StyledProductList>
           {productList.map((product, index) => (

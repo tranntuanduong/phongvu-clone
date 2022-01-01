@@ -20,7 +20,7 @@ export const StyledRelatedSearch = styled.div`
     color: ${colors.text};
   }
 
-  & .item {
+  /* & .item {
     margin-left: 10px;
     padding: 8px 16px;
     border: 1px solid ${colors.border};
@@ -30,5 +30,5 @@ export const StyledRelatedSearch = styled.div`
       background-color: ${colors.whitesmoke};
       cursor: pointer;
     }
-  }
+  } */
 `

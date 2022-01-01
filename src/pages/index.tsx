@@ -2,6 +2,7 @@
 // import PromoteBanner from '@components/Banner/PromoteBanner';
 // import ShortBanner from '@components/Banner/ShortBanner';
 import Section from '@components/Elements/Section';
+import { StyledTitle } from '@components/ProductList/ProductList';
 // import MainSlider from '@components/MainSlider';
 // import Pagination from '@components/Pagination';
 // import ProductList from '@components/ProductList';
@@ -57,7 +58,11 @@ const Home: NextPage = () => {
         <Section>
           <DynamicLazyShortBanner images={shortBanner4} />
         </Section>
-        <DynamicLazyProductList>Dành cho bạn</DynamicLazyProductList>
+        <DynamicLazyProductList>
+          <StyledTitle>
+            Dành cho bạn
+          </StyledTitle>
+        </DynamicLazyProductList>
         <DynamicLazyPagination />
       </Container>
     </Page>

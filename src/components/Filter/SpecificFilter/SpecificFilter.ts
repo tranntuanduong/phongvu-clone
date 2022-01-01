@@ -18,7 +18,13 @@ export const StyledSpecificFilter = styled.ul`
     height: 40px;
   }
 
+  
+
   & .list-chip {
+    &.list-chip--enhance {
+    overflow: inherit;
+  }
+
     flex: 1;
     display: flex;
     flex-wrap: wrap;
@@ -32,17 +38,13 @@ export const StyledSpecificFilter = styled.ul`
     &__item {
       font-size: ${fontSizes.body2};
       color: ${colors.text};
-      padding: 8px 16px;
-      border: 1px solid ${colors.border};
-      border-radius: 5px;
       height: fit-content;
-      margin-right: 8px;
-      margin-bottom: 10px;
+    }
 
-      &:hover {
-        cursor: pointer;
-        background-color: ${colors.whitesmoke};
-      }
+    & .sub-filter {
+      background-color: ${colors.whiteColor};
+      padding: 16px;
+      border-radius: 5px;
     }
   }
 

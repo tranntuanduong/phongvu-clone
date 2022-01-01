@@ -154,7 +154,7 @@ function Footer() {
 
       </StyledBottomFooter>
       <div className="version">
-        version: 1.1.0
+        version: 1.1.1
       </div>
     </StyledFooterWrap>
   );

@@ -29,5 +29,35 @@ export const StyledTitleSection = styled.div`
 export const StyledTitle = styled.div`
   font-size: ${fontSizes.subtitle};
   font-weight: 600;
-  color: ${colors.text}
+  color: ${colors.text};
+`
+
+export const StyledSortProducts = styled.div`
+  height: 64px;
+  display: flex;
+  align-items: center;
+
+  & .sort-title {
+    color: ${colors.text};
+    font-size: ${fontSizes.desc1};
+    font-weight: 600;
+    margin-right: 44px;
+  }
+
+  & .sort-list {
+    font-size: ${fontSizes.desc1};
+    color: ${colors.text};
+    display: flex;
+    align-items: center;
+
+    & .chip-wrap {
+      align-items: center;
+      display: flex;
+      margin-left: 20px;
+
+      & .dash {
+        margin-right: 8px;
+      }
+    }
+  }
 `
