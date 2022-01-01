@@ -21,3 +21,7 @@ export interface FontSizes {
   desc1: string; //13px
   desc2: string; //12px
 }
+
+export interface SxProps {
+  marginTop?: string;
+}

@@ -151,7 +151,11 @@ function Footer() {
             </ul>
           </StyledFooterColumn>
         </div>
+
       </StyledBottomFooter>
+      <div className="version">
+        version: 1.1.0
+      </div>
     </StyledFooterWrap>
   );
 }

@@ -474,3 +474,43 @@ export const productList = [
     originPrice: 450000,
   },
 ];
+
+export const filters = [
+  {
+    hasOpenBtn: true,
+    title: 'Thương hiệu',
+    filterCollection: [
+      'A4 TECH',
+      'Moto speed',
+      'ANTEC',
+      'ACBEL',
+      'Máy tính để bàn',
+      'điện thoại cầm tay',
+      'ổ cứng ssd',
+      'Tay cầm chơi game',
+      'dài dài dài',
+      'Harma kaman',
+    ],
+  },
+  {
+    hasOpenBtn: true,
+    title: 'Dòng sản phẩm',
+    filterCollection: [
+      'Máy tính',
+      'Moto speed',
+      'Cây máy tính',
+      'ACBEL',
+      'Máy tính để bàn',
+      'điện thoại cầm tay',
+      'ổ cứng ssd',
+      'Tay cầm chơi game',
+      'dài dài dài',
+      'Harma kaman',
+    ],
+  },
+  {
+    hasOpenBtn: false,
+    title: 'Màu sắc',
+    filterCollection: ['Đỏ', 'Xanh'],
+  },
+];

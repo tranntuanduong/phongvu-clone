@@ -6,5 +6,7 @@ export const StyledContainer = styled.div`
   max-width: 1216px;
   margin-left: auto;
   margin-right: auto;
+  
+  margin-top: ${props => props.theme.marginTop ?? '0px'}
   /* position: relative; */
 `;

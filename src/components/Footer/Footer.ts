@@ -5,6 +5,14 @@ import styled from 'styled-components';
 export const StyledFooterWrap = styled.div`
   border-top: 3px solid ${colors.primaryColor};
   background-color: ${colors.whiteColor};
+  position: relative;
+
+  & .version {
+    bottom: 10px;
+    right: 10px;
+    color: ${colors.textGrey};
+    position: fixed;
+  }
 
   .wrap {
     /* width: 1216px; */

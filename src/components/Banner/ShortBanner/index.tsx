@@ -19,7 +19,9 @@ const ShortBanner = (props: Props) => {
   const { title, images } = props
   return (
     <StyledBannerWrapper title={title}>
-      <div className="banner-title">{title}</div>
+      {title && (
+        <div className="banner-title">{title}</div>
+      )}
       {images.length > 4 && (
         <>
           <NextBtn />
