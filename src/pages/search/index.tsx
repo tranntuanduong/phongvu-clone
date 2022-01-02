@@ -25,6 +25,9 @@ const DynamicPaginationWithNoSSR = dynamic(() => import('@components/Pagination'
 const DynamicFilterProductsWithNoSSR = dynamic(() => import('@components/Filter/FilterProducts'),
   { ssr: false }
 );
+const DynamicContainerWithNoSSR = dynamic(() => import('layouts/container'),
+  { ssr: false }
+);
 
 
 interface Props {
@@ -40,7 +43,7 @@ const SearchProducts = (props: Props) => {
 
   return (
     <Page>
-      <Container mt="20px" >
+      <DynamicContainerWithNoSSR mt="20px" >
         <DynamicBreadCrumbWithNoSSR breadCrumbs={[]} current="Tìm kiếm" />
         <DynamicRelatedSearchWithNoSSR />
         <DynamicFilterProductsWithNoSSR />
@@ -48,7 +51,7 @@ const SearchProducts = (props: Props) => {
           < DynamicSortProductsWithNoSSR />
         </DynamicProductListWithNoSSR>
         <DynamicPaginationWithNoSSR />
-      </Container>
+      </DynamicContainerWithNoSSR>
     </Page>
   )
 }

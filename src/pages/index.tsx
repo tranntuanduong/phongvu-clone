@@ -9,7 +9,6 @@ import {
   shortBanner3,
   shortBanner4
 } from 'dummydata';
-import Container from 'layouts/container';
 import Page from 'layouts/page';
 import type { NextPage } from 'next';
 import dynamic from 'next/dynamic';
@@ -33,6 +32,9 @@ const DynamicPaginationWithNoSSR = dynamic(() => import('@components/Pagination'
 const DynamicProductListWithNoSSR = dynamic(() => import('@components/ProductList'),
   { ssr: false }
 );
+const DynamicContainerWithNoSSR = dynamic(() => import('layouts/container'),
+  { ssr: false }
+);
 
 interface Props {
   productList: Product[]
@@ -43,7 +45,7 @@ const Home: NextPage<Props> = () => {
   return (
     <Page>
       <DynamicMainSliderWithNoSSR />
-      <Container>
+      <DynamicContainerWithNoSSR>
         <Section>
           <DynamicPromoteBannerWithNoSSR />
         </Section>
@@ -71,7 +73,7 @@ const Home: NextPage<Props> = () => {
           </StyledTitle>
         </DynamicProductListWithNoSSR>
         <DynamicPaginationWithNoSSR />
-      </Container>
+      </DynamicContainerWithNoSSR>
     </Page>
   );
 };
