@@ -9,13 +9,19 @@ interface Props {
   mb?: string;
   active?: boolean;
   hasIcon?: boolean;
-  openSubFilter?: boolean
+  openSubFilter?: boolean;
+  borderBottom?: string;
 }
 
 export const Chip = (props: Props) => {
-  const { name, mr, mb, active, hasIcon, openSubFilter } = props;
+  const { name, mr, mb, active, hasIcon, openSubFilter, borderBottom } = props;
   return (
-    <StyledChip theme={{ marginRight: mr, marginBottom: mb }} className={active ? "active" : ''} >
+    <StyledChip theme={{
+      marginRight: mr,
+      marginBottom: mb,
+      borderBottom: borderBottom
+    }}
+      className={active ? "active" : ''} >
       <div className="wrap">
         {name}
         {hasIcon && (

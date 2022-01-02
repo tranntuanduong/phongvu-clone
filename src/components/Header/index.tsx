@@ -25,6 +25,7 @@ import {
   StyledUserActions
 } from './Header';
 import LogoMenu from './LogoMenu';
+import { useRouter } from 'next/router'
 
 function Header() {
   const searchInput = useRef(null);
@@ -34,6 +35,7 @@ function Header() {
   const [openNotify, setOpenNotify] = useState(false);
   const [openCard, setOpenCard] = useState(false);
   const { handleClosePortfolioIndustry } = useContext(UserContext);
+  const router = useRouter()
 
   const handleSearchFieldClick = () => {
     setOpenHistorySearch(true);
@@ -93,6 +95,10 @@ function Header() {
     };
   }, [handleClosePortfolioIndustry]);
 
+  const handleSearch = (query: string) => () => {
+    router.push(`/search?query=${query}`)
+  }
+
   return (
     <StyledHeader className={zoomOutHeader ? 'zoomout' : ''}>
       <Container>
@@ -124,21 +130,21 @@ function Header() {
                   <div className="history-title__action">Xóa lịch sử</div>
                 </div>
                 <ul className="history-list">
-                  <li className="history-item">
+                  <li className="history-item" onClick={handleSearch("keychorn")}>
                     <BsClock className="history-item__icon" />
                     <p>Keychorn</p>
                   </li>
-                  <li className="history-item">
+                  <li className="history-item" onClick={handleSearch("bàn phím")}>
                     <BsClock className="history-item__icon" />
                     <p>Bàn phím</p>
                   </li>
-                  <li className="history-item">
+                  <li className="history-item" onClick={handleSearch("màn hình")}>
                     <BsClock className="history-item__icon" />
                     <p>
                       Màn hình máy tính, Màn hình máy tính, Màn hình máy tính, Màn hình máy tính
                     </p>
                   </li>
-                  <li className="history-item">
+                  <li className="history-item" onClick={handleSearch("khong day")}>
                     <BsClock className="history-item__icon" />
                     <p>Keychorn</p>
                   </li>

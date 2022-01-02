@@ -13,22 +13,33 @@ interface Props {
 
 const EnhanceSpecificItem = (props: Props) => {
   const { filter } = props
-  const [openSubFilter, setOpenSubFilter] = useState<boolean>(false)
+  // const [openSubFilter, setOpenSubFilter] = useState<boolean>(false)
 
   const handleToggleSubFilter = () => {
-    setOpenSubFilter(!openSubFilter)
+    // setOpenSubFilter(!openSubFilter)
   }
 
   return (
     <li className="list-chip__item" onClick={handleToggleSubFilter}>
-      <Chip name={filter.title} mr="8px" mb="10px" openSubFilter hasIcon />
-      <ul className="sub-filter" style={{ display: openSubFilter ? "block" : "none" }}>
+      {/* <ul className="sub-filter" style={{ display: openSubFilter ? "block" : "none" }}>
         {filter.categories.map((subFilter, index) => (
           <li key={index} className="sub-filter__item">
             {subFilter}
           </li>
         ))}
-      </ul>
+      </ul> */}
+      <div className="chip-wrap">
+        <div className="parent-chip">
+          <Chip name={filter.title} openSubFilter hasIcon />
+        </div>
+        <ul className="sub-filter">
+          {filter.categories.map((subFilter, index) => (
+            <li key={index} className="sub-filter__item">
+              {subFilter}
+            </li>
+          ))}
+        </ul>
+      </div>
     </li>
   )
 }

@@ -1,5 +1,6 @@
 import Chip from '@components/Elements/Chip';
 import FilterProducts from '@components/Filter/FilterProducts';
+import Pagination from '@components/Pagination';
 import ProductList from '@components/ProductList';
 import { StyledSortProducts } from '@components/ProductList/ProductList';
 import RelatedSearch from '@components/RelatedSearch';
@@ -36,6 +37,7 @@ const SearchProducts = () => {
             </div>
           </StyledSortProducts>
         </ProductList>
+        <Pagination />
       </Container>
     </Page>
   )

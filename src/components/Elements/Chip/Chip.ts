@@ -9,6 +9,7 @@ export const StyledChip = styled.div`
   border: 1px solid ${colors.border};
   border-radius: 5px;
   position: relative;
+  border-bottom: ${props => props.theme.borderBottom ?? `1px solid ${colors.border}`};
 
   &:hover {
     background-color: ${colors.whitesmoke};
