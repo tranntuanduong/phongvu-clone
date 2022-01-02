@@ -14,6 +14,7 @@ function PageLayout(props: PageProps) {
 
   return (
     <UserContextProvider>
+      <div>vi tri quang cao...</div>
       <TopContact />
       <Header />
       {children}

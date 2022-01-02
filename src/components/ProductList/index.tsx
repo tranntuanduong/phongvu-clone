@@ -1,15 +1,17 @@
 import ProductCard from "@components/Card/ProductCard"
 import Section from "@components/Elements/Section"
-import { productList } from "dummydata"
 import { Fragment, ReactNode } from "react"
-import { StyledProductList, StyledTitle, StyledTitleSection } from "./ProductList"
+import { Product } from "types"
+import { StyledProductList, StyledTitleSection } from "./ProductList"
 
 interface Props {
-  children?: ReactNode
+  children?: ReactNode;
+  productList: Product[]
 }
 
+
 const ProductList = (props: Props) => {
-  const { children } = props
+  const { children, productList } = props
   return (
     <Section>
       <Fragment>

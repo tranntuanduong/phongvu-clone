@@ -1,22 +1,39 @@
+import BreadCrumb from '@components/BreadCrumb';
 import Chip from '@components/Elements/Chip';
 import FilterProducts from '@components/Filter/FilterProducts';
 import Pagination from '@components/Pagination';
 import ProductList from '@components/ProductList';
 import { StyledSortProducts } from '@components/ProductList/ProductList';
 import RelatedSearch from '@components/RelatedSearch';
+import { productList } from 'dummydata';
 import Container from 'layouts/container';
 import Page from 'layouts/page';
+import { GetServerSideProps } from 'next';
+import { useRouter } from 'next/router';
 import { GoDash } from 'react-icons/go';
+import { Product } from 'types';
 
 
-const SearchProducts = () => {
+interface Props {
+  productList: Product[]
+}
+
+
+
+const SearchProducts = (props: Props) => {
+  const { productList } = props
+
+  const { query } = useRouter();
+
+  console.log("query", query);
 
   return (
     <Page>
       <Container mt="20px" >
+        <BreadCrumb breadCrumbs={[]} current="Tìm kiếm" />
         <RelatedSearch />
         <FilterProducts />
-        <ProductList>
+        <ProductList productList={productList}>
           <StyledSortProducts>
             <div className="sort-title">
               Sắp xếp theo
@@ -44,3 +61,12 @@ const SearchProducts = () => {
 }
 
 export default SearchProducts;
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const data: Product[] = productList;
+  return {
+    props: {
+      productList: data,
+    },
+  }
+}

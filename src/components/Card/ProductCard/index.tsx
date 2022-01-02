@@ -28,7 +28,7 @@ const ProductCard = (props: Props) => {
 
   return (
     <StyledProductCard>
-      <Link href="#product">
+      <Link href="/card-man-hinh-vga-msi-rtx-3080-ti-ventus-3x-12g-oc--s210601911?sku=210601911">
         <a className="link">
           <div
             className="thumb"

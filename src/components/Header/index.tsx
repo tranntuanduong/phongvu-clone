@@ -26,6 +26,7 @@ import {
 } from './Header';
 import LogoMenu from './LogoMenu';
 import { useRouter } from 'next/router'
+import useMoutned from 'hooks/useMouted';
 
 function Header() {
   const searchInput = useRef(null);
@@ -35,6 +36,7 @@ function Header() {
   const [openNotify, setOpenNotify] = useState(false);
   const [openCard, setOpenCard] = useState(false);
   const { handleClosePortfolioIndustry } = useContext(UserContext);
+  const isMounted = useMoutned();
   const router = useRouter()
 
   const handleSearchFieldClick = () => {
@@ -78,6 +80,8 @@ function Header() {
 
 
   useEffect(() => {
+    if (isMounted) return;
+
     const handleScrollY = (e: any) => {
       if (e?.currentTarget) {
         if (e.currentTarget.scrollY >= 46) {
@@ -88,12 +92,12 @@ function Header() {
         }
       }
     };
-
     window.addEventListener('scroll', (e: Event) => handleScrollY(e));
     return () => {
       window.removeEventListener('scroll', (e: Event) => handleScrollY(e));
+
     };
-  }, [handleClosePortfolioIndustry]);
+  }, [handleClosePortfolioIndustry, isMounted]);
 
   const handleSearch = (query: string) => () => {
     router.push(`/search?query=${query}`)
