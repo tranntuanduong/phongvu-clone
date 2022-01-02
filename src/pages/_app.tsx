@@ -1,10 +1,9 @@
-import Loading from '@components/Loading';
 import type { AppProps } from 'next/app';
 import { Router } from 'next/router';
-import { Fragment, useEffect, useState } from 'react';
-import '../styles/main.css';
-import '../styles/Nprogress.css'
 import NProgress from 'nprogress';
+import { useEffect } from 'react';
+import '../styles/main.css';
+import '../styles/Nprogress.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -15,18 +14,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     showSpinner: false,
   });
 
-  // const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const start = () => {
       NProgress.start();
-      // console.log("start");
-      // setLoading(true);
     };
     const end = () => {
       NProgress.done();
-      // console.log("findished");
-      // setLoading(false);
     };
 
     Router.events.on("routeChangeStart", start);
@@ -42,9 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 
   return (
-    <Fragment>
-      <Component {...pageProps} />
-    </Fragment>
+    <Component {...pageProps} />
   );
 }
 

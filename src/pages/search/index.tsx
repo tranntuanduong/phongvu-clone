@@ -18,8 +18,6 @@ interface Props {
   productList: Product[]
 }
 
-
-
 const SearchProducts = (props: Props) => {
   const { productList } = props
 

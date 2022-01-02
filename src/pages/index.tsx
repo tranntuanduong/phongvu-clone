@@ -13,13 +13,12 @@ import {
   shortBanner1,
   shortBanner2,
   shortBanner3,
-  shortBanner4,
+  shortBanner4
 } from 'dummydata';
 import Container from 'layouts/container';
 import Page from 'layouts/page';
 import type { GetServerSideProps, NextPage } from 'next';
 import dynamic from 'next/dynamic';
-import { Suspense } from 'react';
 import { Product } from 'types';
 
 const DynamicLazyGeneralBanner = dynamic(() => import('@components/Banner/GeneralBanner'));
@@ -35,12 +34,12 @@ const DynamicLazyPagination = dynamic(() => import('@components/Pagination'));
 const DynamicLazyProductList = dynamic(() => import('@components/ProductList'));
 
 interface Props {
-  productList: Product[];
+  productList: Product[]
 }
 
 
-const Home: NextPage<Props> = (props) => {
-  const { productList } = props;
+const Home: NextPage<Props> = () => {
+  // const { productList } = props;
   return (
     <Page>
       <DynamicLazyMainSlider />
@@ -79,11 +78,11 @@ const Home: NextPage<Props> = (props) => {
 
 export default Home;
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const data: Product[] = productList;
-  return {
-    props: {
-      productList: data,
-    },
-  }
-}
+// export const getServerSideProps: GetServerSideProps = async (context) => {
+//   const data: Product[] = productList;
+//   return {
+//     props: {
+//       productList: data,
+//     },
+//   }
+// }
