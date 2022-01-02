@@ -1,13 +1,24 @@
-// import TopContact from '@components/Contact/TopContact';
-import Shadow from '@components/Elements/Shadow';
-import Footer from '@components/Footer';
-import Header from '@components/Header';
 import UserContextProvider from 'contexts/UserContext';
 import { ReactNode } from 'react';
 import dynamic from 'next/dynamic'
 
 const DynamicTopContactWithNoSSR = dynamic(
   () => import('@components/Contact/TopContact'),
+  { ssr: false }
+)
+
+const DynamicHeaderWithNoSSR = dynamic(
+  () => import('@components/Header'),
+  { ssr: false }
+)
+
+const DynamicFooterWithNoSSR = dynamic(
+  () => import('@components/Footer'),
+  { ssr: false }
+)
+
+const DynamicShadowWithNoSSR = dynamic(
+  () => import('@components/Elements/Shadow'),
   { ssr: false }
 )
 
@@ -22,10 +33,10 @@ function PageLayout(props: PageProps) {
     <UserContextProvider>
       <div>vi tri quang cao...</div>
       <DynamicTopContactWithNoSSR />
-      <Header />
+      <DynamicHeaderWithNoSSR />
       {children}
-      <Footer />
-      <Shadow />
+      <DynamicFooterWithNoSSR />
+      <DynamicShadowWithNoSSR />
     </UserContextProvider>
   );
 }

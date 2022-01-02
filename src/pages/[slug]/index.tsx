@@ -1,6 +1,9 @@
-import BreadCrumb from "@components/BreadCrumb";
 import Container from "layouts/container";
 import Page from 'layouts/page';
+import dynamic from "next/dynamic";
+
+// component dung du lieu tu get sever side moi can dynamic
+const DynamicBreadCrumbWithNoSSR = dynamic(() => import('@components/BreadCrumb'));
 
 const breadCrumbs = [
   {
@@ -13,7 +16,7 @@ const ProductDetails = () => {
   return (
     <Page>
       <Container mt="20px" >
-        <BreadCrumb breadCrumbs={breadCrumbs} current="GTX 3080" />
+        <DynamicBreadCrumbWithNoSSR breadCrumbs={breadCrumbs} current="GTX 3080" />
       </Container>
     </Page>
   )

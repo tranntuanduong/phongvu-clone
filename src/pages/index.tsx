@@ -1,11 +1,5 @@
-// import GeneralBanner from '@components/Banner/GeneralBanner';
-// import PromoteBanner from '@components/Banner/PromoteBanner';
-// import ShortBanner from '@components/Banner/ShortBanner';
 import Section from '@components/Elements/Section';
 import { StyledTitle } from '@components/ProductList/ProductList';
-// import MainSlider from '@components/MainSlider';
-// import Pagination from '@components/Pagination';
-// import ProductList from '@components/ProductList';
 import {
   generalBanner1,
   generalBanner2,
@@ -21,56 +15,50 @@ import type { GetServerSideProps, NextPage } from 'next';
 import dynamic from 'next/dynamic';
 import { Product } from 'types';
 
-const DynamicLazyGeneralBanner = dynamic(() => import('@components/Banner/GeneralBanner'));
-
-const DynamicLazyPromoteBanner = dynamic(() => import('@components/Banner/PromoteBanner'));
-
-const DynamicLazyShortBanner = dynamic(() => import('@components/Banner/ShortBanner'));
-
-const DynamicLazyMainSlider = dynamic(() => import('@components/MainSlider'));
-
-const DynamicLazyPagination = dynamic(() => import('@components/Pagination'));
-
-const DynamicLazyProductList = dynamic(() => import('@components/ProductList'));
+const DynamicGeneralBannerWithNoSSR = dynamic(() => import('@components/Banner/GeneralBanner'));
+const DynamicPromoteBannerWithNoSSR = dynamic(() => import('@components/Banner/PromoteBanner'));
+const DynamicShortBannerWithNoSSR = dynamic(() => import('@components/Banner/ShortBanner'));
+const DynamicMainSliderWithNoSSR = dynamic(() => import('@components/MainSlider'));
+const DynamicPaginationWithNoSSR = dynamic(() => import('@components/Pagination'));
+const DynamicProductListWithNoSSR = dynamic(() => import('@components/ProductList'));
 
 interface Props {
   productList: Product[]
 }
 
-
 const Home: NextPage<Props> = () => {
   // const { productList } = props;
   return (
     <Page>
-      <DynamicLazyMainSlider />
+      <DynamicMainSliderWithNoSSR />
       <Container>
         <Section>
-          <DynamicLazyPromoteBanner />
+          <DynamicPromoteBannerWithNoSSR />
         </Section>
         <Section>
-          <DynamicLazyShortBanner images={shortBanner1} />
+          <DynamicShortBannerWithNoSSR images={shortBanner1} />
         </Section>
         <Section>
-          <DynamicLazyShortBanner images={shortBanner2} title="Thương hiệu nổi bật" />
+          <DynamicShortBannerWithNoSSR images={shortBanner2} title="Thương hiệu nổi bật" />
         </Section>
         <Section>
-          <DynamicLazyGeneralBanner generalBanners={generalBanner1} />
+          <DynamicGeneralBannerWithNoSSR generalBanners={generalBanner1} />
         </Section>
         <Section>
-          <DynamicLazyShortBanner images={shortBanner3} />
+          <DynamicShortBannerWithNoSSR images={shortBanner3} />
         </Section>
         <Section>
-          <DynamicLazyGeneralBanner generalBanners={generalBanner2} />
+          <DynamicGeneralBannerWithNoSSR generalBanners={generalBanner2} />
         </Section>
         <Section>
-          <DynamicLazyShortBanner images={shortBanner4} />
+          <DynamicShortBannerWithNoSSR images={shortBanner4} />
         </Section>
-        <DynamicLazyProductList productList={productList} >
+        <DynamicProductListWithNoSSR productList={productList} >
           <StyledTitle>
             Dành cho bạn
           </StyledTitle>
-        </DynamicLazyProductList>
-        <DynamicLazyPagination />
+        </DynamicProductListWithNoSSR>
+        <DynamicPaginationWithNoSSR />
       </Container>
     </Page>
   );
