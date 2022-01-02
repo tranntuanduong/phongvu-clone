@@ -3,7 +3,9 @@ import Page from 'layouts/page';
 import dynamic from "next/dynamic";
 
 // component dung du lieu tu get sever side moi can dynamic
-const DynamicBreadCrumbWithNoSSR = dynamic(() => import('@components/BreadCrumb'));
+const DynamicBreadCrumbWithNoSSR = dynamic(() => import('@components/BreadCrumb'),
+  { ssr: false }
+);
 
 const breadCrumbs = [
   {

@@ -7,12 +7,24 @@ import { useRouter } from 'next/router';
 import { Product } from 'types';
 
 
-const DynamicBreadCrumbWithNoSSR = dynamic(() => import('@components/BreadCrumb'));
-const DynamicRelatedSearchWithNoSSR = dynamic(() => import('@components/RelatedSearch'));
-const DynamicProductListWithNoSSR = dynamic(() => import('@components/ProductList'));
-const DynamicSortProductsWithNoSSR = dynamic(() => import('@components/Sort/SortProducts'));
-const DynamicPaginationWithNoSSR = dynamic(() => import('@components/Pagination'));
-const DynamicFilterProductsWithNoSSR = dynamic(() => import('@components/Filter/FilterProducts'));
+const DynamicBreadCrumbWithNoSSR = dynamic(() => import('@components/BreadCrumb'),
+  { ssr: false }
+);
+const DynamicRelatedSearchWithNoSSR = dynamic(() => import('@components/RelatedSearch'),
+  { ssr: false }
+);
+const DynamicProductListWithNoSSR = dynamic(() => import('@components/ProductList'),
+  { ssr: false }
+);
+const DynamicSortProductsWithNoSSR = dynamic(() => import('@components/Sort/SortProducts'),
+  { ssr: false }
+);
+const DynamicPaginationWithNoSSR = dynamic(() => import('@components/Pagination'),
+  { ssr: false }
+);
+const DynamicFilterProductsWithNoSSR = dynamic(() => import('@components/Filter/FilterProducts'),
+  { ssr: false }
+);
 
 
 interface Props {

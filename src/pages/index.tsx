@@ -11,16 +11,28 @@ import {
 } from 'dummydata';
 import Container from 'layouts/container';
 import Page from 'layouts/page';
-import type { GetServerSideProps, NextPage } from 'next';
+import type { NextPage } from 'next';
 import dynamic from 'next/dynamic';
 import { Product } from 'types';
 
-const DynamicGeneralBannerWithNoSSR = dynamic(() => import('@components/Banner/GeneralBanner'));
-const DynamicPromoteBannerWithNoSSR = dynamic(() => import('@components/Banner/PromoteBanner'));
-const DynamicShortBannerWithNoSSR = dynamic(() => import('@components/Banner/ShortBanner'));
-const DynamicMainSliderWithNoSSR = dynamic(() => import('@components/MainSlider'));
-const DynamicPaginationWithNoSSR = dynamic(() => import('@components/Pagination'));
-const DynamicProductListWithNoSSR = dynamic(() => import('@components/ProductList'));
+const DynamicGeneralBannerWithNoSSR = dynamic(() => import('@components/Banner/GeneralBanner'),
+  { ssr: false }
+);
+const DynamicPromoteBannerWithNoSSR = dynamic(() => import('@components/Banner/PromoteBanner'),
+  { ssr: false }
+);
+const DynamicShortBannerWithNoSSR = dynamic(() => import('@components/Banner/ShortBanner'),
+  { ssr: false }
+);
+const DynamicMainSliderWithNoSSR = dynamic(() => import('@components/MainSlider'),
+  { ssr: false }
+);
+const DynamicPaginationWithNoSSR = dynamic(() => import('@components/Pagination'),
+  { ssr: false }
+);
+const DynamicProductListWithNoSSR = dynamic(() => import('@components/ProductList'),
+  { ssr: false }
+);
 
 interface Props {
   productList: Product[]
