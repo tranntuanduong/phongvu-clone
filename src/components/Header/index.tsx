@@ -1,8 +1,10 @@
 import Button from '@components/Elements/Button';
 import { UserContext } from 'contexts/UserContext';
+import useMoutned from 'hooks/useMouted';
 import Container from 'layouts/container';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useContext, useEffect, useRef, useState } from 'react';
 import {
   BsBell,
@@ -25,8 +27,6 @@ import {
   StyledUserActions
 } from './Header';
 import LogoMenu from './LogoMenu';
-import { useRouter } from 'next/router'
-import useMoutned from 'hooks/useMouted';
 
 function Header() {
   const searchInput = useRef(null);
