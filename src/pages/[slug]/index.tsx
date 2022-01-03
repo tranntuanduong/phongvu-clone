@@ -1,5 +1,6 @@
 import Section from "@components/Elements/Section";
 import ProductOverview from "@components/ProductDetails/Overview";
+import ProductPolicy from "@components/ProductDetails/Policy";
 import SEO from "@components/SEO";
 import Container from "layouts/container";
 import Grid from "layouts/Grid";
@@ -26,12 +27,12 @@ const ProductDetails = () => {
       <Container mt="20px" >
         <DynamicBreadCrumbWithNoSSR breadCrumbs={breadCrumbs} current="GTX 3080" />
         <Section>
-          <Grid container gap="10px">
+          <Grid container gap="16px">
             <Grid item sx={9}>
               <ProductOverview />
             </Grid>
             <Grid item sx={3}>
-              <ProductOverview />
+              <ProductPolicy />
             </Grid>
           </Grid>
         </Section>

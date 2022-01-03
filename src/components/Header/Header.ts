@@ -76,7 +76,7 @@ export const StyledHeader = styled.div`
 export const StyledLogoMenu = styled.div`
    display: flex:
     align-items: center;
-    transform: translateY(6px);
+    transform: translateY(10px);
 
     & .menu {
       display: flex;
