@@ -1,9 +1,10 @@
+import SEO from '@components/SEO';
 import { productList } from 'dummydata';
-import Container from 'layouts/container';
 import Page from 'layouts/page';
 import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
+import { Fragment } from 'react';
 import { Product } from 'types';
 
 
@@ -43,6 +44,7 @@ const SearchProducts = (props: Props) => {
 
   return (
     <Page>
+      <SEO title="Phong vũ clone" description="Bàn phím cơ keychorn" />
       <DynamicContainerWithNoSSR mt="20px" >
         <DynamicBreadCrumbWithNoSSR breadCrumbs={[]} current="Tìm kiếm" />
         <DynamicRelatedSearchWithNoSSR />

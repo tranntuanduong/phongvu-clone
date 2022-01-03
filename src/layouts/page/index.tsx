@@ -2,15 +2,16 @@ import UserContextProvider from 'contexts/UserContext';
 import { ReactNode } from 'react';
 import dynamic from 'next/dynamic'
 
+const DynamicHeaderWithNoSSR = dynamic(
+  () => import('@components/Header'),
+  { ssr: false }
+)
+
 const DynamicTopContactWithNoSSR = dynamic(
   () => import('@components/Contact/TopContact'),
   { ssr: false }
 )
 
-const DynamicHeaderWithNoSSR = dynamic(
-  () => import('@components/Header'),
-  { ssr: false }
-)
 
 const DynamicFooterWithNoSSR = dynamic(
   () => import('@components/Footer'),
@@ -24,16 +25,17 @@ const DynamicShadowWithNoSSR = dynamic(
 
 interface PageProps {
   children?: ReactNode;
+  home?: boolean
 }
 
 function PageLayout(props: PageProps) {
-  const { children } = props;
+  const { children, home } = props;
 
   return (
     <UserContextProvider>
       <div>vi tri quang cao...</div>
       <DynamicTopContactWithNoSSR />
-      <DynamicHeaderWithNoSSR />
+      <DynamicHeaderWithNoSSR home={home} />
       {children}
       <DynamicFooterWithNoSSR />
       <DynamicShadowWithNoSSR />

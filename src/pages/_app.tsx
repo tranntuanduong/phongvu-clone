@@ -4,6 +4,7 @@ import NProgress from 'nprogress';
 import { useEffect } from 'react';
 import '../styles/main.css';
 import '../styles/Nprogress.css';
+import Page from 'layouts/page';
 
 function MyApp({ Component, pageProps }: AppProps) {
 

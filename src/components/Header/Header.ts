@@ -1,6 +1,6 @@
-import styled from 'styled-components';
 import { colors } from '@theme/colors';
 import { fontSizes } from '@theme/fontSizes';
+import styled from 'styled-components';
 import { StyledBox } from 'styles';
 
 export const StyledHeader = styled.div`
@@ -12,51 +12,30 @@ export const StyledHeader = styled.div`
   z-index: 10;
 
   &.zoomout {
-    transform: translateY(-16px);
+    /* transform: translateY(-16px); */
+    height: 72px;
     transition: all 0.25s;
 
     & .search {
-      transform: translateY(8px);
+      transform: translateY(6px);
     }
 
     & .logo {
-      transform: translateY(8px);
+      transform: translateY(6px);
+    }
+
+    & .header-content {
+      padding: 0;
     }
   }
-
-  /* & .logo-menu {
-    display: flex:
-    align-items: center;
-    transform: translateY(10px);
-
-    &__menu {
-      display: flex;
-      align-items: center;
-      padding: 0 10px;
-      border-radius: 5px;
-      height: 30px;
-      border: 0.5px solid ${colors.logoMenuBorder};
-      margin-left: 20px;
-      cursor: pointer;
-    }
-
-    &__menu-icon {
-      margin-right: 4px;
-      font-size: 20px;
-      color: ${colors.textGrey};
-    }
-
-    &__menu-title {
-      font-size: ${fontSizes.body2};
-      color: ${colors.textGrey};
-    }
-  } */
 
   & .header-content {
     display: flex;
     align-items: center;
     padding: 14px 0;
+
   }
+
 
   & .search {
     margin-left: 16px;
@@ -97,7 +76,7 @@ export const StyledHeader = styled.div`
 export const StyledLogoMenu = styled.div`
    display: flex:
     align-items: center;
-    transform: translateY(10px);
+    transform: translateY(6px);
 
     & .menu {
       display: flex;
@@ -143,6 +122,15 @@ export const StyledSearchHisory = styled(StyledBox)`
   top: 40px;
   left: 0;
   right: 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -11px;
+    left: 0;
+    width: 100%;
+    height: 18px;
+  }
 
   & .history-title {
     display: flex;

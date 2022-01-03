@@ -1,6 +1,5 @@
 import Button from '@components/Elements/Button';
 import { UserContext } from 'contexts/UserContext';
-import useMoutned from 'hooks/useMouted';
 import Container from 'layouts/container';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -28,7 +27,13 @@ import {
 } from './Header';
 import LogoMenu from './LogoMenu';
 
-function Header() {
+interface Props {
+  home?: boolean
+}
+
+function Header(props: Props) {
+  const { home } = props;
+
   const searchInput = useRef(null);
   const [openHistorySearch, setOpenHistorySearch] = useState(false);
   const [openUserActions, setOpenUserActions] = useState(false);
@@ -36,7 +41,6 @@ function Header() {
   const [openNotify, setOpenNotify] = useState(false);
   const [openCard, setOpenCard] = useState(false);
   const { handleClosePortfolioIndustry } = useContext(UserContext);
-  const isMounted = useMoutned();
   const router = useRouter()
 
   const handleSearchFieldClick = () => {
@@ -80,9 +84,16 @@ function Header() {
 
 
   useEffect(() => {
-    if (isMounted) return;
+    const isHome = !!home;
+    if (!isHome) {
+      setZoomOutHeader(true);
+      return;
+    }
 
+    let isMounted = true;
     const handleScrollY = (e: any) => {
+      if (!isMounted) return;
+
       if (e?.currentTarget) {
         if (e.currentTarget.scrollY >= 46) {
           setZoomOutHeader(true);
@@ -94,10 +105,10 @@ function Header() {
     };
     window.addEventListener('scroll', (e: Event) => handleScrollY(e));
     return () => {
+      isMounted = false;
       window.removeEventListener('scroll', (e: Event) => handleScrollY(e));
-
     };
-  }, [handleClosePortfolioIndustry, isMounted]);
+  }, [handleClosePortfolioIndustry, home]);
 
   const handleSearch = (query: string) => () => {
     router.push(`/search?query=${query}`)

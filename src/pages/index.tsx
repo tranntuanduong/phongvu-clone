@@ -1,5 +1,6 @@
 import Section from '@components/Elements/Section';
 import { StyledTitle } from '@components/ProductList/ProductList';
+import SEO from '@components/SEO';
 import {
   generalBanner1,
   generalBanner2,
@@ -36,14 +37,18 @@ const DynamicContainerWithNoSSR = dynamic(() => import('layouts/container'),
   { ssr: false }
 );
 
+
 interface Props {
   productList: Product[]
 }
 
+
+
 const Home: NextPage<Props> = () => {
   // const { productList } = props;
   return (
-    <Page>
+    <Page home>
+      <SEO title="Phong vũ clone" description="web thương mại điện tử chuyên đồ điện tử" />
       <DynamicMainSliderWithNoSSR />
       <DynamicContainerWithNoSSR>
         <Section>
