@@ -16,7 +16,7 @@ const SEO = (props: SEOProps) => {
       <meta name="description" content={description} />
       <meta
         property="og:image"
-        content="/access/prroducts/card/2.jpg"
+        content="/access/products/card/2.jpg"
         data-svelte="svelte-1u4aq0n"
       />
     </Head>
