@@ -13,12 +13,10 @@ const SEO = (props: SEOProps) => {
       <title>{title}</title>
       <link rel="shortcut icon" href="/access/logo/short-logo.svg" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      <meta name="description" content={description} />
-      <meta
-        property="og:image"
-        content="/access/products/card/2.jpg"
-        data-svelte="svelte-1u4aq0n"
-      />
+      <meta property="og:description" content={description} />
+      <meta property="og:title" content={title} />
+      <meta property="og:image" content="/access/products/giadung/giadung1.jpg" />
+      <meta property="og:url" content="https://phongvu-clone.netlify.app/" />
     </Head>
   );
 };
