@@ -1,30 +1,33 @@
-import Section from "@components/Elements/Section";
-import ProductOverview from "@components/ProductDetails/Overview";
-import ProductPolicy from "@components/ProductDetails/Policy";
-import SEO from "@components/SEO";
-import Container from "layouts/container";
-import Grid from "layouts/Grid";
+import Section from '@components/Elements/Section';
+import ProductOverview from '@components/ProductDetails/Overview';
+import ProductPolicy from '@components/ProductDetails/Policy';
+import SEO from '@components/SEO';
+import Container from 'layouts/container';
+import Grid from 'layouts/Grid';
 import Page from 'layouts/page';
-import dynamic from "next/dynamic";
-import { Fragment } from "react";
+import dynamic from 'next/dynamic';
+import { Fragment } from 'react';
 
 // component dung du lieu tu get sever side moi can dynamic
-const DynamicBreadCrumbWithNoSSR = dynamic(() => import('@components/BreadCrumb'),
-  { ssr: false }
-);
+const DynamicBreadCrumbWithNoSSR = dynamic(() => import('@components/BreadCrumb'), { ssr: false });
 
 const breadCrumbs = [
   {
-    name: "Card màn hình",
-    link: "query=card man hinh"
-  }
-]
+    name: 'Card màn hình',
+    link: 'query=card man hinh',
+  },
+];
+
+// card-man-hinh-vga-msi-rtx-3080-ti-ventus
 
 const ProductDetails = () => {
   return (
     <Page>
-      <SEO title="Phong vũ clone" description="card-man-hinh-vga-msi-rtx-3080-ti-ventus" />
-      <Container mt="20px" >
+      <SEO
+        title="Phong vũ clone | details"
+        description="Card màn hình VGA MSI RTX 3080 Ti ventus"
+      />
+      <Container mt="20px">
         <DynamicBreadCrumbWithNoSSR breadCrumbs={breadCrumbs} current="GTX 3080" />
         <Section>
           <Grid container gap="16px">
@@ -38,7 +41,7 @@ const ProductDetails = () => {
         </Section>
       </Container>
     </Page>
-  )
-}
+  );
+};
 
 export default ProductDetails;

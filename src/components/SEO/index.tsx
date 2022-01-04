@@ -16,7 +16,7 @@ const SEO = (props: SEOProps) => {
       <meta name="description" content={description} />
       <meta
         property="og:image"
-        content="https://res.cloudinary.com/level-up-tutorials/image/upload/v1628268484/social-cards/default.png"
+        content="/access/prroducts/card/2.jpg"
         data-svelte="svelte-1u4aq0n"
       />
     </Head>

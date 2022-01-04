@@ -8,47 +8,38 @@ import {
   shortBanner1,
   shortBanner2,
   shortBanner3,
-  shortBanner4
+  shortBanner4,
 } from 'dummydata';
 import Page from 'layouts/page';
 import type { NextPage } from 'next';
 import dynamic from 'next/dynamic';
 import { Product } from 'types';
 
-const DynamicGeneralBannerWithNoSSR = dynamic(() => import('@components/Banner/GeneralBanner'),
-  { ssr: false }
-);
-const DynamicPromoteBannerWithNoSSR = dynamic(() => import('@components/Banner/PromoteBanner'),
-  { ssr: false }
-);
-const DynamicShortBannerWithNoSSR = dynamic(() => import('@components/Banner/ShortBanner'),
-  { ssr: false }
-);
-const DynamicMainSliderWithNoSSR = dynamic(() => import('@components/MainSlider'),
-  { ssr: false }
-);
-const DynamicPaginationWithNoSSR = dynamic(() => import('@components/Pagination'),
-  { ssr: false }
-);
-const DynamicProductListWithNoSSR = dynamic(() => import('@components/ProductList'),
-  { ssr: false }
-);
-const DynamicContainerWithNoSSR = dynamic(() => import('layouts/container'),
-  { ssr: false }
-);
-
+const DynamicGeneralBannerWithNoSSR = dynamic(() => import('@components/Banner/GeneralBanner'), {
+  ssr: false,
+});
+const DynamicPromoteBannerWithNoSSR = dynamic(() => import('@components/Banner/PromoteBanner'), {
+  ssr: false,
+});
+const DynamicShortBannerWithNoSSR = dynamic(() => import('@components/Banner/ShortBanner'), {
+  ssr: false,
+});
+const DynamicMainSliderWithNoSSR = dynamic(() => import('@components/MainSlider'), { ssr: false });
+const DynamicPaginationWithNoSSR = dynamic(() => import('@components/Pagination'), { ssr: false });
+const DynamicProductListWithNoSSR = dynamic(() => import('@components/ProductList'), {
+  ssr: false,
+});
+const DynamicContainerWithNoSSR = dynamic(() => import('layouts/container'), { ssr: false });
 
 interface Props {
-  productList: Product[]
+  productList: Product[];
 }
-
-
 
 const Home: NextPage<Props> = () => {
   // const { productList } = props;
   return (
     <Page home>
-      <SEO title="Phong vũ clone" description="web thương mại điện tử chuyên đồ điện tử" />
+      <SEO title="Phong vũ clone| Trang chủ" description="Đây là desc của trang chủ" />
       <DynamicMainSliderWithNoSSR />
       <DynamicContainerWithNoSSR>
         <Section>
@@ -72,10 +63,8 @@ const Home: NextPage<Props> = () => {
         <Section>
           <DynamicShortBannerWithNoSSR images={shortBanner4} />
         </Section>
-        <DynamicProductListWithNoSSR productList={productList} >
-          <StyledTitle>
-            Dành cho bạn
-          </StyledTitle>
+        <DynamicProductListWithNoSSR productList={productList}>
+          <StyledTitle>Dành cho bạn</StyledTitle>
         </DynamicProductListWithNoSSR>
         <DynamicPaginationWithNoSSR />
       </DynamicContainerWithNoSSR>
