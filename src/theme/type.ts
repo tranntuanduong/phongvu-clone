@@ -11,6 +11,7 @@ export interface Colors {
   quantityProduct: string;
   footerBackground: string;
   logoMenuBorder: string;
+  greenColor: string;
 }
 
 export interface FontSizes {

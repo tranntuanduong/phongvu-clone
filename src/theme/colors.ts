@@ -13,4 +13,5 @@ export const colors: Colors = {
   quantityProduct: '#eca56d',
   footerBackground: '#e9edf2',
   logoMenuBorder: '#82869e',
+  greenColor: '#53c305',
 };

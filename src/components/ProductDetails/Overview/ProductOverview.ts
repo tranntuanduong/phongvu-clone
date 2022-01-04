@@ -1,6 +1,6 @@
-import { colors } from "@theme/colors";
-import { fontSizes } from "@theme/fontSizes";
-import styled from "styled-components";
+import { colors } from '@theme/colors';
+import { fontSizes } from '@theme/fontSizes';
+import styled from 'styled-components';
 
 export const StyledProductOverview = styled.div`
   padding: 24px;
@@ -14,23 +14,23 @@ export const StyledProductOverview = styled.div`
     border-bottom: 1px dashed ${colors.border};
     margin: 20px 0;
   }
-`
+`;
 
 export const StyledImageConllection = styled.div`
   width: 100%;
   aspect-ratio: 1;
- 
+
   & .main {
     background-size: contain;
     background-repeat: no-repeat;
     height: 100%;
   }
 
-  & .list { 
+  & .list {
     display: flex;
     width: 100%;
 
-    & .item { 
+    & .item {
       background-size: contain;
       background-repeat: no-repeat;
       width: 20%;
@@ -46,7 +46,7 @@ export const StyledImageConllection = styled.div`
       border-radius: 5px;
     }
   }
-  
+
   & .sub-info {
     margin-top: 40px;
     font-size: ${fontSizes.body2};
@@ -57,12 +57,9 @@ export const StyledImageConllection = styled.div`
       margin-top: 8px;
     }
   }
-
-  
-`
+`;
 
 export const StyledOverview = styled.div`
-  
   & .title {
     font-size: ${fontSizes.title};
     color: ${colors.text};
@@ -71,7 +68,7 @@ export const StyledOverview = styled.div`
 
     display: -webkit-box;
     -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;  
+    -webkit-box-orient: vertical;
     overflow: hidden;
   }
 
@@ -85,13 +82,12 @@ export const StyledOverview = styled.div`
     font-size: ${fontSizes.body2};
     position: relative;
 
-
     & span {
       color: ${colors.primaryColor};
     }
 
     &::after {
-      content: "|";
+      content: '|';
       margin: 0px 8px;
     }
   }
@@ -131,9 +127,8 @@ export const StyledOverview = styled.div`
         margin-left: 8px;
       }
     }
-
   }
-`
+`;
 
 export const StyledPromote = styled.div`
   & .title {
@@ -162,7 +157,6 @@ export const StyledPromote = styled.div`
         color: ${colors.hotline};
         font-weight: 600;
         margin: 0 4px;
-
       }
 
       & .link {
@@ -172,4 +166,21 @@ export const StyledPromote = styled.div`
       }
     }
   }
-`
+`;
+
+export const StyledAdvertise = styled.div`
+  margin-top: 16px;
+  & .banner-item {
+    margin-top: 10px;
+    display: block;
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 5px;
+      display: block;
+    }
+  }
+`;
