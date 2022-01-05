@@ -2,6 +2,7 @@ import { Colors } from './type';
 
 export const colors: Colors = {
   primaryColor: '#1435c3',
+  secondaryColor: '#0d6efd',
   primaryHover: '#122fab',
   whiteColor: '#fff',
   hotline: '#da4343',

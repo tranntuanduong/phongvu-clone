@@ -1,5 +1,6 @@
 export interface Colors {
   primaryColor: string;
+  secondaryColor: string;
   primaryHover: string;
   whiteColor: string;
   hotline: string;
@@ -17,6 +18,7 @@ export interface Colors {
 export interface FontSizes {
   title: string; //24px
   subtitle: string; //20px
+  subtitle2: string; //16px
   body1: string; //15px
   body2: string; //14px
   desc1: string; //13px

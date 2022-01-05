@@ -1,6 +1,8 @@
 import Section from '@components/Elements/Section';
+import ProductDescription from '@components/ProductDetails/Description';
 import ProductOverview from '@components/ProductDetails/Overview';
 import ProductPolicy from '@components/ProductDetails/Policy';
+import ProductSpecifications from '@components/ProductDetails/Specifications';
 import SEO from '@components/SEO';
 import Container from 'layouts/container';
 import Grid from 'layouts/Grid';
@@ -36,6 +38,16 @@ const ProductDetails = () => {
             </Grid>
             <Grid item sx={3}>
               <ProductPolicy />
+            </Grid>
+          </Grid>
+        </Section>
+        <Section>
+          <Grid container gap="16px">
+            <Grid item sx={8}>
+              <ProductDescription />
+            </Grid>
+            <Grid item sx={4}>
+              <ProductSpecifications />
             </Grid>
           </Grid>
         </Section>

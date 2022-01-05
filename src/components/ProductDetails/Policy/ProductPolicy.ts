@@ -44,13 +44,13 @@ export const StyledPolicyContent = styled.div`
     & .icon {
       font-size: 18px;
       margin-right: 10px;
-      color: ${colors.primaryColor};
+      color: ${colors.secondaryColor};
     }
   }
 
   & .link {
     font-size: ${fontSizes.body2};
-    color: ${colors.primaryColor};
+    color: ${colors.secondaryColor};
     margin-left: 28px;
   }
 `;
@@ -58,13 +58,14 @@ export const StyledPolicyContent = styled.div`
 export const StyledAdvertise = styled.div`
   margin-top: 20px;
   width: 100%;
-  max-height: 400px;
   height: max-content;
   position: relative;
 
   & .image {
     border-radius: 5px;
     width: 100%;
+    max-height: 400px;
+    display: block;
   }
 
   & .time-list {
@@ -86,6 +87,7 @@ export const StyledAdvertise = styled.div`
         font-weight: 600;
         justify-content: center;
         margin-bottom: 8px;
+        flex-wrap: wrap;
 
         & .block {
           display: flex;
@@ -108,3 +110,4 @@ export const StyledAdvertise = styled.div`
     }
   }
 `;
+
