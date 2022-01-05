@@ -5,7 +5,7 @@ import { fontSizes } from '@theme/fontSizes';
 export const StyledProductDesc = styled.div`
   padding: 16px;
   border-radius: 10px;
-  background-color: ${colors.whiteColor};
+  /* background-color: ${colors.whiteColor}; */
   line-height: 1.4;
   color: ${colors.text};
 

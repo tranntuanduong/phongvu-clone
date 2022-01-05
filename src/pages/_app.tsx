@@ -6,14 +6,12 @@ import '../styles/main.css';
 import '../styles/Nprogress.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
-
   NProgress.configure({
     minimum: 0.3,
     easing: 'ease',
     speed: 800,
     showSpinner: false,
   });
-
 
   useEffect(() => {
     const start = () => {
@@ -23,20 +21,19 @@ function MyApp({ Component, pageProps }: AppProps) {
       NProgress.done();
     };
 
-    Router.events.on("routeChangeStart", start);
-    Router.events.on("routeChangeComplete", end);
-    Router.events.on("routeChangeError", end);
+    Router.events.on('routeChangeStart', start);
+    Router.events.on('routeChangeComplete', end);
+    Router.events.on('routeChangeError', end);
 
     return () => {
-      Router.events.off("routeChangeStart", start);
-      Router.events.off("routeChangeComplete", end);
-      Router.events.off("routeChangeError", end);
+      Router.events.off('routeChangeStart', start);
+      Router.events.off('routeChangeComplete', end);
+      Router.events.off('routeChangeError', end);
     };
   }, []);
 
-
   return (
-    <Component {...pageProps} />
+      <Component {...pageProps} />
   );
 }
 

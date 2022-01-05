@@ -1,3 +1,4 @@
+import Paper from '@components/Elements/Paper';
 import Section from '@components/Elements/Section';
 import ProductDescription from '@components/ProductDetails/Description';
 import ProductOverview from '@components/ProductDetails/Overview';
@@ -42,14 +43,16 @@ const ProductDetails = () => {
           </Grid>
         </Section>
         <Section>
-          <Grid container gap="16px">
-            <Grid item sx={8}>
-              <ProductDescription />
+          <Paper borderRadius="10px">
+            <Grid container gap="16px">
+              <Grid item sx={8}>
+                <ProductDescription />
+              </Grid>
+              <Grid item sx={4}>
+                <ProductSpecifications />
+              </Grid>
             </Grid>
-            <Grid item sx={4}>
-              <ProductSpecifications />
-            </Grid>
-          </Grid>
+          </Paper>
         </Section>
       </Container>
     </Page>
