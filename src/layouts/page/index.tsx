@@ -1,7 +1,6 @@
 import UserContextProvider from 'contexts/UserContext';
-import { ReactNode } from 'react';
 import dynamic from 'next/dynamic';
-import GlobalStyle from 'styles/GlobalStyle';
+import { ReactNode } from 'react';
 
 const DynamicHeaderWithNoSSR = dynamic(() => import('@components/Header'), { ssr: false });
 
