@@ -19,13 +19,15 @@ const ProductSpecifications = () => {
     setOpenDetails(false);
   };
 
-  useOnClickOutside( ref, handleCloseDialogDetails );
+  useOnClickOutside(ref, handleCloseDialogDetails);
 
   return (
     <StyledSpecifications>
       {openDetails && <GlobalScrollStyle />}
       <div className="title">Thông tin chi tiết</div>
-      <ProductSpecificationsDetails />
+      <div className="short-list">
+        <ProductSpecificationsDetails />
+      </div>
       <div className="readmore" onClick={handleToggleDialogDetails}>
         Xem thêm nội dung
         <BiChevronDown className="icon" />
@@ -35,7 +37,9 @@ const ProductSpecifications = () => {
           <Paper borderRadius="10px">
             <div className="dialog" ref={ref}>
               <div className="header">Thông số kĩ thuật</div>
-              <ProductSpecificationsDetails />
+              <div className="dialog-content">
+                <ProductSpecificationsDetails />
+              </div>
             </div>
           </Paper>
         </Dialog>

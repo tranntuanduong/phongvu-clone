@@ -6,7 +6,9 @@ import PrevBtn from '@components/Elements/PrevBtn';
 import NextBtn from '@components/Elements/NextBtn';
 import { useEffect, useState } from 'react';
 import { promoteBanner } from 'dummydata';
-
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 interface Product {
   backgroundImage: string;
   backgroundPosition: string;
@@ -16,6 +18,40 @@ interface Product {
   originPrice: number;
 }
 
+interface CustomArrowProps {
+  onClick?: () => void;
+}
+
+const CustomPrevArrow = (props: CustomArrowProps) => {
+  const { onClick } = props;
+
+  return (
+    <div className="product-list-wrap__carousel-btn" onClick={onClick}>
+      <PrevBtn />
+    </div>
+  );
+};
+
+const CustomNextArrow = (props: CustomArrowProps) => {
+  const { onClick } = props;
+
+  return (
+    <div className="product-list-wrap__carousel-btn" onClick={onClick}>
+      <NextBtn />
+    </div>
+  );
+};
+
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  autoplay: true,
+  slidesToShow: 5,
+  slidesToScroll: 5,
+  nextArrow: <CustomPrevArrow />, //onClick pass from nextArrow custom, it automatic
+  prevArrow: <CustomNextArrow />,
+};
 
 const PromoteBanner = () => {
   const [translateX, setTranslateX] = useState(0);
@@ -109,19 +145,24 @@ const PromoteBanner = () => {
         </Link>
 
         <div className="product-list-wrap">
-          <div className="product-list-wrap__carousel-btn" onClick={prevPageHandler}>
+          {/* <div className="product-list-wrap__carousel-btn" onClick={prevPageHandler}>
             <PrevBtn />
-          </div>
+          </div> */}
           <StyledProductList theme={{ translateX: `${translateX}px` }}>
-            {promoteBanner.map((product, index) => (
-              <li key={index} className="product-item">
-                <ProductCard product={product} />
-              </li>
-            ))}
+            <Slider {...settings}>
+              {promoteBanner.map((product, index) => (
+                <li key={index} className="product-item">
+                  <div className="card">
+                    <ProductCard product={product} />
+                  </div>
+                </li>
+              ))}
+            </Slider>
           </StyledProductList>
-          <div className="product-list-wrap__carousel-btn" onClick={nextPageHandler}>
+
+          {/* <div className="product-list-wrap__carousel-btn" onClick={nextPageHandler}>
             <NextBtn />
-          </div>
+          </div> */}
         </div>
       </div>
     </StyledPromoteBanner>

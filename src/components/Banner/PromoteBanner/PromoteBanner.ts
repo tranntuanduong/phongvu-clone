@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { fontSizes } from '@theme/fontSizes';
 
 export const StyledPromoteBanner = styled.div`
-
   padding-top: 10px;
 
   & .link {
@@ -52,8 +51,9 @@ export const StyledPromoteBanner = styled.div`
 
   & .content {
     width: 100%;
-    height: 326px;
-    background-repeat: no-repeat;
+    /* height: 326px; */
+    height: 100%;
+    /* background-repeat: no-repeat; */
     background-size: cover;
     padding-bottom: 12px;
     display: flex;
@@ -67,9 +67,8 @@ export const StyledPromoteBanner = styled.div`
     & .promotion-time {
       color: ${colors.whiteColor};
       text-align: center;
-      margin: 0 33px ;
+      margin: 0 33px;
       padding-top: 40px;
-  
 
       &__title {
         font-size: ${fontSizes.body1};
@@ -77,7 +76,7 @@ export const StyledPromoteBanner = styled.div`
         margin-bottom: 14px;
 
         & span {
-          font-size: ${fontSizes.subtitle}
+          font-size: ${fontSizes.subtitle};
         }
       }
 
@@ -95,7 +94,6 @@ export const StyledPromoteBanner = styled.div`
         background-image: linear-gradient(rgb(74, 74, 74), rgb(35, 34, 34));
       }
     }
-
 
     & .view-all {
       position: absolute;
@@ -130,21 +128,25 @@ export const StyledPromoteBanner = styled.div`
       }
     }
   }
-`
+`;
 
 export const StyledProductList = styled.ul`
-  transform: translateX(${(props) => props.theme.translateX}); 
+  /* transform: translateX(${(props) => props.theme.translateX});
   transition: transform 0.3s;
   display: flex;
-  /* justify-content: space-evenly; */
   margin-top: 45px;
-  width: max-content;
-  & .product-item {
+  width: max-content; */
+  margin-top: 45px;
+  & .card {
+    padding: 16px;
     background-color: ${colors.whiteColor};
-    margin-right: 16px;
+    border-radius: 10px;
+  }
+
+  & .product-item {
+    box-sizing: border-box;
     border-radius: 10px;
     overflow: hidden;
-    width: 155px;
-    padding: 16px;
+    padding: 5px;
   }
-`
+`;

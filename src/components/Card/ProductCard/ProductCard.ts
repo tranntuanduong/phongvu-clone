@@ -1,9 +1,9 @@
-import { colors } from "@theme/colors";
-import { fontSizes } from "@theme/fontSizes";
-import styled from "styled-components";
+import { colors } from '@theme/colors';
+import { fontSizes } from '@theme/fontSizes';
+import styled from 'styled-components';
 
 export const StyledProductCard = styled.div`
-  background-color: "transparent";
+  background-color: 'transparent';
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -12,12 +12,16 @@ export const StyledProductCard = styled.div`
     text-decoration: none;
   }
 
+  & .thumb-wrap {
+    position: relative;
+  }
 
   & .thumb {
     background-size: contain;
     background-repeat: no-repeat;
-    position: relative;
     transition: transform 0.3s;
+    width: 100%;
+    aspect-ratio: 1;
 
     &:hover {
       transform: scale(1.05);
@@ -25,15 +29,21 @@ export const StyledProductCard = styled.div`
   }
 
   & .save-tag {
-      position: absolute;
-      top: 100px;
+    position: absolute;
+    bottom: 0;
 
-      background: linear-gradient(315deg, rgba(136,0,255,1) 6%, rgba(166,0,255,1) 33%, rgba(161,68,237,1) 64%, rgba(102,68,237,1) 96%);
-      width: fit-content;
-      padding: 6px 6px;
-      font-weight: bold;
-      border-radius: 5px;
-    }
+    background: linear-gradient(
+      315deg,
+      rgba(136, 0, 255, 1) 6%,
+      rgba(166, 0, 255, 1) 33%,
+      rgba(161, 68, 237, 1) 64%,
+      rgba(102, 68, 237, 1) 96%
+    );
+    width: fit-content;
+    padding: 6px 6px;
+    font-weight: bold;
+    border-radius: 5px;
+  }
 
   & .label {
     color: ${colors.quantityProduct};
@@ -43,10 +53,9 @@ export const StyledProductCard = styled.div`
 
   & .number {
     color: ${colors.whiteColor};
-    font-size: ${fontSizes.desc1}
+    font-size: ${fontSizes.desc1};
   }
 
- 
   & .title {
     font-size: ${fontSizes.desc1};
     line-height: 1.35;
@@ -82,7 +91,6 @@ export const StyledProductCard = styled.div`
     display: flex;
     margin: 8px 0;
     font-size: ${fontSizes.desc2};
-
   }
 
   & .origin-price {
@@ -100,4 +108,4 @@ export const StyledProductCard = styled.div`
     top: 0;
     right: 0;
   }
-`
+`;

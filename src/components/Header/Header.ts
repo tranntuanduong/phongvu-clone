@@ -2,11 +2,11 @@ import { colors } from '@theme/colors';
 import { fontSizes } from '@theme/fontSizes';
 import styled from 'styled-components';
 import { StyledBox } from 'styles';
+import { CustomScrollBar } from 'styles/CustomScrollBar';
 
 export const StyledHeader = styled.div`
   background-color: ${colors.whiteColor};
-  box-shadow: 0 0.5rem 1rem 0
-    rgb(0 0 0 / 10%);
+  box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 10%);
   position: sticky;
   top: 0px;
   z-index: 10;
@@ -33,9 +33,7 @@ export const StyledHeader = styled.div`
     display: flex;
     align-items: center;
     padding: 14px 0;
-
   }
-
 
   & .search {
     margin-left: 16px;
@@ -110,7 +108,7 @@ export const StyledLogoMenu = styled.div`
       top: 52px;
       left: 0;
     }
-`
+`;
 
 export const StyledSearchHisory = styled(StyledBox)`
   /* box-shadow: 0 0.5rem 1rem 0 rgb(0 0 0 / 10%);
@@ -378,8 +376,7 @@ export const StyledCard = styled(StyledBox)`
   }
 
   & .list {
-    border-bottom: 2px dashed
-      ${colors.border};
+    border-bottom: 2px dashed ${colors.border};
     max-height: 288px;
     overflow-y: scroll;
     &::-webkit-scrollbar {
@@ -392,12 +389,7 @@ export const StyledCard = styled(StyledBox)`
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: rgba(
-        109,
-        109,
-        109,
-        0.576
-      );
+      background-color: rgba(109, 109, 109, 0.576);
       border-radius: 8px;
     }
 
@@ -423,8 +415,7 @@ export const StyledCard = styled(StyledBox)`
       width: 78px;
       height: 78px;
       margin-right: 8px;
-      border: 0.5px solid
-        ${colors.border};
+      border: 0.5px solid ${colors.border};
       border-radius: 5px;
     }
 
