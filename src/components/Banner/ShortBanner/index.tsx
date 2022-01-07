@@ -1,52 +1,97 @@
-import { StringifyOptions } from "querystring";
-import { StyledBannerWrapper, StyledShortBanner } from "./ShortBanner";
-import Link from 'next/link'
-import NextBtn from "@components/Elements/NextBtn";
-import PrevBtn from "@components/Elements/PrevBtn";
+import CustomNextArrow from '@components/Elements/CustomArrowBtn/CustomNextArrow';
+import CustomPrevArrow from '@components/Elements/CustomArrowBtn/CustomPrevArrow';
+import Link from 'next/link';
+import { useMemo } from 'react';
+import Slider from 'react-slick';
+import { StyledBannerItem, StyledBannerWrap } from './ShortBanner';
 
 interface Image {
-  imageUrl: string,
-  link: string,
-  name?: string
+  imageUrl: string;
+  link: string;
+  name?: string;
 }
 
 interface Props {
-  images: Image[],
-  title?: string
+  images: Image[];
+  title?: string;
+  numberItem: number;
 }
 
-const ShortBanner = (props: Props) => {
-  const { title, images } = props
-  return (
-    <StyledBannerWrapper title={title}>
-      {title && (
-        <div className="banner-title">{title}</div>
-      )}
-      {images.length > 4 && (
-        <>
-          <NextBtn />
-          <PrevBtn />
-        </>
-      )}
-      <StyledShortBanner>
+// const settings = {
+//   infinite: true,
+//   speed: 500,
+//   autoplay: true,
+//   slidesToShow: 4,
+//   slidesToScroll: 1,
+//   prevArrow: <CustomPrevArrow />,
+//   nextArrow: <CustomNextArrow />,
+// };
 
-        {images.slice(0, 4).map((image, index) => (
-          <div key={index}>
+const ShortBanner = (props: Props) => {
+  const { title, images, numberItem } = props;
+
+  const settings = useMemo(() => {
+    return {
+      infinite: true,
+      speed: 500,
+      autoplay: false,
+      slidesToShow: numberItem,
+      slidesToScroll: numberItem,
+      prevArrow: <CustomPrevArrow />,
+      nextArrow: <CustomNextArrow />,
+    };
+  }, [numberItem]);
+
+  return (
+    // <StyledBannerWrapper title={title}>
+    //   {title && <div className="banner-title">{title}</div>}
+    //   {images.length > 4 && (
+    //     <>
+    //       <NextBtn />
+    //       <PrevBtn />
+    //     </>
+    //   )}
+    //   <StyledShortBanner>
+    //     {images.slice(0, 4).map((image, index) => (
+    //       <div key={index}>
+    //         <Link href={`#${index}`}>
+    //           <a className="banner-item">
+    //             <div className="banner-item__img-wrap">
+    //               <img
+    //                 src={`/access/banner-ngan-4/${image.imageUrl}`}
+    //                 alt=""
+    //                 className="banner-item__img"
+    //               />
+    //             </div>
+    //           </a>
+    //         </Link>
+    //         {image.name && <div className="banner-item__name">{image.name}</div>}
+    //       </div>
+    //     ))}
+    //   </StyledShortBanner>
+    // </StyledBannerWrapper>
+    <StyledBannerWrap title={title}>
+      {title && <div className="banner-title">{title}</div>}
+      <Slider {...settings}>
+        {images.map((image, index) => (
+          <StyledBannerItem key={index} className="pd">
             <Link href={`#${index}`}>
               <a className="banner-item">
                 <div className="banner-item__img-wrap">
-                  <img src={`/access/banner-ngan-4/${image.imageUrl}`} alt="" className="banner-item__img" />
+                  <img
+                    className="banner-img"
+                    src={`/access/banner-ngan-4/${image.imageUrl}`}
+                    alt=""
+                  />
                 </div>
               </a>
             </Link>
-            {image.name && (
-              <div className="banner-item__name">{image.name}</div>
-            )}
-          </div>
+            {image.name && <div className="banner-item__name">{image.name}</div>}
+          </StyledBannerItem>
         ))}
-      </StyledShortBanner>
-    </StyledBannerWrapper>
-  )
-}
+      </Slider>
+    </StyledBannerWrap>
+  );
+};
 
 export default ShortBanner;

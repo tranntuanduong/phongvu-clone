@@ -9,8 +9,6 @@ import NextBtn from '@components/Elements/NextBtn';
 import PrevBtn from '@components/Elements/PrevBtn';
 import { bannerBottomAdvertise, mainSliderImgs } from 'dummydata';
 
-
-
 const imageCollection = mainSliderImgs;
 
 function MainSlider() {
@@ -102,9 +100,8 @@ function MainSlider() {
           </StyledRightAdvertise>
         </div>
         <StyledBottomAdvertise>
-          <ShortBanner images={bannerBottomAdvertise} />
+          <ShortBanner images={bannerBottomAdvertise} numberItem={4} />
         </StyledBottomAdvertise>
-
       </Container>
     </StyledMainSlider>
   );
