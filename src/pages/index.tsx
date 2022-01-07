@@ -30,6 +30,9 @@ const DynamicProductListWithNoSSR = dynamic(() => import('@components/ProductLis
   ssr: false,
 });
 const DynamicContainerWithNoSSR = dynamic(() => import('layouts/container'), { ssr: false });
+const DynamicProductSliderWithNoSSR = dynamic(() => import('@components/ProductSlider'), {
+  ssr: false,
+});
 
 interface Props {
   productList: Product[];
@@ -62,6 +65,9 @@ const Home: NextPage<Props> = () => {
         </Section>
         <Section>
           <DynamicShortBannerWithNoSSR images={shortBanner4} />
+        </Section>
+        <Section>
+          <DynamicProductSliderWithNoSSR />
         </Section>
         <DynamicProductListWithNoSSR productList={productList}>
           <StyledTitle>Dành cho bạn</StyledTitle>

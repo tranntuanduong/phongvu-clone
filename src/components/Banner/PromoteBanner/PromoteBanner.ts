@@ -118,14 +118,7 @@ export const StyledPromoteBanner = styled.div`
       overflow: hidden;
       position: relative;
       transform: translateX(-14px);
-
-      &__carousel-btn {
-        opacity: 0;
-      }
-
-      &:hover .product-list-wrap__carousel-btn {
-        opacity: 1;
-      }
+     
     }
   }
 `;

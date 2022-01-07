@@ -9,6 +9,8 @@ import { promoteBanner } from 'dummydata';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import CustomPrevArrow from '@components/Elements/CustomArrowBtn/CustomPrevArrow';
+import CustomNextArrow from '@components/Elements/CustomArrowBtn/CustomNextArrow';
 interface Product {
   backgroundImage: string;
   backgroundPosition: string;
@@ -18,30 +20,6 @@ interface Product {
   originPrice: number;
 }
 
-interface CustomArrowProps {
-  onClick?: () => void;
-}
-
-const CustomPrevArrow = (props: CustomArrowProps) => {
-  const { onClick } = props;
-
-  return (
-    <div className="product-list-wrap__carousel-btn" onClick={onClick}>
-      <PrevBtn />
-    </div>
-  );
-};
-
-const CustomNextArrow = (props: CustomArrowProps) => {
-  const { onClick } = props;
-
-  return (
-    <div className="product-list-wrap__carousel-btn" onClick={onClick}>
-      <NextBtn />
-    </div>
-  );
-};
-
 const settings = {
   dots: true,
   infinite: true,
@@ -49,8 +27,8 @@ const settings = {
   autoplay: true,
   slidesToShow: 5,
   slidesToScroll: 5,
-  nextArrow: <CustomPrevArrow />, //onClick pass from nextArrow custom, it automatic
-  prevArrow: <CustomNextArrow />,
+  prevArrow: <CustomPrevArrow />, //onClick pass from nextArrow custom, it automatic
+  nextArrow: <CustomNextArrow />,
 };
 
 const PromoteBanner = () => {
