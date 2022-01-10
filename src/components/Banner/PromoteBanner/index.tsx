@@ -49,8 +49,8 @@ const settings = {
   autoplay: true,
   slidesToShow: 5,
   slidesToScroll: 5,
-  nextArrow: <CustomPrevArrow />, //onClick pass from nextArrow custom, it automatic
-  prevArrow: <CustomNextArrow />,
+  prevArrow: <CustomPrevArrow />, //onClick pass from nextArrow custom, it automatic
+  nextArrow: <CustomNextArrow />,
 };
 
 const PromoteBanner = () => {
