@@ -50,9 +50,41 @@ export const shortBanner1 = [
     imageUrl: 'banner-n9.jpg',
     link: '#',
   },
+  {
+    imageUrl: 'banner-n9.jpg',
+    link: '#',
+  },
+  {
+    imageUrl: 'banner-n9.jpg',
+    link: '#',
+  },
+  {
+    imageUrl: 'banner-n9.jpg',
+    link: '#',
+  },
 ];
 
 export const shortBanner2 = [
+  {
+    imageUrl: 'banner-n1.jpg',
+    link: '#',
+    name: 'MSI',
+  },
+  {
+    imageUrl: 'banner-n2.jpg',
+    link: '#',
+    name: 'Asus',
+  },
+  {
+    imageUrl: 'banner-n4.jpg',
+    link: '#',
+    name: 'Microsoft',
+  },
+  {
+    imageUrl: 'banner-n5.jpg',
+    link: '#',
+    name: 'HP',
+  },
   {
     imageUrl: 'banner-n1.jpg',
     link: '#',
@@ -83,6 +115,26 @@ export const shortBanner3 = [
   {
     imageUrl: 'banner-n10.jpg',
     link: '#',
+  },
+  {
+    imageUrl: 'banner-n1.jpg',
+    link: '#',
+    name: 'MSI',
+  },
+  {
+    imageUrl: 'banner-n2.jpg',
+    link: '#',
+    name: 'Asus',
+  },
+  {
+    imageUrl: 'banner-n4.jpg',
+    link: '#',
+    name: 'Microsoft',
+  },
+  {
+    imageUrl: 'banner-n5.jpg',
+    link: '#',
+    name: 'HP',
   },
 ];
 
@@ -228,6 +280,14 @@ export const shortBanner4 = [
   },
   {
     imageUrl: 'banner-n13.jpg',
+    link: '#',
+  },
+  {
+    imageUrl: 'banner-n14.jpg',
+    link: '#',
+  },
+  {
+    imageUrl: 'banner-n14.jpg',
     link: '#',
   },
   {

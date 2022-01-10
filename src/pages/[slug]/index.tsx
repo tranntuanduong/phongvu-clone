@@ -4,6 +4,7 @@ import ProductDescription from '@components/ProductDetails/Description';
 import ProductOverview from '@components/ProductDetails/Overview';
 import ProductPolicy from '@components/ProductDetails/Policy';
 import ProductSpecifications from '@components/ProductDetails/Specifications';
+import ProductSlider from '@components/ProductSlider';
 import SEO from '@components/SEO';
 import Container from 'layouts/container';
 import Grid from 'layouts/Grid';
@@ -13,6 +14,10 @@ import { Fragment } from 'react';
 
 // component dung du lieu tu get sever side moi can dynamic
 const DynamicBreadCrumbWithNoSSR = dynamic(() => import('@components/BreadCrumb'), { ssr: false });
+
+const DynamicProductSliderWithNoSSR = dynamic(() => import('@components/ProductSlider'), {
+  ssr: false,
+});
 
 const breadCrumbs = [
   {
@@ -53,6 +58,9 @@ const ProductDetails = () => {
               </Grid>
             </Grid>
           </Paper>
+        </Section>
+        <Section>
+          <DynamicProductSliderWithNoSSR />
         </Section>
       </Container>
     </Page>

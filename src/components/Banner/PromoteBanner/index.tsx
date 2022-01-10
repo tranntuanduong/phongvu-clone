@@ -9,6 +9,8 @@ import { promoteBanner } from 'dummydata';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import CustomPrevArrow from '@components/Elements/CustomArrowBtn/CustomPrevArrow';
+import CustomNextArrow from '@components/Elements/CustomArrowBtn/CustomNextArrow';
 interface Product {
   backgroundImage: string;
   backgroundPosition: string;
@@ -17,30 +19,6 @@ interface Product {
   promotePrice: number;
   originPrice: number;
 }
-
-interface CustomArrowProps {
-  onClick?: () => void;
-}
-
-const CustomPrevArrow = (props: CustomArrowProps) => {
-  const { onClick } = props;
-
-  return (
-    <div className="product-list-wrap__carousel-btn" onClick={onClick}>
-      <PrevBtn />
-    </div>
-  );
-};
-
-const CustomNextArrow = (props: CustomArrowProps) => {
-  const { onClick } = props;
-
-  return (
-    <div className="product-list-wrap__carousel-btn" onClick={onClick}>
-      <NextBtn />
-    </div>
-  );
-};
 
 const settings = {
   dots: true,
