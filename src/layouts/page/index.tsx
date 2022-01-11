@@ -1,6 +1,7 @@
 import UserContextProvider from 'contexts/UserContext';
 import dynamic from 'next/dynamic';
 import { ReactNode } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const DynamicHeaderWithNoSSR = dynamic(() => import('@components/Header'), { ssr: false });
 
@@ -19,9 +20,11 @@ interface PageProps {
 
 function PageLayout(props: PageProps) {
   const { children, home } = props;
+  const { t } = useTranslation();
 
   return (
     <UserContextProvider>
+      <div>{t('hello-i18n')}</div>
       <div>vi tri quang cao...</div>
       <DynamicTopContactWithNoSSR />
       <DynamicHeaderWithNoSSR home={home} />

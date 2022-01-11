@@ -2,8 +2,10 @@ import type { AppProps } from 'next/app';
 import { Router } from 'next/router';
 import NProgress from 'nprogress';
 import { useEffect } from 'react';
+import { I18nextProvider } from 'react-i18next';
 import '../styles/main.css';
 import '../styles/Nprogress.css';
+import i18nInstance from '@i18n/i18n';
 
 function MyApp({ Component, pageProps }: AppProps) {
   NProgress.configure({
@@ -33,7 +35,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
+    <I18nextProvider i18n={i18nInstance}>
       <Component {...pageProps} />
+    </I18nextProvider>
   );
 }
 
