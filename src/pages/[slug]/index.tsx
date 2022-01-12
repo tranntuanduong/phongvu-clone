@@ -34,7 +34,7 @@ const ProductDetails = () => {
   }, []);
 
   return (
-    <Page>
+    <>
       <SEO
         title="Phong vũ clone | details"
         description="Card màn hình VGA MSI RTX 3080 Ti ventus"
@@ -67,7 +67,7 @@ const ProductDetails = () => {
           <DynamicProductSliderWithNoSSR />
         </Section>
       </Container>
-    </Page>
+    </>
   );
 };
 

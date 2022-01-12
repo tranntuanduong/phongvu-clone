@@ -69,6 +69,14 @@ export const StyledBannerWrap = styled.div`
     color: ${colors.text};
     margin-bottom: 20px;
   }
+
+  & .banner-item ~ & .banner-item {
+    padding-right: 16px;
+  }
+
+  &:hover .carousel-btn {
+    display: block;
+  }
 `;
 
 export const StyledBannerItem = styled.div`

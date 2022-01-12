@@ -1,3 +1,22 @@
 {
-  "hello-i18n": "i18n-en"
+  "hello-i18n": "i18n-en",
+  "showroom-system": "Showrooms system",
+  "shopping-advice": "Shopping advice",
+  "en": "English",
+  "vn": "Vietnamese",
+  "customer-service": "Customer service",
+  "tech-news": "Tech news",
+  "build-configuration": "Build configuration",
+  "product-portfolio": "Product portfolio",
+  "search-placeholder": "Enter key to search",
+  "history-search": "History search",
+  "remove-history-search": "Remove history",
+  "account-infomation": "Account infomation",
+  "order-management": "Order management",
+  "address-book": "Address book",
+  "notification": "Notification",
+  "membership-points": "Membership points",
+  "news": "News",
+  "language": "Language",
+  "logout": "Logout"
 }

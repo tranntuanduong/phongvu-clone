@@ -17,16 +17,6 @@ interface Props {
   numberItem: number;
 }
 
-// const settings = {
-//   infinite: true,
-//   speed: 500,
-//   autoplay: true,
-//   slidesToShow: 4,
-//   slidesToScroll: 1,
-//   prevArrow: <CustomPrevArrow />,
-//   nextArrow: <CustomNextArrow />,
-// };
-
 const ShortBanner = (props: Props) => {
   const { title, images, numberItem } = props;
 
@@ -74,7 +64,7 @@ const ShortBanner = (props: Props) => {
       {title && <div className="banner-title">{title}</div>}
       <Slider {...settings}>
         {images.map((image, index) => (
-          <StyledBannerItem key={index} className="pd">
+          <StyledBannerItem key={index}>
             <Link href={`#${index}`}>
               <a className="banner-item">
                 <div className="banner-item__img-wrap">

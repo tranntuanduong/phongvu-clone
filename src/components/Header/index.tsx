@@ -1,10 +1,12 @@
 import Button from '@components/Elements/Button';
-import { UserContext } from 'contexts/UserContext';
+import i18nInstance from '@i18n/i18n';
+import { PageContext } from 'contexts/PageContext';
 import Container from 'layouts/container';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   BsBell,
   BsCalendar2Check,
@@ -15,24 +17,27 @@ import {
   BsPersonCircle,
   BsPiggyBank,
   BsSearch,
-  BsTags
+  BsTags,
 } from 'react-icons/bs';
+import { IoLanguage } from 'react-icons/io5';
 import {
   StyledCard,
   StyledHeader,
   StyledNavItem,
   StyledNotify,
   StyledSearchHisory,
-  StyledUserActions
+  StyledSubList,
+  StyledUserActions,
 } from './Header';
 import LogoMenu from './LogoMenu';
 
 interface Props {
-  home?: boolean
+  home?: boolean;
 }
 
 function Header(props: Props) {
   const { home } = props;
+  const { t } = useTranslation();
 
   const searchInput = useRef(null);
   const [openHistorySearch, setOpenHistorySearch] = useState(false);
@@ -40,8 +45,8 @@ function Header(props: Props) {
   const [zoomOutHeader, setZoomOutHeader] = useState(false);
   const [openNotify, setOpenNotify] = useState(false);
   const [openCard, setOpenCard] = useState(false);
-  const { handleClosePortfolioIndustry } = useContext(UserContext);
-  const router = useRouter()
+  const { handleClosePortfolioIndustry } = useContext(PageContext);
+  const router = useRouter();
 
   const handleSearchFieldClick = () => {
     setOpenHistorySearch(true);
@@ -82,7 +87,6 @@ function Header(props: Props) {
   // zoom out header
   // can fix typescript EventTarget
 
-
   useEffect(() => {
     const isHome = !!home;
     if (!isHome) {
@@ -111,8 +115,13 @@ function Header(props: Props) {
   }, [handleClosePortfolioIndustry, home]);
 
   const handleSearch = (query: string) => () => {
-    router.push(`/search?query=${query}`)
-  }
+    router.push(`/search?query=${query}`);
+  };
+
+  const handleChangeLanguage = (language: string) => () => {
+    i18nInstance.changeLanguage(language);
+    // setOpenUserActions(false);
+  };
 
   return (
     <StyledHeader className={zoomOutHeader ? 'zoomout' : ''}>
@@ -131,7 +140,7 @@ function Header(props: Props) {
           <div className="search" onMouseLeave={onMouseLeaveSearchHistoryHandler}>
             <input
               type="text"
-              placeholder="Nhập từ khóa cần tìm"
+              placeholder={t('search-placeholder')}
               onClick={handleSearchFieldClick}
               ref={searchInput}
             />
@@ -141,25 +150,25 @@ function Header(props: Props) {
             {openHistorySearch && (
               <StyledSearchHisory>
                 <div className="history-title">
-                  <div className="history-title__text">LỊCH SỬ TÌM KIẾM</div>
-                  <div className="history-title__action">Xóa lịch sử</div>
+                  <div className="history-title__text">{t('history-search')}</div>
+                  <div className="history-title__action">{t('remove-history-search')}</div>
                 </div>
                 <ul className="history-list">
-                  <li className="history-item" onClick={handleSearch("keychorn")}>
+                  <li className="history-item" onClick={handleSearch('keychorn')}>
                     <BsClock className="history-item__icon" />
                     <p>Keychorn</p>
                   </li>
-                  <li className="history-item" onClick={handleSearch("bàn phím")}>
+                  <li className="history-item" onClick={handleSearch('bàn phím')}>
                     <BsClock className="history-item__icon" />
                     <p>Bàn phím</p>
                   </li>
-                  <li className="history-item" onClick={handleSearch("màn hình")}>
+                  <li className="history-item" onClick={handleSearch('màn hình')}>
                     <BsClock className="history-item__icon" />
                     <p>
                       Màn hình máy tính, Màn hình máy tính, Màn hình máy tính, Màn hình máy tính
                     </p>
                   </li>
-                  <li className="history-item" onClick={handleSearch("khong day")}>
+                  <li className="history-item" onClick={handleSearch('khong day')}>
                     <BsClock className="history-item__icon" />
                     <p>Keychorn</p>
                   </li>
@@ -202,31 +211,55 @@ function Header(props: Props) {
                   <ul className="detail-list">
                     <li className="detail-item">
                       <BsPersonCircle className="detail-item__icon" />
-                      <div className="detail-item__text">Thông tin tài khoản</div>
+                      <div className="detail-item__text">{t('account-infomation')}</div>
                     </li>
                     <li className="detail-item">
                       <BsCalendar2Check className="detail-item__icon" />
-                      <div className="detail-item__text">Quản lí đơn hàng</div>
+                      <div className="detail-item__text">{t('order-management')}</div>
                     </li>
                     <li className="detail-item">
                       <BsGeoAlt className="detail-item__icon" />
-                      <div className="detail-item__text">Sổ địa chỉ</div>
+                      <div className="detail-item__text">{t('address-book')}</div>
                     </li>
                     <li className="detail-item">
                       <BsBell className="detail-item__icon" />
-                      <div className="detail-item__text">Thông báo</div>
+                      <div className="detail-item__text">{t('notification')}</div>
                     </li>
                     <li className="detail-item">
                       <BsPiggyBank className="detail-item__icon" />
-                      <div className="detail-item__text">Điểm thành viên</div>
+                      <div className="detail-item__text">{t('membership-points')}</div>
                     </li>
                     <li className="detail-item">
                       <BsNewspaper className="detail-item__icon" />
-                      <div className="detail-item__text">Bản tin</div>
+                      <div className="detail-item__text">{t('news')}</div>
+                    </li>
+                    <li className="detail-item">
+                      <IoLanguage className="detail-item__icon" />
+                      <div className="detail-item__text">
+                        <div className="label">{t('language')}</div>
+                        <img
+                          src={`access/language/${i18nInstance.language}.png`}
+                          alt=""
+                          className="img"
+                        />
+                      </div>
+
+                      <StyledSubList className="sub-list-wrap">
+                        <ul className="sub-list">
+                          <li className="sub-list__item" onClick={handleChangeLanguage('vn')}>
+                            <img src="/access/language/vn.png" alt="" className="img" />
+                            <div className="label">{t('vn')}</div>
+                          </li>
+                          <li className="sub-list__item" onClick={handleChangeLanguage('en')}>
+                            <img src="/access/language/en.png" alt="" className="img" />
+                            <div className="label">{t('en')}</div>
+                          </li>
+                        </ul>
+                      </StyledSubList>
                     </li>
                   </ul>
                   <div className="logout-btn">
-                    <Button>Đăng xuất</Button>
+                    <Button>{t('logout')}</Button>
                   </div>
                 </StyledUserActions>
               )}

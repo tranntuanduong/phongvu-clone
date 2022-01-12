@@ -118,7 +118,6 @@ export const StyledPromoteBanner = styled.div`
       overflow: hidden;
       position: relative;
       transform: translateX(-14px);
-     
     }
   }
 `;
@@ -129,6 +128,10 @@ export const StyledProductList = styled.ul`
   display: flex;
   margin-top: 45px;
   width: max-content; */
+  &:hover .carousel-btn {
+    display: block;
+  }
+
   margin-top: 45px;
   & .card {
     padding: 16px;

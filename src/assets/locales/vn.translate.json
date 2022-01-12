@@ -1,3 +1,22 @@
 {
-  "hello-i18n": "I18n tiếng việt"
+  "hello-i18n": "I18n tiếng việt",
+  "showroom-system": "Hệ thống Showroom",
+  "shopping-advice": "Tư vấn mua hàng",
+  "en": "Tiếng anh",
+  "vn": "Tiếng việt",
+  "customer-service": "CSKH",
+  "tech-news": "Tin công nghệ",
+  "build-configuration": "Xây dựng cấu hình",
+  "product-portfolio": "Danh mục sản phẩm",
+  "search-placeholder": "Nhập từ khóa cần tìm",
+  "history-search": "Lịch sử tìm kiếm",
+  "remove-history-search": "Xóa lịch sử",
+  "account-infomation": "Thông tin tài khoản",
+  "order-management": "Quản lí đơn hàng",
+  "address-book": "Sổ địa chỉ",
+  "notification": "Thông báo",
+  "membership-points": "Điểm thành viên",
+  "news": "Bản tin",
+  "language": "Ngôn ngữ",
+  "logout": "Đăng xuất"
 }
