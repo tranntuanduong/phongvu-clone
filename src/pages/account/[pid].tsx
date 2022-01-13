@@ -1,4 +1,6 @@
 import AccountMenu from '@components/Account/AccountMenu';
+import AccountInfo from '@components/Account/AccountPage/AccountInfo';
+import AccountOrder from '@components/Account/AccountPage/AccountOrder';
 import Section from '@components/Elements/Section';
 import SEO from '@components/SEO';
 import Container from 'layouts/container';
@@ -14,15 +16,13 @@ const Account = () => {
     const { pid } = query;
     switch (pid) {
       case 'info':
-        return <>Thông tin tài khoản</>;
+        return <AccountOrder />;
       case 'orders':
-        return <>Quản lý đơn hàng</>;
+        return <AccountInfo />
       case 'addresses':
         return <>Sổ địa chỉ</>;
       case 'notification':
         return <>Thông báo của bạn</>;
-      case 'news':
-        return <>Quản lý thông báo</>;
       default:
         return <></>;
     }
@@ -33,11 +33,11 @@ const Account = () => {
       <SEO title="Phong vũ | Account" description="Đây là desc của trang chủ" />
       <Container>
         <Section>
-          <Grid container>
-            <Grid item sx={4}>
+          <Grid container gap="16px">
+            <Grid item sx={3}>
               <AccountMenu />
             </Grid>
-            <Grid item sx={4}>
+            <Grid item sx={9}>
               {renderPid()}
             </Grid>
           </Grid>
