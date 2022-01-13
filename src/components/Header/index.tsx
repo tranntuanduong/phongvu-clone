@@ -36,7 +36,6 @@ interface Props {
 }
 
 function Header(props: Props) {
-  const { home } = props;
   const { t } = useTranslation();
 
   const searchInput = useRef(null);
@@ -45,7 +44,7 @@ function Header(props: Props) {
   const [zoomOutHeader, setZoomOutHeader] = useState(false);
   const [openNotify, setOpenNotify] = useState(false);
   const [openCard, setOpenCard] = useState(false);
-  const { handleClosePortfolioIndustry } = useContext(PageContext);
+  const { handleClosePortfolioIndustry, isHome } = useContext(PageContext);
   const router = useRouter();
 
   const handleSearchFieldClick = () => {
@@ -88,13 +87,13 @@ function Header(props: Props) {
   // can fix typescript EventTarget
 
   useEffect(() => {
-    const isHome = !!home;
     if (!isHome) {
       setZoomOutHeader(true);
       return;
     }
 
     let isMounted = true;
+    setZoomOutHeader(false);
     const handleScrollY = (e: any) => {
       if (!isMounted) return;
 
@@ -112,7 +111,7 @@ function Header(props: Props) {
       isMounted = false;
       window.removeEventListener('scroll', (e: Event) => handleScrollY(e));
     };
-  }, [handleClosePortfolioIndustry, home]);
+  }, [handleClosePortfolioIndustry, isHome]);
 
   const handleSearch = (query: string) => () => {
     router.push(`/search?query=${query}`);

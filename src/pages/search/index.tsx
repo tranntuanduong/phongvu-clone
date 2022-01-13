@@ -1,11 +1,12 @@
 import SEO from '@components/SEO';
 import i18nInstance from '@i18n/i18n';
+import { PageContext } from 'contexts/PageContext';
 import { productList } from 'dummydata';
 import Page from 'layouts/page';
 import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import { Fragment, useEffect } from 'react';
+import { Fragment, useContext, useEffect } from 'react';
 import { Product } from 'types';
 
 const DynamicBreadCrumbWithNoSSR = dynamic(() => import('@components/BreadCrumb'), { ssr: false });
@@ -30,14 +31,15 @@ interface Props {
 
 const SearchProducts = (props: Props) => {
   const { productList } = props;
+  const { handleChangePage } = useContext(PageContext);
 
   const { query } = useRouter();
 
   console.log('query', query);
 
   useEffect(() => {
-    i18nInstance.changeLanguage('en');
-  }, []);
+    handleChangePage(false);
+  }, [handleChangePage]);
 
   return (
     <>
