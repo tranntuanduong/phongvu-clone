@@ -13,6 +13,7 @@ export interface Colors {
   footerBackground: string;
   logoMenuBorder: string;
   greenColor: string;
+  inputBorder: string;
 }
 
 export interface FontSizes {

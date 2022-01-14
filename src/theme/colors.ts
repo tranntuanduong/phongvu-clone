@@ -15,4 +15,5 @@ export const colors: Colors = {
   footerBackground: '#e9edf2',
   logoMenuBorder: '#82869e',
   greenColor: '#53c305',
+  inputBorder: '#e0e0e0',
 };
