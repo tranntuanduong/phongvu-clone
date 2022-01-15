@@ -354,7 +354,7 @@ function Header(props: Props) {
                     <div className="count__quantity">Tổng tiền (3) sản phẩm</div>
                     <div className="count__price">5.899.000đ</div>
                   </div>
-                  <Button size="large" mt={16}>
+                  <Button size="large" margin="20px 0 0 0">
                     Xem giỏ hàng
                   </Button>
                 </StyledCard>

@@ -499,7 +499,7 @@ export const StyledCard = styled(StyledBox)`
   & .count {
     display: flex;
     justify-content: space-between;
-    margin-top: 16px;
+    margin: 16px 0;
     text-align: center;
 
     &__quantity {

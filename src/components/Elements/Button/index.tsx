@@ -8,19 +8,20 @@ interface ButtonProps {
   bgColor?: string;
   textColor?: string;
   children: string;
-  mt?: number | null;
+  margin?: string;
   variant?: Variant;
   width?: string;
+  onClick?: () => void;
 }
 
 const sizes: Record<string, string> = {
   small: '6px',
-  medium: '14px',
+  medium: '10px',
   large: '14px',
 };
 
 function Button(props: ButtonProps) {
-  const { size, bgColor, textColor, children, mt, variant, width } = props;
+  const { size, bgColor, textColor, children, margin, variant, width, onClick } = props;
 
   const btnSize = size ? sizes[size] : '10px';
   const btnBgColor = bgColor ? bgColor : colors.primaryColor;
@@ -29,11 +30,12 @@ function Button(props: ButtonProps) {
   if (variant === 'outline') {
     return (
       <StyledOutLineButton
+        onClick={onClick}
         theme={{
           size: btnSize,
           btnBgColor: btnBgColor,
           btnTextColor: btnTextColor,
-          mt: mt,
+          margin: margin,
           width: width,
         }}
       >
@@ -48,7 +50,8 @@ function Button(props: ButtonProps) {
         size: btnSize,
         btnBgColor: btnBgColor,
         btnTextColor: btnTextColor,
-        mt: mt,
+        margin: margin,
+
         width: width,
       }}
     >

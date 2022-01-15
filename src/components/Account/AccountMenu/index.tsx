@@ -1,16 +1,51 @@
-import Divider from '@components/Elements/Divider';
 import { useRouter } from 'next/router';
+import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { BsBell, BsCalendar2Check, BsGeoAlt, BsPersonCircle, BsPiggyBank } from 'react-icons/bs';
+import { BsBell, BsCalendar2Check, BsGeoAlt, BsPersonCircle } from 'react-icons/bs';
 import { StyledAccountMenu, StyledUser } from './AccountMenu';
 
 const AccountMenu = () => {
   const { t } = useTranslation();
   const router = useRouter();
+  const [tabRouter, setTabRouter] = useState('');
+
+  const accountMenu = useMemo(() => {
+    return [{
+      id: "account",
+      label: t('account-infomation'),
+      icon: <BsPersonCircle className="item__icon" />
+    },
+    {
+      id: "orders",
+      label: t('order-management'),
+      icon: <BsCalendar2Check className="item__icon" />
+    },
+    {
+      id: "addresses",
+      label: t('address-book'),
+      icon: <BsGeoAlt className="item__icon" />
+    },
+    {
+      id: "news",
+      label: t('notification'),
+      icon: <BsBell className="item__icon" />
+    },]
+  }, [t])
+
 
   const handleChangePid = (pid: string) => () => {
-    router.push(`/account/${pid}`);
+    if (pid === 'account') {
+      router.push(`/account`);
+    } else {
+      router.push(`/account/${pid}`);
+    }
   };
+
+  useEffect(() => {
+    const pathArr = router.pathname.split("/");
+
+    setTabRouter(pathArr[pathArr.length - 1])
+  }, [router])
 
   return (
     <StyledAccountMenu>
@@ -22,7 +57,15 @@ const AccountMenu = () => {
             <div className="name">Duong Tran Tuan</div>
           </div>
         </StyledUser>
-        <li onClick={handleChangePid('info')} className="item">
+        {accountMenu.map((menu, index) => (
+          <li key={index} onClick={handleChangePid(menu.id)}
+            className={tabRouter === menu.id ? 'item item--active' : 'item'}
+          >
+            {menu.icon}
+            <div className="item__text">{menu.label}</div>
+          </li>
+        ))}
+        {/* <li onClick={handleChangePid('')} className="item">
           <BsPersonCircle className="item__icon" />
           <div className="item__text">{t('account-infomation')}</div>
         </li>
@@ -37,7 +80,7 @@ const AccountMenu = () => {
         <li onClick={handleChangePid('notification')} className="item">
           <BsBell className="item__icon" />
           <div className="item__text">{t('notification')}</div>
-        </li>
+        </li> */}
       </ul>
     </StyledAccountMenu>
   );

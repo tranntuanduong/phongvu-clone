@@ -14,6 +14,10 @@ export interface Colors {
   logoMenuBorder: string;
   greenColor: string;
   inputBorder: string;
+
+  success: string;
+  error: string;
+  warning: string;
 }
 
 export interface FontSizes {

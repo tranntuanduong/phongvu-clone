@@ -16,7 +16,7 @@ const resources = {
 
 i18nInstance.use(initReactI18next).init({
   // lng: 'en', // if you're using a language detector, do not define the lng option
-  fallbackLng: 'en',
+  fallbackLng: 'vn',
   interpolation: {
     escapeValue: false, // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape
   },

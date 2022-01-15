@@ -16,4 +16,8 @@ export const colors: Colors = {
   logoMenuBorder: '#82869e',
   greenColor: '#53c305',
   inputBorder: '#e0e0e0',
+
+  success: "#53c305",
+  error: "#d60f29",
+  warning: "#ffc107"
 };

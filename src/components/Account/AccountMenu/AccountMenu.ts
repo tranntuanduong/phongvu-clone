@@ -6,6 +6,8 @@ export const StyledAccountMenu = styled.div`
   background-color: ${colors.whiteColor};
   padding: 8px;
 
+ 
+
   & .item {
     padding: 10px 8px;
     display: flex;
@@ -30,6 +32,13 @@ export const StyledAccountMenu = styled.div`
       & .item__icon {
         color: ${colors.primaryColor};
       }
+    }
+  }
+  
+  & .item.item--active {
+
+    & .item__text, & .item__icon {
+      color: ${colors.primaryColor};
     }
   }
 `;

@@ -5,6 +5,7 @@ type size = 'small' | 'medium' | 'large';
 
 interface Props {
   size: size;
+  margin?: string;
 }
 
 const sizeDefine = {
@@ -14,15 +15,15 @@ const sizeDefine = {
 };
 
 const Divider = (props: Props) => {
-  const { size } = props;
+  const { size, margin } = props;
 
-  return <StyledDivider theme={{ borderWidth: sizeDefine[size] }} />;
+  return <StyledDivider theme={{ borderWidth: sizeDefine[size], margin: margin }} />;
 };
 
 const StyledDivider = styled.div`
   width: 100%;
   border-top: ${(props) => props.theme.borderWidth} solid ${colors.border};
-  margin: 8px 0px;
+  margin: ${props => props.theme.margin ?? '8px 0'};
 `;
 
 export default Divider;
