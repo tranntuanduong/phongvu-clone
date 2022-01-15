@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import PrevBtn from '../PrevBtn';
 
 interface CustomArrowProps {
@@ -7,10 +8,14 @@ interface CustomArrowProps {
 const CustomPrevArrow = (props: CustomArrowProps) => {
   const { onClick } = props;
   return (
-    <div className="product-list-wrap__carousel-btn" onClick={onClick}>
+    <StyledCustomPrevArrow onClick={onClick} className="carousel-btn">
       <PrevBtn />
-    </div>
+    </StyledCustomPrevArrow>
   );
 };
+
+const StyledCustomPrevArrow = styled.div`
+  display: none;
+`;
 
 export default CustomPrevArrow;

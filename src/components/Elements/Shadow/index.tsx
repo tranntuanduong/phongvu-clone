@@ -1,21 +1,15 @@
-import { StyledShadow } from "./Shadow";
-import { UserContext } from 'contexts/UserContext';
-import { useContext } from "react";
+import { StyledShadow } from './Shadow';
+import { PageContext } from 'contexts/PageContext';
+import { useContext } from 'react';
 
 const Shadow = () => {
-  const { openPortfolioIndustry, handleClosePortfolioIndustry } = useContext(UserContext);
+  const { openPortfolioIndustry, handleClosePortfolioIndustry } = useContext(PageContext);
 
   const closePortfolioIndustryHandler = () => {
     if (handleClosePortfolioIndustry) handleClosePortfolioIndustry();
-  }
+  };
 
-  return (
-    <>
-      {openPortfolioIndustry && (
-        <StyledShadow onClick={closePortfolioIndustryHandler} />
-      )}
-    </>
-  )
-}
+  return <>{openPortfolioIndustry && <StyledShadow onClick={closePortfolioIndustryHandler} />}</>;
+};
 
 export default Shadow;

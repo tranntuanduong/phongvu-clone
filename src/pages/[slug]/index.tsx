@@ -4,13 +4,14 @@ import ProductDescription from '@components/ProductDetails/Description';
 import ProductOverview from '@components/ProductDetails/Overview';
 import ProductPolicy from '@components/ProductDetails/Policy';
 import ProductSpecifications from '@components/ProductDetails/Specifications';
-import ProductSlider from '@components/ProductSlider';
 import SEO from '@components/SEO';
+import i18nInstance from '@i18n/i18n';
+import { PageContext } from 'contexts/PageContext';
 import Container from 'layouts/container';
 import Grid from 'layouts/Grid';
 import Page from 'layouts/page';
 import dynamic from 'next/dynamic';
-import { Fragment } from 'react';
+import { useContext, useEffect } from 'react';
 
 // component dung du lieu tu get sever side moi can dynamic
 const DynamicBreadCrumbWithNoSSR = dynamic(() => import('@components/BreadCrumb'), { ssr: false });
@@ -29,8 +30,14 @@ const breadCrumbs = [
 // card-man-hinh-vga-msi-rtx-3080-ti-ventus
 
 const ProductDetails = () => {
+  const { handleChangePage } = useContext(PageContext);
+
+  useEffect(() => {
+    handleChangePage(false);
+  }, [handleChangePage]);
+
   return (
-    <Page>
+    <>
       <SEO
         title="Phong vũ clone | details"
         description="Card màn hình VGA MSI RTX 3080 Ti ventus"
@@ -63,7 +70,7 @@ const ProductDetails = () => {
           <DynamicProductSliderWithNoSSR />
         </Section>
       </Container>
-    </Page>
+    </>
   );
 };
 

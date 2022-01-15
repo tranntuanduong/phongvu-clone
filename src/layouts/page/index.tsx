@@ -1,6 +1,7 @@
-import UserContextProvider from 'contexts/UserContext';
+import PageContextProvider, { PageContext } from 'contexts/PageContext';
 import dynamic from 'next/dynamic';
-import { ReactNode } from 'react';
+import { ReactNode, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const DynamicHeaderWithNoSSR = dynamic(() => import('@components/Header'), { ssr: false });
 
@@ -18,17 +19,20 @@ interface PageProps {
 }
 
 function PageLayout(props: PageProps) {
-  const { children, home } = props;
+  const { children } = props;
+  const { t } = useTranslation();
+  const { isHome } = useContext(PageContext);
 
   return (
-    <UserContextProvider>
+    <PageContextProvider>
+      <div>{t('hello-i18n')}</div>
       <div>vi tri quang cao...</div>
       <DynamicTopContactWithNoSSR />
-      <DynamicHeaderWithNoSSR home={home} />
+      <DynamicHeaderWithNoSSR home={isHome} />
       {children}
       <DynamicFooterWithNoSSR />
       <DynamicShadowWithNoSSR />
-    </UserContextProvider>
+    </PageContextProvider>
   );
 }
 

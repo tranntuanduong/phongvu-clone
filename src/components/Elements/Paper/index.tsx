@@ -3,11 +3,12 @@ import { StyledPaper } from './Paper';
 
 interface Props {
   borderRadius?: string;
+  padding?: string;
 }
 
-const Paper: FC<Props> = ({ borderRadius, children }) => {
+const Paper: FC<Props> = ({ borderRadius, padding, children }) => {
   return (
-    <StyledPaper theme={{borderRadius: borderRadius}}>{children}</StyledPaper>
+    <StyledPaper theme={{ borderRadius: borderRadius, padding: padding }}>{children}</StyledPaper>
   );
 };
 

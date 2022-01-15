@@ -1,6 +1,7 @@
 import Section from '@components/Elements/Section';
 import { StyledTitle } from '@components/ProductList/ProductList';
 import SEO from '@components/SEO';
+import { PageContext } from 'contexts/PageContext';
 import {
   generalBanner1,
   generalBanner2,
@@ -13,6 +14,7 @@ import {
 import Page from 'layouts/page';
 import type { NextPage } from 'next';
 import dynamic from 'next/dynamic';
+import { useContext, useEffect } from 'react';
 import { Product } from 'types';
 
 const DynamicGeneralBannerWithNoSSR = dynamic(() => import('@components/Banner/GeneralBanner'), {
@@ -39,9 +41,14 @@ interface Props {
 }
 
 const Home: NextPage<Props> = () => {
+  const { handleChangePage } = useContext(PageContext);
+
+  useEffect(() => {
+    handleChangePage(true);
+  }, [handleChangePage]);
   // const { productList } = props;
   return (
-    <Page home>
+    <>
       <SEO title="Phong vũ clone| Trang chủ" description="Đây là desc của trang chủ" />
       <DynamicMainSliderWithNoSSR />
       <DynamicContainerWithNoSSR>
@@ -78,7 +85,7 @@ const Home: NextPage<Props> = () => {
         </DynamicProductListWithNoSSR>
         <DynamicPaginationWithNoSSR />
       </DynamicContainerWithNoSSR>
-    </Page>
+    </>
   );
 };
 

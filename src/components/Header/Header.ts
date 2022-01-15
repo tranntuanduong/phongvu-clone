@@ -302,10 +302,15 @@ export const StyledUserActions = styled(StyledBox)`
   & .detail-item {
     display: flex;
     padding: 12px 8px;
+    position: relative;
 
     &:hover {
       background-color: ${colors.whitesmoke};
       cursor: pointer;
+    }
+
+    &:hover .sub-list-wrap {
+      display: block;
     }
 
     &__icon {
@@ -314,6 +319,12 @@ export const StyledUserActions = styled(StyledBox)`
     }
 
     &__text {
+      display: flex;
+
+      & .img {
+        margin-left: 8px;
+      }
+
       color: ${colors.text};
       font-size: ${fontSizes.body2};
       font-weight: 300;
@@ -323,6 +334,36 @@ export const StyledUserActions = styled(StyledBox)`
   & .logout-btn {
     padding: 8px;
     min-width: 230px;
+  }
+`;
+
+export const StyledSubList = styled(StyledBox)`
+  position: absolute;
+  top: 0;
+  right: -200px;
+  padding: 8px 0;
+  min-width: 200px;
+  display: none;
+
+  & .sub-list {
+    background-color: ${colors.whiteColor};
+    font-weight: 300;
+    color: ${colors.text};
+    font-size: ${fontSizes.body1};
+
+    &__item {
+      padding: 8px 8px;
+      display: flex;
+
+      & .img {
+        margin-right: 8px;
+      }
+
+      &:hover {
+        background-color: ${colors.whitesmoke};
+        cursor: pointer;
+      }
+    }
   }
 `;
 

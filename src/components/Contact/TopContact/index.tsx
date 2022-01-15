@@ -1,8 +1,10 @@
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 import { BiBuildingHouse } from 'react-icons/bi';
 import { StyledTopContact } from './TopContact';
 
 function TopContact() {
+  const { t } = useTranslation();
   return (
     <StyledTopContact>
       <ul className="list">
@@ -10,7 +12,7 @@ function TopContact() {
           <Link href="#">
             <a className="element__link">
               <BiBuildingHouse className="element__icon" />
-              <p>Hệ thống Showroom</p>
+              <p>{t('showroom-system')}</p>
             </a>
           </Link>
         </li>
@@ -18,7 +20,7 @@ function TopContact() {
           <Link href="tel:18006867">
             <a className="element__link">
               <BiBuildingHouse className="element__icon" />
-              <p>Tư vấn mua hàng</p>
+              <p>{t('shopping-advice')}</p>
               <span>18006865</span>
             </a>
           </Link>
@@ -27,21 +29,21 @@ function TopContact() {
           <Link href="tel:18006865">
             <a className="element__link">
               <BiBuildingHouse className="element__icon" />
-              <p>CSKH</p>
+              <p>{t('customer-service')}</p>
               <span>18006865</span>
             </a>
           </Link>
         </li>
         <li className="element">
           <BiBuildingHouse className="element__icon" />
-          <p>Tin công nghệ</p>
+          <p>{t('tech-news')}</p>
         </li>
         <li className="element">
           <BiBuildingHouse className="element__icon" />
-          <p>Xây dựng cấu hình</p>
+          <p>{t('build-configuration')}</p>
         </li>
       </ul>
-    </StyledTopContact >
+    </StyledTopContact>
   );
 }
 

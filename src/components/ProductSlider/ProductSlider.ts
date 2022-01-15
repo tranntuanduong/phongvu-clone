@@ -7,6 +7,10 @@ export const StyledProductSlider = styled.div`
   padding: 16px;
   background-color: ${colors.whiteColor};
 
+  &:hover .carousel-btn {
+    display: block;
+  }
+
   & .header {
     display: flex;
     justify-content: space-between;
