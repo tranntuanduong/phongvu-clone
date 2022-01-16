@@ -13,7 +13,7 @@ import Container from 'layouts/container';
 import Grid from 'layouts/Grid';
 import { useRef, useState } from 'react';
 import { BsBell } from 'react-icons/bs';
-import { StyledAccountTitle, StyledAddAddressBtn, StyledAddressDialog, StyledFullScreen } from 'styles/AccountPage';
+import { StyledAccountTitle, StyledAddAddressBtn, StyledAddressDialog, StyledFullScreen, StyledMyAddress } from 'styles/AccountPage';
 
 const AccountAddresses = () => {
   const [openAddressDialog, setOpenAddressDialog] = useState(false);
@@ -50,6 +50,54 @@ const AccountAddresses = () => {
                 </div>
                 <div className="text">Thêm địa chỉ mới</div>
               </StyledAddAddressBtn>
+              <Section>
+                <StyledMyAddress>
+                  <div className="top">
+                    <div className="title">Trần Tuấn Dương</div>
+                    <span className="label">MẶC ĐỊNH</span>
+                  </div>
+                  <div className="body">
+                    <div className="wrap">
+                      <div className="text">
+                        Địa chỉ: Số nhà 154, ngõ 99 định công hạ, hoàng mai, hà nội, Phường Định Công, Quận Hoàng Mai, Thành phố Hà Nội
+                      </div>
+                      <div className="text">Điện thoại: 0389168111</div>
+                    </div>
+                    <div className="btn">
+                      <Button variant="outline" size="small"
+                        onClick={handleOpenAddressDialog}
+                        textColor={colors.error}
+                      >
+                        Chỉnh sửa
+                      </Button>
+                    </div>
+                  </div>
+                </StyledMyAddress>
+              </Section>
+              <Section>
+                <StyledMyAddress>
+                  <div className="top">
+                    <div className="title">Tống Min</div>
+                  </div>
+                  <div className="body">
+                    <div className="wrap">
+                      <div className="text">
+                        Địa chỉ: Số nhà 154, ngõ 99 định công hạ, hoàng mai, hà nội, Phường Định Công, Quận Hoàng Mai, Thành phố Hà Nội,
+                        Địa chỉ: Số hà nội, Phường Định Công, Quận Hoàng Mai, Thành phố Hà Nội
+                      </div>
+                      <div className="text">Điện thoại: 038916232</div>
+                    </div>
+                    <div className="btn">
+                      <Button variant="outline" size="small"
+                        onClick={handleOpenAddressDialog}
+                        textColor={colors.error}
+                      >
+                        Chỉnh sửa
+                      </Button>
+                    </div>
+                  </div>
+                </StyledMyAddress>
+              </Section>
             </Grid>
           </Grid>
         </Section>
@@ -105,10 +153,10 @@ const AccountAddresses = () => {
                   </FormLabel>
                 </Grid>
               </Grid>
-
               <div className="btn-wrap">
                 <Button
                   size="medium" variant="outline" margin="0 10px 0 0"
+                  textColor={colors.primaryColor}
                   onClick={handleCloseDialogDetails}>
                   Hủy bỏ
                 </Button>

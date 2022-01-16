@@ -20,6 +20,7 @@ import {
   BsTags,
 } from 'react-icons/bs';
 import { IoLanguage } from 'react-icons/io5';
+import { changePid } from 'utils';
 import {
   StyledCard,
   StyledHeader,
@@ -122,6 +123,10 @@ function Header(props: Props) {
     // setOpenUserActions(false);
   };
 
+  const handleChangePid = (pid: string) => () => {
+    changePid(pid, router);
+  }
+
   return (
     <StyledHeader className={zoomOutHeader ? 'zoomout' : ''}>
       <Container>
@@ -208,19 +213,19 @@ function Header(props: Props) {
                     <div className="top__title">Trần Tuấn Dương</div>
                   </div>
                   <ul className="detail-list">
-                    <li className="detail-item">
+                    <li className="detail-item" onClick={handleChangePid("account")}>
                       <BsPersonCircle className="detail-item__icon" />
                       <div className="detail-item__text">{t('account-infomation')}</div>
                     </li>
-                    <li className="detail-item">
+                    <li className="detail-item" onClick={handleChangePid("orders")}>
                       <BsCalendar2Check className="detail-item__icon" />
                       <div className="detail-item__text">{t('order-management')}</div>
                     </li>
-                    <li className="detail-item">
+                    <li className="detail-item" onClick={handleChangePid("addresses")}>
                       <BsGeoAlt className="detail-item__icon" />
                       <div className="detail-item__text">{t('address-book')}</div>
                     </li>
-                    <li className="detail-item">
+                    <li className="detail-item" onClick={handleChangePid("notification")}>
                       <BsBell className="detail-item__icon" />
                       <div className="detail-item__text">{t('notification')}</div>
                     </li>
@@ -354,9 +359,13 @@ function Header(props: Props) {
                     <div className="count__quantity">Tổng tiền (3) sản phẩm</div>
                     <div className="count__price">5.899.000đ</div>
                   </div>
-                  <Button size="large" margin="20px 0 0 0">
-                    Xem giỏ hàng
-                  </Button>
+                  <Link href="/cart">
+                    <a>
+                      <Button size="large" margin="20px 0 0 0" >
+                        Xem giỏ hàng
+                      </Button>
+                    </a>
+                  </Link>
                 </StyledCard>
               )}
             </li>

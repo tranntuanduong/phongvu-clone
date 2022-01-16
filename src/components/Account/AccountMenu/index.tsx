@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BsBell, BsCalendar2Check, BsGeoAlt, BsPersonCircle } from 'react-icons/bs';
+import { changePid } from 'utils';
 import { StyledAccountMenu, StyledUser } from './AccountMenu';
 
 const AccountMenu = () => {
@@ -26,7 +27,7 @@ const AccountMenu = () => {
       icon: <BsGeoAlt className="item__icon" />
     },
     {
-      id: "news",
+      id: "notification",
       label: t('notification'),
       icon: <BsBell className="item__icon" />
     },]
@@ -34,12 +35,9 @@ const AccountMenu = () => {
 
 
   const handleChangePid = (pid: string) => () => {
-    if (pid === 'account') {
-      router.push(`/account`);
-    } else {
-      router.push(`/account/${pid}`);
-    }
+    changePid(pid, router);
   };
+
 
   useEffect(() => {
     const pathArr = router.pathname.split("/");

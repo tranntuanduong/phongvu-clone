@@ -1,7 +1,6 @@
 import { colors } from "@theme/colors";
 import { fontSizes } from "@theme/fontSizes";
 import styled from "styled-components";
-import { StyledBox } from "./Box";
 
 export const StyledAccountTitle = styled.div`
   display: flex;
@@ -81,5 +80,52 @@ export const StyledAddressDialog = styled.div`
     display: flex;
     justify-content: flex-end;
     margin-top: 20px;
+  }
+`
+
+export const StyledMyAddress = styled.div`
+  background-color: ${colors.whiteColor};
+  padding: 16px;
+  border-radius: 10px;
+
+  & .top {
+    display: flex;
+    align-items: center;
+  }
+
+  & .title {
+    font-size: ${fontSizes.body2};
+    color: ${colors.text};
+    margin-right: 8px;
+    font-weight: 600;
+  }
+
+  & .label {
+    color: ${colors.primaryColor};
+    background-color: ${colors.whitesmoke};
+    font-size: ${fontSizes.desc2};
+    padding: 4px;
+  }
+
+  & .body {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+
+    & .wrap {
+      flex: 1;
+    }
+
+    & .btn {
+      min-width: 120px;
+      margin-left: 50px;
+    }
+
+    & .text {
+      color: ${colors.textGrey};
+      font-size: ${fontSizes.desc2};
+      margin-top: 8px;
+      line-height: 1.5;
+    }
   }
 `
