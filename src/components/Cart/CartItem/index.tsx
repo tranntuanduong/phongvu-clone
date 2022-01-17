@@ -1,32 +1,36 @@
 import QuantityButton from "@components/Elements/QuantityButton";
 import { colors } from "@theme/colors";
 import { fontSizes } from "@theme/fontSizes";
+import { Cart, CartContext, Item } from "contexts/CartContext";
+import { useContext } from "react";
 import styled from "styled-components";
 
-interface Cart {
-  thumb: string;
-  name: string;
-  sku: string;
-  price: number;
-}
 
 interface Props {
-  cart: Cart
+  item: Item,
+  id: string
 }
 
-const CartItem = ({ cart }: Props) => {
+const CartItem = (props: Props) => {
+  const { id, item } = props;
+  const { handleChangeQuantityItem } = useContext(CartContext);
+
+  const handleChangeQuantity = (number: number) => () => {
+    handleChangeQuantityItem(id, number)
+  }
+
   return (
     <StyledCartItem>
-      <img src={cart.thumb} alt="" className="thumb" />
+      <img src={item.thumb} alt="" className="thumb" />
       <div className="wrap">
-        <div className="name">{cart.name}</div>
-        <div className="sku">SKU: {cart.sku}</div>
+        <div className="name">{item.name}</div>
+        <div className="sku">SKU: {item.sku}</div>
       </div>
       <div className="btn-wrap">
-        <QuantityButton />
+        <QuantityButton quantity={item.quantity} handleChangeQuantity={handleChangeQuantity} />
         <div className="delete">Xóa</div>
       </div>
-      <div className="price">{cart.price} đ</div>
+      <div className="price">{item.price} đ</div>
     </StyledCartItem>
   )
 }
@@ -64,6 +68,8 @@ const StyledCartItem = styled.li`
     font-size: ${fontSizes.body1};
     font-weight: 600;
     color: ${colors.text};
+    min-width: 100px;
+    text-align: right;
   }
 
   & .btn-wrap {

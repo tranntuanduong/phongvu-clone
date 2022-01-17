@@ -4,16 +4,13 @@ import { colors } from "@theme/colors";
 import { fontSizes } from "@theme/fontSizes";
 import { useState } from "react";
 
-const QuantityButton = () => {
-  const [quantity, setQuantity] = useState(1);
+interface Props {
+  quantity: number;
+  handleChangeQuantity: (number: number) => () => void
+}
 
-  const handleChangeQuantity = (number: number) => () => {
-    if (quantity === 0 && number < 0) {
-      setQuantity(0)
-    } else {
-      setQuantity(quantity + number)
-    }
-  }
+const QuantityButton = (props: Props) => {
+  const { quantity, handleChangeQuantity } = props
 
   return (
     <StyledQuantityButton>

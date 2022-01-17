@@ -37,10 +37,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <Page home>
-
-    <I18nextProvider i18n={i18nInstance}>
-      <Component {...pageProps} />
-    </I18nextProvider>
+      <I18nextProvider i18n={i18nInstance}>
+        <Component {...pageProps} />
+      </I18nextProvider>
     </Page>
   );
 }

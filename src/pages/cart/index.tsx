@@ -6,8 +6,10 @@ import Section from "@components/Elements/Section";
 import VerifyIcon from "@components/SvgIcon/VerifyIcon";
 import { colors } from "@theme/colors";
 import { fontSizes } from "@theme/fontSizes";
+import { CartContext } from "contexts/CartContext";
 import Container from "layouts/container";
 import Grid from "layouts/Grid";
+import { useContext } from "react";
 import styled from "styled-components";
 
 const cartList = [
@@ -15,22 +17,34 @@ const cartList = [
     thumb: "/access/products/manhinh/screen1.jpg",
     name: "Chuột không dây Logitech MX Master 3 (Đen)",
     sku: "201201647",
-    price: 2490000
+    price: 2490000,
+    quantity: 1,
   },
   {
     thumb: "/access/products/dongho/dongho1.jpg",
     name: "Chuột không dây Logitech MX Master 3 (Đen)",
     sku: "201201647",
-    price: 2750000
+    price: 2750000,
+    quantity: 3,
+
   },
   {
     thumb: "/access/products/giadung/giadung1.jpg",
     name: "Laptop Dell Vostro 15 3510 V5I33 Laptop Dell Vostro 15 3510 V5I33 Laptop Dell Vostro 15 3510 V5I33 Laptop Dell Vostro 15 3510 V5I33",
     sku: "201201647",
-    price: 1900000
+    price: 1900000,
+    quantity: 2,
   }
 ]
 const Cart = () => {
+  const { cartList } = useContext(CartContext);
+  let total = 0;
+
+  Object.entries(cartList).forEach(([id, item]) => {
+    total = total + item.price * item.quantity;
+  })
+
+
   return (
     <Container>
       <Section>
@@ -48,13 +62,14 @@ const Cart = () => {
                     <VerifyIcon />
                   </div>
                 </div>
-                <div className="total-price">32.480.000đ</div>
+                <div className="total-price">{total} đ</div>
               </StyledTotalHeader>
               <Divider size="small" margin="16px 0" />
               <StyledCartList>
-                {cartList.map((item, index) => (
-                  <CartItem key={index} cart={item} />
+                {Object.entries(cartList).map(([id, item], index) => (
+                  <CartItem key={index} item={item} id={id} />
                 ))}
+
               </StyledCartList>
             </Paper>
           </Grid>

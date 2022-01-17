@@ -1,3 +1,4 @@
+import CartContextProvider from 'contexts/CartContext';
 import PageContextProvider, { PageContext } from 'contexts/PageContext';
 import dynamic from 'next/dynamic';
 import { ReactNode, useContext } from 'react';
@@ -24,15 +25,17 @@ function PageLayout(props: PageProps) {
   const { isHome } = useContext(PageContext);
 
   return (
-    <PageContextProvider>
-      <div>{t('hello-i18n')}</div>
-      <div>vi tri quang cao...</div>
-      <DynamicTopContactWithNoSSR />
-      <DynamicHeaderWithNoSSR home={isHome} />
-      {children}
-      <DynamicFooterWithNoSSR />
-      <DynamicShadowWithNoSSR />
-    </PageContextProvider>
+    <CartContextProvider>
+      <PageContextProvider>
+        <div>{t('hello-i18n')}</div>
+        <div>vi tri quang cao...</div>
+        <DynamicTopContactWithNoSSR />
+        <DynamicHeaderWithNoSSR home={isHome} />
+        {children}
+        <DynamicFooterWithNoSSR />
+        <DynamicShadowWithNoSSR />
+      </PageContextProvider>
+    </CartContextProvider>
   );
 }
 
