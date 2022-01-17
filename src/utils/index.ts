@@ -1,1 +1,3 @@
-export * from './changePid'
+export * from './changePid';
+
+export * from './formatNumber';

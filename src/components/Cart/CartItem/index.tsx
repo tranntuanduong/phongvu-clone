@@ -1,14 +1,14 @@
-import QuantityButton from "@components/Elements/QuantityButton";
-import { colors } from "@theme/colors";
-import { fontSizes } from "@theme/fontSizes";
-import { Cart, CartContext, Item } from "contexts/CartContext";
-import { useContext } from "react";
-import styled from "styled-components";
-
+import QuantityButton from '@components/Elements/QuantityButton';
+import { colors } from '@theme/colors';
+import { fontSizes } from '@theme/fontSizes';
+import { Cart, CartContext, Item } from 'contexts/CartContext';
+import { useContext } from 'react';
+import styled from 'styled-components';
+import { formatCurrency } from 'utils';
 
 interface Props {
-  item: Item,
-  id: string
+  item: Item;
+  id: string;
 }
 
 const CartItem = (props: Props) => {
@@ -16,8 +16,8 @@ const CartItem = (props: Props) => {
   const { handleChangeQuantityItem } = useContext(CartContext);
 
   const handleChangeQuantity = (number: number) => () => {
-    handleChangeQuantityItem(id, number)
-  }
+    handleChangeQuantityItem(id, number);
+  };
 
   return (
     <StyledCartItem>
@@ -30,16 +30,17 @@ const CartItem = (props: Props) => {
         <QuantityButton quantity={item.quantity} handleChangeQuantity={handleChangeQuantity} />
         <div className="delete">Xóa</div>
       </div>
-      <div className="price">{item.price} đ</div>
+      <div className="price">{formatCurrency(item.price)}</div>
     </StyledCartItem>
-  )
-}
+  );
+};
 
 const StyledCartItem = styled.li`
   display: flex;
   margin-bottom: 20px;
+  padding: 20px 0;
   justify-content: space-between;
-  
+
   & .thumb {
     width: 80px;
     height: 80px;
@@ -86,6 +87,6 @@ const StyledCartItem = styled.li`
     cursor: pointer;
     user-select: none;
   }
-`
+`;
 
 export default CartItem;

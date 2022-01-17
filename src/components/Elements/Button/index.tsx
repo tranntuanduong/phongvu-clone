@@ -12,6 +12,7 @@ interface ButtonProps {
   variant?: Variant;
   width?: string;
   onClick?: () => void;
+  disiable?: boolean;
 }
 
 const sizes: Record<string, string> = {
@@ -21,7 +22,7 @@ const sizes: Record<string, string> = {
 };
 
 function Button(props: ButtonProps) {
-  const { size, bgColor, textColor, children, margin, variant, width, onClick } = props;
+  const { size, bgColor, textColor, children, margin, variant, width, onClick, ...rest } = props;
 
   const btnSize = size ? sizes[size] : '10px';
   const btnBgColor = bgColor ? bgColor : colors.primaryColor;
@@ -31,6 +32,7 @@ function Button(props: ButtonProps) {
     return (
       <StyledOutLineButton
         onClick={onClick}
+        {...rest}
         theme={{
           size: btnSize,
           btnBgColor: btnBgColor,
@@ -51,7 +53,6 @@ function Button(props: ButtonProps) {
         btnBgColor: btnBgColor,
         btnTextColor: btnTextColor,
         margin: margin,
-
         width: width,
       }}
     >
