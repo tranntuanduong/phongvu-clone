@@ -1,64 +1,23 @@
 import Button from '@components/Elements/Button';
-import { useState } from 'react';
+import Divider from '@components/Elements/Divider';
+import PresentIcon from '@components/SvgIcon/PresentIcon';
+import { colors } from '@theme/colors';
+import Link from 'next/link';
+import { BsCheck } from 'react-icons/bs';
+import OverviewPlayer from './OverviewPlayer';
 import {
   StyledAdvertise,
-  StyledImageConllection,
-  StyledOverview,
+  StyledCouponGift,
+  StyledGift, StyledOverview,
   StyledProductOverview,
-  StyledPromote,
+  StyledPromote
 } from './ProductOverview';
-import Link from 'next/link';
 
 const ProductOverview = () => {
+
   return (
     <StyledProductOverview>
-      <StyledImageConllection>
-        <div
-          className="main"
-          style={{
-            backgroundImage: `url("/access/products/card/2.jpg")`,
-          }}
-        />
-        <div className="list">
-          <div
-            className="item"
-            style={{
-              backgroundImage: `url("/access/products/card/1.jpg")`,
-            }}
-          />
-          <div
-            className="item item--active"
-            style={{
-              backgroundImage: `url("/access/products/card/2.jpg")`,
-            }}
-          />
-          <div
-            className="item"
-            style={{
-              backgroundImage: `url("/access/products/card/3.jpg")`,
-            }}
-          />
-          <div
-            className="item"
-            style={{
-              backgroundImage: `url("/access/products/card/4.jpg")`,
-            }}
-          />
-          <div
-            className="item"
-            style={{
-              backgroundImage: `url("/access/products/card/5.jpg")`,
-            }}
-          />
-        </div>
-        <div className="hr" />
-        <ul className="sub-info">
-          <li className="sub-info__item">- Chip đồ họa: GeForce RTX 3080Ti</li>
-          <li className="sub-info__item">- Bộ nhớ: 12GB GDDR6X (384-bit)</li>
-          <li className="sub-info__item">- Boost: 1695 MHz</li>
-          <li className="sub-info__item">- Nguồn phụ: 2 x 8-pin</li>
-        </ul>
-      </StyledImageConllection>
+      <OverviewPlayer />
 
       <StyledOverview>
         <h3 className="title">
@@ -73,17 +32,48 @@ const ProductOverview = () => {
         </div>
         <div className="quantity">Chỉ còn 2 sản phẩm</div>
         <div className="price">55.990.000đ</div>
+        <div className="price--promote">12.990.000đ</div>
+        <StyledGift>
+          <div className="gift-title">Bạn sẽ nhận được</div>
+          <div className="jun-gift">
+            <img src="/access/products/dongho/dongho1.jpg" alt="" className="jun-gift__thumb" />
+            <div className="jun-gift__quantity">x1</div>
+            <div className="jun-gift__name">Loa Soundbar Samsung HW-T420</div>
+          </div>
+        </StyledGift>
+        <Divider size="small" type="dashed" margin="20px 0" />
+
+        <StyledCouponGift>
+          <div className="gift-title">Chọn thêm 1 trong những khuyến mãi sau</div>
+          <div className="coupon-wrap">
+            <div className="gift-icon">
+              <PresentIcon />
+            </div>
+            <div className="content-wrap">
+              <div className="name">Giá Tốt Mỗi Ngày</div>
+              <div className="desc">
+                Giảm trực tiếp: <span>6.410.000đ</span>
+              </div>
+              <div className="label">
+                <div className="label__icon">
+                  <BsCheck />
+                </div>
+              </div>
+            </div>
+          </div>
+        </StyledCouponGift>
+
         <div className="btn-wrap">
           <div className="btn">
             <Button size="large">MUA NGAY</Button>
           </div>
           <div className="btn">
-            <Button size="large" variant="outline">
+            <Button size="large" variant="outline" textColor={colors.primaryColor}>
               THÊM VÀO GIỎ HÀNG
             </Button>
           </div>
         </div>
-        <div className="hr" />
+        <Divider size="small" type="dashed" margin="20px 0" />
         <StyledPromote>
           <div className="title">Khuyến mãi liên quan</div>
           <ul className="list">

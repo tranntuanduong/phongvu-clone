@@ -31,6 +31,7 @@ export const StyledPaginationItem = styled.li`
   color: ${colors.text};
   font-size: ${fontSizes.desc1};
   cursor: pointer;
+  user-select: none;
 
   &.active {
     background-color: ${colors.primaryColor};

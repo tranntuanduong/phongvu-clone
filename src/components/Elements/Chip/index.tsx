@@ -1,7 +1,7 @@
 import { Fragment } from "react";
+import { BiChevronDown } from "react-icons/bi";
 import { BsCheck } from 'react-icons/bs';
 import { StyledChip } from "./Chip";
-import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 
 interface Props {
   name: string;

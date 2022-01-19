@@ -11,10 +11,9 @@ import {
   shortBanner3,
   shortBanner4,
 } from 'dummydata';
-import Page from 'layouts/page';
 import type { NextPage } from 'next';
 import dynamic from 'next/dynamic';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Product } from 'types';
 
 const DynamicGeneralBannerWithNoSSR = dynamic(() => import('@components/Banner/GeneralBanner'), {
@@ -43,10 +42,17 @@ interface Props {
 const Home: NextPage<Props> = () => {
   const { handleChangePage } = useContext(PageContext);
 
+  const [page, setPage] = useState(1);
+
   useEffect(() => {
     handleChangePage(true);
   }, [handleChangePage]);
   // const { productList } = props;
+
+  const handlechangePage = (page: number) => {
+    setPage(page);
+  };
+
   return (
     <>
       <SEO title="Phong vũ clone| Trang chủ" description="Đây là desc của trang chủ" />
@@ -83,7 +89,13 @@ const Home: NextPage<Props> = () => {
         <DynamicProductListWithNoSSR productList={productList}>
           <StyledTitle>Dành cho bạn</StyledTitle>
         </DynamicProductListWithNoSSR>
-        <DynamicPaginationWithNoSSR />
+        <DynamicPaginationWithNoSSR
+          total={productList.length}
+          page={page}
+          onChange={handlechangePage}
+          rowPerPage={2}
+          pageVisible={8}
+        />
       </DynamicContainerWithNoSSR>
     </>
   );

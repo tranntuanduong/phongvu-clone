@@ -6,7 +6,7 @@ import Page from 'layouts/page';
 import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import { Fragment, useContext, useEffect } from 'react';
+import { Fragment, useContext, useEffect, useState } from 'react';
 import { Product } from 'types';
 
 const DynamicBreadCrumbWithNoSSR = dynamic(() => import('@components/BreadCrumb'), { ssr: false });
@@ -32,6 +32,7 @@ interface Props {
 const SearchProducts = (props: Props) => {
   const { productList } = props;
   const { handleChangePage } = useContext(PageContext);
+  const [page, setPage] = useState(1);
 
   const { query } = useRouter();
 
@@ -40,6 +41,10 @@ const SearchProducts = (props: Props) => {
   useEffect(() => {
     handleChangePage(false);
   }, [handleChangePage]);
+
+  const handlechangePage = (page: number) => {
+    setPage(page);
+  };
 
   return (
     <>
@@ -51,7 +56,13 @@ const SearchProducts = (props: Props) => {
         <DynamicProductListWithNoSSR productList={productList}>
           <DynamicSortProductsWithNoSSR />
         </DynamicProductListWithNoSSR>
-        <DynamicPaginationWithNoSSR />
+        <DynamicPaginationWithNoSSR
+          total={productList.length}
+          page={page}
+          onChange={handlechangePage}
+          rowPerPage={2}
+          pageVisible={8}
+        />
       </DynamicContainerWithNoSSR>
     </>
   );

@@ -11,6 +11,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import CustomPrevArrow from '@components/Elements/CustomArrowBtn/CustomPrevArrow';
 import CustomNextArrow from '@components/Elements/CustomArrowBtn/CustomNextArrow';
+import Countdown, { CountdownRendererFn } from 'react-countdown';
 interface Product {
   backgroundImage: string;
   backgroundPosition: string;
@@ -63,6 +64,21 @@ const PromoteBanner = () => {
     }
   }, [page, pageSize]);
 
+  const renderer: CountdownRendererFn = ({ days, hours, minutes, seconds, completed }) => {
+    return (
+      <div className="promotion-time">
+        <div className="promotion-time__title">
+          Kết thúc sau <span>{days}</span> ngày
+        </div>
+        <div className="promotion-time__block">
+          <div className="promotion-time__block-item">{hours < 10 ? `0${hours}` : hours}</div>
+          <div className="promotion-time__block-item">{minutes < 10 ? `0${minutes}` : minutes}</div>
+          <div className="promotion-time__block-item">{seconds < 10 ? `0${seconds}` : seconds}</div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <StyledPromoteBanner>
       <ul className="tab">
@@ -105,16 +121,7 @@ const PromoteBanner = () => {
           backgroundPosition: '0px -65px',
         }}
       >
-        <div className="promotion-time">
-          <div className="promotion-time__title">
-            Kết thúc sau <span>4</span> ngày
-          </div>
-          <div className="promotion-time__block">
-            <div className="promotion-time__block-item">09</div>
-            <div className="promotion-time__block-item">04</div>
-            <div className="promotion-time__block-item">59</div>
-          </div>
-        </div>
+        <Countdown date={Date.now() + 500000000} renderer={renderer} />
         <Link href="#viewall">
           <a className="view-all">
             Xem tất cả

@@ -9,11 +9,6 @@ export const StyledProductOverview = styled.div`
   display: grid;
   grid-template-columns: 5fr 7fr;
   gap: 15px;
-
-  & .hr {
-    border-bottom: 1px dashed ${colors.border};
-    margin: 20px 0;
-  }
 `;
 
 export const StyledImageConllection = styled.div`
@@ -35,6 +30,7 @@ export const StyledImageConllection = styled.div`
       background-repeat: no-repeat;
       width: 20%;
       aspect-ratio: 1;
+      border: 1px solid ${colors.whiteColor};
 
       &:hover {
         cursor: pointer;
@@ -114,11 +110,17 @@ export const StyledOverview = styled.div`
     margin-top: 14px;
   }
 
+  & .price--promote {
+    color: ${colors.textGrey};
+    font-size: ${fontSizes.body2};
+    margin-top: 8px;
+    text-decoration: line-through;
+  }
+
   & .btn-wrap {
     display: flex;
     font-weight: 600;
     font-size: ${fontSizes.body2};
-    margin-top: 35px;
 
     & .btn {
       flex: 1;
@@ -127,6 +129,13 @@ export const StyledOverview = styled.div`
         margin-left: 8px;
       }
     }
+  }
+
+  & .gift-title {
+    font-size: ${fontSizes.subtitle2};
+    font-weight: 600;
+    color: ${colors.text};
+    margin-bottom: 10px;
   }
 `;
 
@@ -181,6 +190,90 @@ export const StyledAdvertise = styled.div`
       object-fit: cover;
       border-radius: 5px;
       display: block;
+    }
+  }
+`;
+
+export const StyledGift = styled.div`
+  margin-top: 20px;
+
+  & .jun-gift {
+    display: flex;
+    align-items: center;
+    border: 1px solid ${colors.border};
+    padding: 8px 16px;
+    border-radius: 5px;
+    background-color: ${colors.whitesmoke};
+
+    &__thumb {
+      width: 36px;
+      height: 36px;
+      margin-right: 8px;
+      border: 1px solid ${colors.border};
+      border-radius: 2px;
+    }
+
+    &__quantity {
+      color: ${colors.textGrey};
+      font-size: ${fontSizes.desc2};
+      margin-right: 8px;
+    }
+
+    &__name {
+      color: ${colors.text};
+      font-size: ${fontSizes.desc2};
+    }
+  }
+`;
+
+export const StyledCouponGift = styled.div`
+  font-size: ${fontSizes.body2};
+  color: ${colors.text};
+  margin-bottom: 20px;
+
+  & .coupon-wrap {
+    border: 1px solid ${colors.primaryColor};
+    border-radius: 5px;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+  }
+
+  & .gift-icon {
+    margin-right: 8px;
+  }
+
+  & .name {
+    font-weight: 600;
+  }
+
+  & .desc {
+    margin-top: 16px;
+
+    & span {
+      font-weight: 600;
+    }
+  }
+
+  & .label {
+    width: 36px;
+    height: 36px;
+    border-style: solid;
+    border-width: 0 36px 36px 0;
+    border-color: transparent ${colors.primaryColor} transparent transparent;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    &__icon {
+      color: ${colors.whiteColor};
+      position: absolute;
+      font-size: 20px;
+      top: 2px;
+      left: 16px;
+      /* transform: translate(-50%, -50%); */
     }
   }
 `;

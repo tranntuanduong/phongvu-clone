@@ -6,8 +6,44 @@ import { ImUndo2 } from 'react-icons/im';
 import { IoMdSettings } from 'react-icons/io';
 import { StyledAdvertise, StyledPolicyContent, StyledProductPolicy } from './ProductPolicy';
 import Link from 'next/link';
+import Countdown, { CountdownRendererFn } from 'react-countdown';
 
 const ProductPolicy = () => {
+  const renderer: CountdownRendererFn = ({ days, hours, minutes, seconds }) => {
+    return (
+      <div className="time-list">
+        <div className="time-wrap">
+          <div className="time">
+            <div className="block">{Math.floor(days / 10)}</div>
+            <div className="block">{days % 10}</div>
+          </div>
+          <div className="text">Ngày</div>
+        </div>
+        <div className="time-wrap">
+          <div className="time">
+            <div className="block">{Math.floor(hours / 10)}</div>
+            <div className="block">{hours % 10}</div>
+          </div>
+          <div className="text">Giờ</div>
+        </div>
+        <div className="time-wrap">
+          <div className="time">
+            <div className="block">{Math.floor(minutes / 10)}</div>
+            <div className="block">{minutes % 10}</div>
+          </div>
+          <div className="text">Phút</div>
+        </div>
+        <div className="time-wrap">
+          <div className="time">
+            <div className="block">{Math.floor(seconds / 10)}</div>
+            <div className="block">{seconds % 10}</div>
+          </div>
+          <div className="text">Giây</div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <StyledProductPolicy>
       <div className="promote">
@@ -67,36 +103,8 @@ const ProductPolicy = () => {
 
       <StyledAdvertise>
         <img src="/access/advertise/ad3.png" alt="" className="image" />
-        <div className="time-list">
-          <div className="time-wrap">
-            <div className="time">
-              <div className="block">0</div>
-              <div className="block">1</div>
-            </div>
-            <div className="text">Ngày</div>
-          </div>
-          <div className="time-wrap">
-            <div className="time">
-              <div className="block">0</div>
-              <div className="block">3</div>
-            </div>
-            <div className="text">Giờ</div>
-          </div>
-          <div className="time-wrap">
-            <div className="time">
-              <div className="block">0</div>
-              <div className="block">1</div>
-            </div>
-            <div className="text">Phút</div>
-          </div>
-          <div className="time-wrap">
-            <div className="time">
-              <div className="block">3</div>
-              <div className="block">2</div>
-            </div>
-            <div className="text">Giây</div>
-          </div>
-        </div>
+
+        <Countdown date={Date.now() + 500000000} renderer={renderer} />
       </StyledAdvertise>
     </StyledProductPolicy>
   );
