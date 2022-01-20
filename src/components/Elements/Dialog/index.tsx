@@ -1,14 +1,16 @@
-import { FC } from 'react';
+import { FC, LegacyRef, ReactNode } from 'react';
 import { StyledDialog } from './Dialog';
 
+interface Props {
+  children: ReactNode;
+}
 
-
-const Dialog: FC = ({children} ) => {
-
+const Dialog = (props: Props) => {
+  const { children } = props;
   return (
-      <StyledDialog>
-        {children}
-      </StyledDialog>
+    <StyledDialog>
+      {children}
+    </StyledDialog>
   );
 };
 

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="284" height="283" viewBox="0 0 284 283">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.861" y1="0.546" x2="0.05" y2="0.154" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#03a488"/>
+      <stop offset="1"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.633" y1="0.533" x2="0.226" y2="0.203" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff5227"/>
+      <stop offset="1"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="0.531" y1="1" x2="0.523" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#23b567"/>
+      <stop offset="1" stop-color="#3dffa4"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1197" data-name="Rectangle 1197" width="283" height="283" transform="translate(0.074 -0.089)" fill="url(#linear-gradient)"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-5" x1="0.531" y1="1" x2="0.523" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#04ae91"/>
+      <stop offset="1" stop-color="#1ff6cb"/>
+    </linearGradient>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_639" data-name="Rectangle 639" width="283" height="283" transform="translate(0.001)" fill="url(#linear-gradient-2)"/>
+    </clipPath>
+    <clipPath id="clip-path-4">
+      <path id="Rectangle_1184" data-name="Rectangle 1184" d="M26,0H283a0,0,0,0,1,0,0V283a0,0,0,0,1,0,0H26A26,26,0,0,1,0,257V26A26,26,0,0,1,26,0Z" transform="translate(6258 11926)" fill="url(#linear-gradient-4)"/>
+    </clipPath>
+  </defs>
+  <g id="Group_21090" data-name="Group 21090" transform="translate(-5199 -14812)">
+    <g id="Group_21088" data-name="Group 21088" transform="translate(-1059 3315)">
+      <rect id="Rectangle_636" data-name="Rectangle 636" width="283" height="283" transform="translate(6258 11497)" fill="url(#linear-gradient-5)"/>
+      <path id="Path_112660" data-name="Path 112660" d="M12725.129,12186.954" transform="translate(-6397 -564)" fill="none" stroke="#707070" stroke-width="1"/>
+    </g>
+    <g id="Group_21089" data-name="Group 21089" transform="translate(737)">
+      <g id="Mask_Group_243" data-name="Mask Group 243" transform="translate(-1796 2886)" clip-path="url(#clip-path-4)">
+        <path id="Union_63" data-name="Union 63" d="M-6384.953-371.581l-.33-9.172-2.277-2.344,2.2.318-3.5-97.426,146.135,146.914,6.252,7.034,74.546,76.312L-6231-216.851Z" transform="translate(12749.309 12469.696)" fill="#06ab8e" opacity="0.7"/>
+      </g>
+      <g id="Group_6284" data-name="Group 6284" transform="translate(4525 14874.945)">
+        <path id="Shape" d="M65.753,91.513C50.828,76.588,47.458,61.664,46.7,55.685A5.359,5.359,0,0,1,48.237,51.2L60.315,39.127a5.392,5.392,0,0,0,.76-6.672L41.846,2.6A5.392,5.392,0,0,0,34.861.63L3.99,15.169a5.362,5.362,0,0,0-2.965,5.357c1.618,15.366,8.317,53.141,45.439,90.265s74.891,43.821,90.266,45.439a5.362,5.362,0,0,0,5.357-2.965l14.539-30.87a5.392,5.392,0,0,0-1.954-6.974L124.811,96.2a5.392,5.392,0,0,0-6.672.755l-12.072,12.077a5.359,5.359,0,0,1-4.486,1.539C95.6,109.807,80.677,106.437,65.753,91.513Z" transform="translate(-0.997 0.081)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

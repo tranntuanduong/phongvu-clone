@@ -19,5 +19,7 @@ export const colors: Colors = {
 
   success: "#53c305",
   error: "#d60f29",
-  warning: "#ffc107"
+  warning: "#ffc107",
+
+  organge: "#ffdb78",
 };

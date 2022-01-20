@@ -18,6 +18,7 @@ export interface Colors {
   success: string;
   error: string;
   warning: string;
+  organge: string;
 }
 
 export interface FontSizes {

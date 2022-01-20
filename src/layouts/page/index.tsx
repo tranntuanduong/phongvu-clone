@@ -1,7 +1,10 @@
+import RightContact from '@components/Contact/RightContact';
+import PopupAdvertise from '@components/PopupAdvertise';
 import CartContextProvider from 'contexts/CartContext';
 import PageContextProvider, { PageContext } from 'contexts/PageContext';
+import useOnClickOutside from 'hooks/useOnclickOutside';
 import dynamic from 'next/dynamic';
-import { ReactNode, useContext } from 'react';
+import { ReactNode, useContext, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const DynamicHeaderWithNoSSR = dynamic(() => import('@components/Header'), { ssr: false });
@@ -23,6 +26,14 @@ function PageLayout(props: PageProps) {
   const { children } = props;
   const { t } = useTranslation();
   const { isHome } = useContext(PageContext);
+  const [openPopupAdvertise, setOpenPopupAdvertise] = useState(true);
+  const popupAdvertiseRef = useRef(null);
+
+  const handleCloseDialogDetails = () => {
+    setOpenPopupAdvertise(false);
+  };
+
+  useOnClickOutside(popupAdvertiseRef, handleCloseDialogDetails);
 
   return (
     <CartContextProvider>
@@ -35,6 +46,11 @@ function PageLayout(props: PageProps) {
         <DynamicFooterWithNoSSR />
         <DynamicShadowWithNoSSR />
       </PageContextProvider>
+
+      {openPopupAdvertise && (
+        <PopupAdvertise ref={popupAdvertiseRef} onClose={handleCloseDialogDetails} />
+      )}
+      <RightContact />
     </CartContextProvider>
   );
 }

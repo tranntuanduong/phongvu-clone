@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="579" height="578.998" viewBox="0 0 579 578.998">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.536" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#50b836"/>
+      <stop offset="1" stop-color="#58ff64"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1199" data-name="Rectangle 1199" width="574.923" height="578.849" fill="url(#linear-gradient)"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#7ac2ff"/>
+      <stop offset="1" stop-color="#3e7af9"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.29" y1="0.289" x2="1.372" y2="0.609" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5186f1"/>
+      <stop offset="1" stop-color="#538bfb" stop-opacity="0.102"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_21187" data-name="Group 21187" transform="translate(-5197 -16104)">
+    <rect id="Rectangle_1198" data-name="Rectangle 1198" width="579" height="578.849" transform="translate(5197 16104)" fill="url(#linear-gradient-2)"/>
+    <path id="Union_89" data-name="Union 89" d="M298.783,478.115l-1.361-1.212H156.208l-96.6-93.664,53.971-69.955L0,212.2,18.119,160.44,54.9,177.882,203.776,0,389.471,160.44V478.115Z" transform="translate(5384.585 16204.884)" fill="url(#linear-gradient-3)"/>
+    <path id="Union_88" data-name="Union 88" d="M61.327,387.517V215.859H0V145.78H61.327s-.452-15.082,0-62.1S97.759,7.092,123.8,1.96,205.186,3.4,205.186,3.4V63.339s-4.3.6-37.312,0-32.054,38.8-32.054,38.8v43.99h66.523l-9.7,69.385H135.821v172Z" transform="translate(5384.563 16200.208)" fill="#fff"/>
+  </g>
+</svg>

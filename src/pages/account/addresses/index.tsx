@@ -13,7 +13,13 @@ import Container from 'layouts/container';
 import Grid from 'layouts/Grid';
 import { useRef, useState } from 'react';
 import { BsBell } from 'react-icons/bs';
-import { StyledAccountTitle, StyledAddAddressBtn, StyledAddressDialog, StyledFullScreen, StyledMyAddress } from 'styles/AccountPage';
+import {
+  StyledAccountTitle,
+  StyledAddAddressBtn,
+  StyledAddressDialog,
+  StyledFullScreen,
+  StyledMyAddress,
+} from 'styles/AccountPage';
 
 const AccountAddresses = () => {
   const [openAddressDialog, setOpenAddressDialog] = useState(false);
@@ -21,7 +27,7 @@ const AccountAddresses = () => {
 
   const handleOpenAddressDialog = () => {
     setOpenAddressDialog(true);
-  }
+  };
 
   const handleCloseDialogDetails = () => {
     setOpenAddressDialog(false);
@@ -39,10 +45,8 @@ const AccountAddresses = () => {
               <AccountMenu />
             </Grid>
             <Grid item sx={9}>
-              <StyledAccountTitle >
-                <h5 className="title">
-                  Sổ địa chỉ
-                </h5>
+              <StyledAccountTitle>
+                <h5 className="title">Sổ địa chỉ</h5>
               </StyledAccountTitle>
               <StyledAddAddressBtn onClick={handleOpenAddressDialog}>
                 <div className="icon">
@@ -59,12 +63,15 @@ const AccountAddresses = () => {
                   <div className="body">
                     <div className="wrap">
                       <div className="text">
-                        Địa chỉ: Số nhà 154, ngõ 99 định công hạ, hoàng mai, hà nội, Phường Định Công, Quận Hoàng Mai, Thành phố Hà Nội
+                        Địa chỉ: Số nhà 154, ngõ 99 định công hạ, hoàng mai, hà nội, Phường Định
+                        Công, Quận Hoàng Mai, Thành phố Hà Nội
                       </div>
                       <div className="text">Điện thoại: 0389168111</div>
                     </div>
                     <div className="btn">
-                      <Button variant="outline" size="small"
+                      <Button
+                        variant="outline"
+                        size="small"
                         onClick={handleOpenAddressDialog}
                         textColor={colors.error}
                       >
@@ -82,13 +89,16 @@ const AccountAddresses = () => {
                   <div className="body">
                     <div className="wrap">
                       <div className="text">
-                        Địa chỉ: Số nhà 154, ngõ 99 định công hạ, hoàng mai, hà nội, Phường Định Công, Quận Hoàng Mai, Thành phố Hà Nội,
-                        Địa chỉ: Số hà nội, Phường Định Công, Quận Hoàng Mai, Thành phố Hà Nội
+                        Địa chỉ: Số nhà 154, ngõ 99 định công hạ, hoàng mai, hà nội, Phường Định
+                        Công, Quận Hoàng Mai, Thành phố Hà Nội, Địa chỉ: Số hà nội, Phường Định
+                        Công, Quận Hoàng Mai, Thành phố Hà Nội
                       </div>
                       <div className="text">Điện thoại: 038916232</div>
                     </div>
                     <div className="btn">
-                      <Button variant="outline" size="small"
+                      <Button
+                        variant="outline"
+                        size="small"
                         onClick={handleOpenAddressDialog}
                         textColor={colors.error}
                       >
@@ -104,11 +114,9 @@ const AccountAddresses = () => {
       </Container>
       {openAddressDialog && (
         <Dialog>
-          <Paper borderRadius="10px" >
+          <Paper borderRadius="10px">
             <StyledAddressDialog ref={ref}>
-              <div className="title">
-                Thông tin người nhận hàng
-              </div>
+              <div className="title">Thông tin người nhận hàng</div>
               <Grid container gap="16px">
                 <Grid item sx={12}>
                   <FormLabel>
@@ -130,9 +138,7 @@ const AccountAddresses = () => {
                 </Grid>
               </Grid>
               <Divider size="small" margin="20px 0px" />
-              <div className="title">
-                Địa chỉ nhận hàng
-              </div>
+              <div className="title">Địa chỉ nhận hàng</div>
               <Grid container gap="16px">
                 <Grid item sx={12}>
                   <FormLabel>
@@ -155,12 +161,17 @@ const AccountAddresses = () => {
               </Grid>
               <div className="btn-wrap">
                 <Button
-                  size="medium" variant="outline" margin="0 10px 0 0"
+                  size="medium"
+                  variant="outline"
+                  margin="0 10px 0 0"
                   textColor={colors.primaryColor}
-                  onClick={handleCloseDialogDetails}>
+                  onClick={handleCloseDialogDetails}
+                >
                   Hủy bỏ
                 </Button>
-                <Button size="medium" bgColor={colors.textGrey}>Lưu địa chỉ</Button>
+                <Button size="medium" bgColor={colors.textGrey}>
+                  Lưu địa chỉ
+                </Button>
               </div>
             </StyledAddressDialog>
           </Paper>
@@ -169,7 +180,5 @@ const AccountAddresses = () => {
     </StyledFullScreen>
   );
 };
-
-
 
 export default AccountAddresses;
