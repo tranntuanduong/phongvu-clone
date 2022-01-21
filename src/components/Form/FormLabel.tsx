@@ -16,16 +16,16 @@ const StyledFormLabel = styled.div`
     margin-top: 16px;
   }
 
-  & input {
+  & input,
+  & textarea {
     margin-top: 8px;
   }
 
-  & input[type=radio] {
+  & input[type='radio'] {
     margin-top: 0;
     width: auto;
     margin-left: 8px;
   }
- 
 
   & label {
     font-size: ${fontSizes.body2};

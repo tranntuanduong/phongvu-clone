@@ -12,7 +12,6 @@ import Grid from 'layouts/Grid';
 import styled from 'styled-components';
 
 const AccountInfo = () => {
-
   return (
     <StyledFullScreen>
       <SEO title="Phong vũ | Account" description="Đây là desc của trang chủ" />
@@ -60,7 +59,9 @@ const AccountInfo = () => {
                         </div>
                       </div>
                     </FormLabel>
-                    <Button size="small" margin="20px 0 0 0" width='120px'>Cập nhật</Button>
+                    <Button size="medium" margin="20px 0 0 0" width="120px">
+                      Cập nhật
+                    </Button>
                   </form>
                 </StyledAccountInfo>
               </Paper>
@@ -108,6 +109,6 @@ const StyledAccountInfo = styled.div`
       font-weight: 400;
     }
   }
-`
+`;
 
 export default AccountInfo;

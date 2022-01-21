@@ -43,11 +43,11 @@ const RightContact = () => {
   return (
     <Fragment>
       <StyledRightContact>
-        <div className="contact-item" onClick={handleToggleContactMailDialog}>
-          <img src="/access/contact/mail.svg" alt="" className="contact-icon" />
-        </div>
         <div className="contact-item" onClick={handleToggleContactPhoneDialog}>
           <img src="/access/contact/phone.svg" alt="" className="contact-icon" />
+        </div>
+        <div className="contact-item" onClick={handleToggleContactMailDialog}>
+          <img src="/access/contact/mail.svg" alt="" className="contact-icon" />
         </div>
         <div className="contact-item" onClick={handleToggleContactLocationDialog}>
           <img src="/access/contact/location.svg" alt="" className="contact-icon" />
@@ -59,9 +59,15 @@ const RightContact = () => {
           <img src="/access/contact/mes.png" alt="" className="contact-messenger" />
         </div>
       </StyledRightContact>
-      {openContactMailDialog && <ContactMailDialog ref={mailDialogRef} />}
-      {openContactPhoneDialog && <ContactPhoneDialog ref={phoneDialogRef} />}
-      {openContactLocationDialog && <ContactLocationDialog ref={locationDialogRef} />}
+      {openContactMailDialog && (
+        <ContactMailDialog ref={mailDialogRef} onClose={handleCloseDialog} />
+      )}
+      {openContactPhoneDialog && (
+        <ContactPhoneDialog ref={phoneDialogRef} onClose={handleCloseDialog} />
+      )}
+      {openContactLocationDialog && (
+        <ContactLocationDialog ref={locationDialogRef} onClose={handleCloseDialog} />
+      )}
     </Fragment>
   );
 };

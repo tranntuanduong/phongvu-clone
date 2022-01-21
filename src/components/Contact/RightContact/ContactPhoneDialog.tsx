@@ -10,9 +10,13 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import TextField from '@components/Form/TextField';
 import Button from '@components/Elements/Button';
 
-interface Props {}
+interface Props {
+  onClose: () => void;
+}
 
-const ContactPhoneDialog = forwardRef<HTMLDivElement, Props>((_props, ref) => {
+const ContactPhoneDialog = forwardRef<HTMLDivElement, Props>((props, ref) => {
+  const { onClose } = props;
+
   return (
     <Dialog>
       <div ref={ref}>
@@ -30,19 +34,19 @@ const ContactPhoneDialog = forwardRef<HTMLDivElement, Props>((_props, ref) => {
             <div className="contact-item">
               <img src="/access/contact/phone-me.png" alt="" className="contact-item__icon" />
               <div className="wrap">
-                <div className="contact-item__text">Tư vấn mua hàng (24/24)</div>
-                <div className="contact-item__number">1900 1000</div>
+                <div className="contact-item__text">CSKH - Khiếu nại (8h-21h)</div>
+                <div className="contact-item__number">1900 2000</div>
                 <Divider size="small" margin="16px 0" />
               </div>
             </div>
             <div className="sub-title">
               Hoặc vui lòng để lại số điện thoại, chúng tôi sẽ gọi lại sau.
             </div>
-            <div className="wrap">
+            <div className="contact-wrap">
               <TextField placeholder="Số điện thoại của bạn..." />
-              <Button size="small">Yêu cầu gọi lại</Button>
+              <Button size="medium">Yêu cầu gọi lại</Button>
             </div>
-            <div className="close-btn">
+            <div className="close-btn" onClick={onClose}>
               <AiFillCloseCircle />
             </div>
           </StyledContactPhoneDialog>
@@ -72,6 +76,11 @@ const StyledContactPhoneDialog = styled.div`
 
   & .wrap {
     flex: 1;
+  }
+
+  & .contact-wrap {
+    display: flex;
+    column-gap: 10px;
   }
 
   & .contact-item {

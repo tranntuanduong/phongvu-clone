@@ -11,7 +11,7 @@ export const StyledButton = styled.div`
   padding: ${(props) => props.theme.size};
   border-radius: 5px;
   cursor: pointer;
-  margin: ${(props) => props.theme.margin ?? "0px"};
+  margin: ${(props) => props.theme.margin ?? '0px'};
   width: ${(props) => props.theme.width ?? 'auto'};
   font-size: ${fontSizes.body2};
   user-select: none;
@@ -19,6 +19,7 @@ export const StyledButton = styled.div`
     /* background-color: ${(props) => props.theme.btnBgColor}; */
     opacity: 0.9;
   }
+  flex-shrink: 0;
 `;
 
 export const StyledOutLineButton = styled.div`
@@ -30,7 +31,7 @@ export const StyledOutLineButton = styled.div`
   padding: ${(props) => props.theme.size};
   border-radius: 5px;
   cursor: pointer;
-  margin: ${(props) => props.theme.margin ?? "0px"};
+  margin: ${(props) => props.theme.margin ?? '0px'};
   width: ${(props) => props.theme.width ?? 'auto'};
   font-size: ${fontSizes.body2};
   user-select: none;
@@ -38,4 +39,5 @@ export const StyledOutLineButton = styled.div`
     /* background-color: ${(props) => props.theme.btnBgColor}; */
     opacity: 0.9;
   }
+  flex-shrink: 0;
 `;
