@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="9" y="6" width="8" height="8" rx="4"></rect>
+    </defs>
+    <g id="自助装机" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon" transform="translate(-139.000000, -144.000000)">
+            <g id="Group-4" transform="translate(139.000000, 144.000000)">
+                <rect id="Rectangle-10" fill="#FFFFFF" x="0" y="0" width="70" height="70"></rect>
+                <g id="鼠标-" transform="translate(22.000000, 16.000000)">
+                    <path d="M13,1 C6.372583,1 1,6.372583 1,13 L1,25 C1,31.627417 6.372583,37 13,37 C19.627417,37 25,31.627417 25,25 L25,13 C25,6.372583 19.627417,1 13,1 Z" id="Rectangle-57" stroke="#93A1C1" stroke-width="2"></path>
+                    <path d="M13,2 L13,7.00854492 M13,13.078125 L13,17" id="Line" stroke="#93A1C1" stroke-width="2" stroke-linecap="square"></path>
+                    <g id="Rectangle">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <rect stroke="#93A1C1" stroke-width="2" x="10" y="7" width="6" height="6" rx="3"></rect>
+                    </g>
+                    <path d="M1.5,17.5 L24.5,17.5" id="Line-2" stroke="#93A1C1" stroke-width="2" stroke-linecap="square"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

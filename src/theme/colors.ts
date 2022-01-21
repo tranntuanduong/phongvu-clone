@@ -17,9 +17,10 @@ export const colors: Colors = {
   greenColor: '#53c305',
   inputBorder: '#e0e0e0',
 
-  success: "#53c305",
-  error: "#d60f29",
-  warning: "#ffc107",
+  success: '#53c305',
+  error: '#d60f29',
+  warning: '#ffc107',
 
-  organge: "#ffdb78",
+  organge: '#ffdb78',
+  emeraldGreen: '#7dd2eb',
 };

@@ -18,14 +18,14 @@ const SEO = (props: SEOProps) => {
       <meta property="og:image" content="/access/products/giadung/giadung1.jpg" />
       <meta property="og:url" content="https://phongvu-clone.netlify.app/" /> */}
 
-      <title>Phong vũ clone | search</title>
+      <title>{title}</title>
       <link rel="shortcut icon" href="/access/logo/short-logo.svg" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
-      <meta name="description" content="Bàn phím cơ keychorn" />
+      <meta name="description" content={description} />
 
       <meta itemProp="name" content="Phong vũ clone | search" />
-      <meta itemProp="description" content="Bàn phím cơ keychorn" />
+      <meta itemProp="description" content={description} />
       <meta
         itemProp="image"
         content="https://phongvu-clone.netlify.app/access/products/giadung/giadung1.jpg"
@@ -34,7 +34,7 @@ const SEO = (props: SEOProps) => {
       <meta property="og:url" content="https://phongvu-clone.netlify.app/search?query=keychorn" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content="Phong vũ clone | search" />
-      <meta property="og:description" content="Bàn phím cơ keychorn" />
+      <meta property="og:description" content={description} />
       <meta
         property="og:image"
         content="https://phongvu-clone.netlify.app/access/products/giadung/giadung1.jpg"
@@ -42,7 +42,7 @@ const SEO = (props: SEOProps) => {
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Phong vũ clone | search" />
-      <meta name="twitter:description" content="Bàn phím cơ keychorn" />
+      <meta name="twitter:description" content={description} />
       <meta
         name="twitter:image"
         content="https://phongvu-clone.netlify.app/access/products/giadung/giadung1.jpg"

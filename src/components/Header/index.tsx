@@ -125,7 +125,7 @@ function Header(props: Props) {
 
   const handleChangePid = (pid: string) => () => {
     changePid(pid, router);
-  }
+  };
 
   return (
     <StyledHeader className={zoomOutHeader ? 'zoomout' : ''}>
@@ -191,7 +191,7 @@ function Header(props: Props) {
                 </Link>
               </div>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" onClick={handleChangePid('orders')}>
               <div className="nav-item__wrap">
                 <BsCalendar2Check className="nav-item__icon" />
                 <span className="nav-item__text">Đơn hàng</span>
@@ -213,19 +213,19 @@ function Header(props: Props) {
                     <div className="top__title">Trần Tuấn Dương</div>
                   </div>
                   <ul className="detail-list">
-                    <li className="detail-item" onClick={handleChangePid("account")}>
+                    <li className="detail-item" onClick={handleChangePid('account')}>
                       <BsPersonCircle className="detail-item__icon" />
                       <div className="detail-item__text">{t('account-infomation')}</div>
                     </li>
-                    <li className="detail-item" onClick={handleChangePid("orders")}>
+                    <li className="detail-item" onClick={handleChangePid('orders')}>
                       <BsCalendar2Check className="detail-item__icon" />
                       <div className="detail-item__text">{t('order-management')}</div>
                     </li>
-                    <li className="detail-item" onClick={handleChangePid("addresses")}>
+                    <li className="detail-item" onClick={handleChangePid('addresses')}>
                       <BsGeoAlt className="detail-item__icon" />
                       <div className="detail-item__text">{t('address-book')}</div>
                     </li>
-                    <li className="detail-item" onClick={handleChangePid("notification")}>
+                    <li className="detail-item" onClick={handleChangePid('notification')}>
                       <BsBell className="detail-item__icon" />
                       <div className="detail-item__text">{t('notification')}</div>
                     </li>
@@ -361,7 +361,7 @@ function Header(props: Props) {
                   </div>
                   <Link href="/cart">
                     <a>
-                      <Button size="large" margin="20px 0 0 0" >
+                      <Button size="large" margin="20px 0 0 0">
                         Xem giỏ hàng
                       </Button>
                     </a>

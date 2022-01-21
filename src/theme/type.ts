@@ -19,6 +19,7 @@ export interface Colors {
   error: string;
   warning: string;
   organge: string;
+  emeraldGreen: string;
 }
 
 export interface FontSizes {

@@ -1,3 +1,5 @@
+import { colors } from '@theme/colors';
+import { fontSizes } from '@theme/fontSizes';
 import useOnClickOutside from 'hooks/useOnclickOutside';
 import { Fragment, useRef, useState } from 'react';
 import styled from 'styled-components';
@@ -45,18 +47,24 @@ const RightContact = () => {
       <StyledRightContact>
         <div className="contact-item" onClick={handleToggleContactPhoneDialog}>
           <img src="/access/contact/phone.svg" alt="" className="contact-icon" />
+          <div className="tooltip">Hotline</div>
         </div>
         <div className="contact-item" onClick={handleToggleContactMailDialog}>
           <img src="/access/contact/mail.svg" alt="" className="contact-icon" />
+          <div className="tooltip">Email hỗ trợ</div>
         </div>
         <div className="contact-item" onClick={handleToggleContactLocationDialog}>
           <img src="/access/contact/location.svg" alt="" className="contact-icon" />
+          <div className="tooltip">Showroom</div>
         </div>
         <div className="contact-item">
           <img src="/access/contact/fb.svg" alt="" className="contact-icon" />
+          <div className="tooltip">Like fanpage & trúng quà mini mỗi ngày</div>
         </div>
         <div className="messenger">
-          <img src="/access/contact/mes.png" alt="" className="contact-messenger" />
+          <a href="https://m.me/phongvuvietnam" target="_blank" rel="noreferrer">
+            <img src="/access/contact/mes.png" alt="" className="contact-messenger" />
+          </a>
         </div>
       </StyledRightContact>
       {openContactMailDialog && (
@@ -85,6 +93,13 @@ const StyledRightContact = styled.div`
     margin-top: 8px;
     padding-right: 4px;
     cursor: pointer;
+    position: relative;
+
+    &:hover {
+      & .tooltip {
+        display: block;
+      }
+    }
 
     & .contact-icon {
       width: 38px;
@@ -102,6 +117,20 @@ const StyledRightContact = styled.div`
     & .contact-messenger {
       height: 100%;
     }
+  }
+
+  & .tooltip {
+    padding: 8px;
+    background-color: ${colors.primaryColor};
+    color: ${colors.whiteColor};
+    font-size: ${fontSizes.desc1};
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 50px;
+    width: max-content;
+    display: none;
   }
 `;
 

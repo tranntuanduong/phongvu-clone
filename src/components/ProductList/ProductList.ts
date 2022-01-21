@@ -44,6 +44,13 @@ export const StyledSortProducts = styled.div`
     margin-right: 44px;
   }
 
+  & .sort-title--buildPc {
+    color: ${colors.text};
+    font-size: ${fontSizes.desc1};
+    font-weight: 600;
+    margin-right: 10px;
+  }
+
   & .sort-list {
     font-size: ${fontSizes.desc1};
     color: ${colors.text};
@@ -59,5 +66,9 @@ export const StyledSortProducts = styled.div`
         margin-right: 8px;
       }
     }
+  }
+
+  & .search {
+    margin-left: 20px;
   }
 `

@@ -669,3 +669,62 @@ export const enhanceFilters = [
     categories: ['Thép', 'Nhựa', 'Kính'],
   },
 ];
+
+export const buildPcList = [
+  {
+    name: 'Vi xử lý',
+    thumb: '/access/buildpc/cpu.svg',
+  },
+  {
+    name: 'Bo mạch chủ',
+    thumb: '/access/buildpc/bomachchu.svg',
+  },
+  {
+    name: 'RAM',
+    thumb: '/access/buildpc/ram.svg',
+  },
+  {
+    name: 'Ổ HDD',
+    thumb: '/access/buildpc/ssd.svg',
+  },
+  {
+    name: 'Ổ SSD',
+    thumb: '/access/buildpc/ssd.svg',
+  },
+  {
+    name: 'VGA',
+    thumb: '/access/buildpc/vga-card.svg',
+  },
+  {
+    name: 'Nguồn',
+    thumb: '/access/buildpc/power-supply.svg',
+  },
+  {
+    name: 'Vỏ case',
+    thumb: '/access/buildpc/windows-media-audio.svg',
+  },
+  {
+    name: 'Tản nhiệt',
+    thumb: '/access/buildpc/fan.svg',
+  },
+  {
+    name: 'Màn hình',
+    thumb: '/access/buildpc/monitor.svg',
+  },
+  {
+    name: 'Bàn phím',
+    thumb: '/access/buildpc/keyboard-icon.87b45d1c.svg',
+  },
+  {
+    name: 'Chuột',
+    thumb: '/access/buildpc/mouse-icon.144f4d99.svg',
+  },
+  {
+    name: 'Tai nghe',
+    thumb: '/access/buildpc/headphones.svg',
+  },
+  {
+    name: 'Loa máy tính',
+    thumb: '/access/buildpc/windows-media-audio.svg',
+  },
+];

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
+//5*
 const GlobalScrollStyle = createGlobalStyle`
   body {
     overflow-y: hidden;

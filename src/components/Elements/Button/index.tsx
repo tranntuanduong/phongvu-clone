@@ -48,6 +48,7 @@ function Button(props: ButtonProps) {
 
   return (
     <StyledButton
+      onClick={onClick}
       theme={{
         size: btnSize,
         btnBgColor: btnBgColor,
